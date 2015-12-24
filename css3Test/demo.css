@@ -1,0 +1,17 @@
+.spinner{
+    height: 100px;
+    width: 100px;
+    background-color: #218ac3;
+    border-radius: 50%;
+    margin: 50px auto;
+    animation:fade 1.5s infinite ease-in-out;
+}
+@keyframes fade{
+    from{
+        transform:scale(0.0);
+    }
+    to{
+        transform:scale(1.0);
+        opacity: 0;
+    }
+}
