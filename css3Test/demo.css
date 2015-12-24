@@ -5,14 +5,101 @@
 body{
     background-color: #222;
 }
+/* spinner */
 .spinner{
     height: 100px;
     width: 100px;
-    background-color: #fff;
+    background-color: #218ac3;
     border-radius: 50%;
     margin: 50px auto;
     animation:fade 1s infinite ease-in-out;
 }
+@keyframes fade{
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform:scale(1.0);
+        opacity: 0;
+    }
+}
+/* circle loading */
+.circle{
+    height: 100px;
+    width: 100px;
+    border-left: 5px solid #fff;
+    border-radius: 50%;
+    margin: 50px auto;
+    animation:round 1s infinite linear;
+}
+@keyframes round{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.circle2{
+    height: 100px;
+    width: 100px;
+    border-left: 6px solid #fff;
+    border-top:6px solid #555;
+    border-bottom:6px solid #555;
+    border-right:6px solid #555;
+    border-radius: 50%;
+    margin: 50px auto;
+    animation:round 1s infinite linear;
+}
+@keyframes round{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+/* line */
+.line{
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+    margin: 50px auto;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.line>div{
+    display: inline-block;
+    height: 30px;
+    width: 4px;
+    background-color: #fff;
+    animation:linea 1s infinite ease-in-out;
+}
+.line2{
+    -webkit-animation-delay:-0.9s !important;
+    animation-delay:-0.9s !important;
+}
+.line3{
+    -webkit-animation-delay:-0.8s !important;
+    animation-delay:-0.8s !important;
+}
+.line4{
+    -webkit-animation-delay:-0.7s !important;
+    animation-delay:-0.7s !important;
+}
+.line5{
+    -webkit-animation-delay:-0.6s !important;
+    animation-delay:-0.6s !important;
+}
+@keyframes linea{
+    0%,40%,100%{
+        transform:scaleY(0.3);
+    }
+    20%{
+        transform:scaleY(1);
+    }
+}
+/* picture */
 .picture{
     width: 450px;
     position: relative;
@@ -23,7 +110,8 @@ body{
     border: 10px solid #fff;
     position: absolute;
     transform-origin:center 600px;
-    transition:transform 0.5s;
+    transition:transform 0.5s ease-in-out;
+    box-shadow: 1px 1px 4px #333;
 }
 .picture>img:nth-child(1){
     transform:rotate(14deg);
@@ -36,15 +124,6 @@ body{
 }
 .picture>img:nth-child(5){
     transform:rotate(-14deg);
-}
-@keyframes fade{
-    from{
-        transform:scale(0.0);
-    }
-    to{
-        transform:scale(1.0);
-        opacity: 0;
-    }
 }
 .picture:hover img:nth-child(1){
     transform:rotate(34deg);
