@@ -1,10 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #222;
+}
 .spinner{
     height: 100px;
     width: 100px;
-    background-color: #218ac3;
+    background-color: #fff;
     border-radius: 50%;
     margin: 50px auto;
-    animation:fade 1.5s infinite ease-in-out;
+    animation:fade 1s infinite ease-in-out;
+}
+.picture{
+    width: 450px;
+    position: relative;
+    margin: 20px auto;
+}
+.picture>img{
+    width:450px;
+    border: 10px solid #fff;
+    position: absolute;
+    transform-origin:center 600px;
+    transition:transform 0.5s;
+}
+.picture>img:nth-child(1){
+    transform:rotate(14deg);
+}
+.picture>img:nth-child(2){
+    transform:rotate(7deg);
+}
+.picture>img:nth-child(4){
+    transform:rotate(-7deg);
+}
+.picture>img:nth-child(5){
+    transform:rotate(-14deg);
 }
 @keyframes fade{
     from{
@@ -14,4 +45,16 @@
         transform:scale(1.0);
         opacity: 0;
     }
+}
+.picture:hover img:nth-child(1){
+    transform:rotate(34deg);
+}
+.picture:hover img:nth-child(2){
+    transform:rotate(19deg);
+}
+.picture:hover img:nth-child(4){
+    transform:rotate(-19deg);
+}
+.picture:hover img:nth-child(5){
+    transform:rotate(-34deg);
 }
