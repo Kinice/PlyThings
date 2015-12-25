@@ -99,6 +99,38 @@ body{
         transform:scaleY(1);
     }
 }
+/* rect */
+.rect{
+    width: 340px;
+    height: 240px;
+    margin: 50px auto 100px;
+    background-color: #ffffff;
+    transform-origin:left center;
+    transition:transform 1s ease-out;
+    position: relative;
+}
+.rect:after{
+    content: '';
+    width: 340px;
+    height: 240px;
+    background-color: #222;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    opacity: 0;
+    transition:opacity 1s ease-out;
+}
+.rect>img{
+    width: 340px;
+    height: 240px;
+}
+.rect:hover{
+    transform:rotateY(-90deg);
+}
+.rect:hover:after{
+    opacity: 1;
+}
 /* picture */
 .picture{
     width: 450px;
@@ -112,6 +144,7 @@ body{
     transform-origin:center 600px;
     transition:transform 0.5s ease-in-out;
     box-shadow: 1px 1px 4px #333;
+    margin-bottom: 400px;
 }
 .picture>img:nth-child(1){
     transform:rotate(14deg);
