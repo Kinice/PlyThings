@@ -13,13 +13,16 @@ body{
     border-radius: 50%;
     margin: 50px auto;
     animation:fade 1s infinite ease-in-out;
+	-webkit-animation:fade 1s infinite ease-in-out;
 }
 @keyframes fade{
     from{
         transform:scale(0);
+		-webkit-transform:scale(0);
     }
     to{
         transform:scale(1.0);
+		-webkit-transform:scale(1.0);
         opacity: 0;
     }
 }
@@ -31,13 +34,16 @@ body{
     border-radius: 50%;
     margin: 50px auto;
     animation:round 1s infinite linear;
+	-webkit-animation:round 1s infinite linear;
 }
 @keyframes round{
     from{
-        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
     }
     to{
-        transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
     }
 }
 .circle2{
@@ -50,13 +56,16 @@ body{
     border-radius: 50%;
     margin: 50px auto;
     animation:round 1s infinite linear;
+	-webkit-animation:round 1s infinite linear;
 }
 @keyframes round{
     from{
-        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
     }
     to{
-        transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
     }
 }
 /* line */
@@ -74,6 +83,7 @@ body{
     width: 4px;
     background-color: #fff;
     animation:linea 1s infinite ease-in-out;
+	-webkit-animation:linea 1s infinite ease-in-out;
 }
 .line2{
     -webkit-animation-delay:-0.9s !important;
@@ -93,10 +103,12 @@ body{
 }
 @keyframes linea{
     0%,40%,100%{
-        transform:scaleY(0.3);
+        -webkit-transform:scaleY(0.3);
+		transform:scaleY(0.3);
     }
     20%{
-        transform:scaleY(1);
+        -webkit-transform:scaleY(1);
+		transform:scaleY(1);
     }
 }
 /* rect */
@@ -105,8 +117,10 @@ body{
     height: 240px;
     margin: 50px auto 100px;
     background-color: #ffffff;
+	-webkit-transform-origin:left center;
     transform-origin:left center;
-    transition:transform 1s ease-out;
+    -webkit-transition:transform 1s ease-out;
+	transition:transform 1s ease-out;
     position: relative;
     -webkit-perspective:200px;
     perspective:200px;
@@ -128,7 +142,8 @@ body{
     height: 240px;
 }
 .rect:hover{
-    transform:rotateY(-90deg);
+    -webkit-transform:rotateY(-90deg);
+	transform:rotateY(-90deg);
 }
 .rect:hover:after{
     opacity: 1;
@@ -143,32 +158,42 @@ body{
     width:450px;
     border: 10px solid #fff;
     position: absolute;
-    transform-origin:center 600px;
-    transition:transform 0.5s ease-in-out;
+    -webkit-transform-origin:center 600px;
+	transform-origin:center 600px;
+    -webkit-transition:transform 0.5s ease-in-out;
+	transition:transform 0.5s ease-in-out;
     box-shadow: 1px 1px 4px #333;
     margin-bottom: 400px;
 }
 .picture>img:nth-child(1){
-    transform:rotate(14deg);
+    -webkit-transform:rotate(14deg);
+	transform:rotate(14deg);
 }
 .picture>img:nth-child(2){
-    transform:rotate(7deg);
+    -webkit-transform:rotate(7deg);
+	transform:rotate(7deg);
 }
 .picture>img:nth-child(4){
-    transform:rotate(-7deg);
+    -webkit-transform:rotate(-7deg);
+	transform:rotate(-7deg);
 }
 .picture>img:nth-child(5){
-    transform:rotate(-14deg);
+    -webkit-transform:rotate(-14deg);
+	transform:rotate(-14deg);
 }
 .picture:hover img:nth-child(1){
-    transform:rotate(34deg);
+    -webkit-transform:rotate(34deg);
+	transform:rotate(34deg);
 }
 .picture:hover img:nth-child(2){
-    transform:rotate(19deg);
+    -webkit-transform:rotate(19deg);
+	transform:rotate(19deg);
 }
 .picture:hover img:nth-child(4){
-    transform:rotate(-19deg);
+    -webkit-transform:rotate(-19deg);
+	transform:rotate(-19deg);
 }
 .picture:hover img:nth-child(5){
-    transform:rotate(-34deg);
+    -webkit-transform:rotate(-34deg);
+	transform:rotate(-34deg);
 }
