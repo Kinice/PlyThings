@@ -48,7 +48,31 @@
         </div>
     </div>
     <script>
-
+        var isAnimating = false;
+        $('.btn>a:first-child').on('click',function(){
+            if(isAnimating == false){
+                isAnimating = true;
+                var left = $('.imgcont').position().left;
+                $('.imgcont').css('left',left+1024);
+                setTimeout(function(){
+                    isAnimating = false;
+                },1000);
+            }else{
+                return false;
+            }
+        });
+        $('.btn>a:last-child').on('click',function(){
+            if(isAnimating == false){
+                isAnimating = true;
+                var left = $('.imgcont').position().left;
+                $('.imgcont').css('left',left-1024);
+                setTimeout(function(){
+                    isAnimating = false;
+                },1000);
+            }else{
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
