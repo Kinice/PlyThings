@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css test demo3</title>
+    <link rel="stylesheet" href="demo3.css"/>
+    <script src="jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="cont">
+    <div class="picture">
+        <img src="1.jpg"/>
+        <img src="2.jpg"/>
+        <img src="3.jpg"/>
+        <img src="4.jpg"/>
+        <img src="5.jpg"/>
+    </div>
+    <div class="btn">
+        <a>上一页</a>
+        <a>下一页</a>
+    </div>
+</div>
+<script>
+    var height = document.documentElement.clientHeight-18;
+    var width = Math.ceil(height * 4/3);
+    var origin = width/(Math.tan(Math.PI/5)*2) + height;
+    var img = document.getElementsByTagName('img');
+    var imgLen = $('.imgcont img').length;
+    var i = 0,
+        deg = 0;
+    $(function(){
+        $('.picture>img').attr('style','-webkit-transform-origin:center '+Math.ceil(origin)+'px;'+'-moz-transform-origin:center '+Math.ceil(origin)+'px;');
+        $('.picture>img').css({
+            height:height
+        });
+        $('.picture').attr('style','transform-origin:center '+Math.ceil(origin)+'px');
+        $('.picture').css({
+            height:height,
+            width:width
+        });
+        $('.cont').css({
+            height:height,
+            width:width
+        });
+    });
+    $('.btn>a:first-child').click(function(){
+        $('.picture').css({
+            'transform': function () {
+                i--;
+                deg = deg + 72;
+                if(i == 5){i=0;}
+                console.log(i);
+                if(i == -1){i=4;}
+                console.log(deg);
+                return 'rotate('+deg+'deg)';
+            }
+        });
+    });
+    $('.btn>a:last-child').click(function(){
+        $('.picture').css({
+            'transform': function () {
+                i++;
+                deg = deg - 72;
+                if(i == 5){i=0;}
+                console.log(i);
+                console.log(deg);
+                return 'rotate('+deg+'deg)';
+            }
+        });
+    });
+</script>
+</body>
+</html>
