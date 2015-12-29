@@ -17,14 +17,10 @@
 .btn>a{
     display: block;
     padding: 2px 3px;
-    border: 2px solid #218ac3;
     cursor: pointer;
     position: absolute;
     color:#218ac3;
     font-weight: bold;
-}
-.btn>a:hover{
-    border: 2px solid #218ac3;
 }
 .btn>a:first-child{
     left: 50px;

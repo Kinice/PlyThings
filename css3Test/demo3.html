@@ -23,12 +23,14 @@
 <script>
     var height = document.documentElement.clientHeight-18;
     var width = Math.ceil(height * 4/3);
-    var origin = width/(Math.tan(Math.PI/5)*2) + height;
     var img = document.getElementsByTagName('img');
-    var imgLen = $('.imgcont img').length;
-    var i = 0,
-        deg = 0;
+    var imgLen = img.length;
+    var origin = width/(Math.tan(Math.PI/imgLen)*2) + height;
+    var oneDeg = 360/imgLen;
+    var nowDeg = 0;
     $(function(){
+        console.log(oneDeg);
+        console.log();
         $('.picture>img').attr('style','-webkit-transform-origin:center '+Math.ceil(origin)+'px;'+'-moz-transform-origin:center '+Math.ceil(origin)+'px;');
         $('.picture>img').css({
             height:height
@@ -42,29 +44,33 @@
             height:height,
             width:width
         });
+        $('.btn>a:first-child').html('');
     });
     $('.btn>a:first-child').click(function(){
         $('.picture').css({
             'transform': function () {
-                i--;
-                deg = deg + 72;
-                if(i == 5){i=0;}
-                console.log(i);
-                if(i == -1){i=4;}
-                console.log(deg);
-                return 'rotate('+deg+'deg)';
+                if(nowDeg > (-2*oneDeg)){
+                    $('.btn>a:first-child').html('');
+                }
+                nowDeg += oneDeg;
+                return 'rotate('+nowDeg+'deg)';
             }
         });
     });
     $('.btn>a:last-child').click(function(){
         $('.picture').css({
             'transform': function () {
-                i++;
-                deg = deg - 72;
-                if(i == 5){i=0;}
-                console.log(i);
-                console.log(deg);
-                return 'rotate('+deg+'deg)';
+                if(nowDeg < 1){
+                    $('.btn>a:first-child').html('上一页');
+                }
+                if(nowDeg < (-(imgLen-3)*oneDeg)){
+                    $('.btn>a:last-child').html('完成');
+                }
+                if($('.btn>a:last-child').html()=='完成'){
+                    return false;
+                }
+                nowDeg -= oneDeg;
+                return 'rotate('+nowDeg+'deg)';
             }
         });
     });
