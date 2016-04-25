@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>folt</title>
+    <link rel="stylesheet" href="basic.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="jquery-2.1.4.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="folt-container">
+      <h1>FOLT</h1>
+      <div class="game-container">
+        <div class="block">
+
+        </div>
+      </div>
+      <input type="button" name="name" value="add class" class="add">
+    </div>
+  </body>
+  <script type="text/javascript">
+    $('.add').click(function(){
+      $('.block').addClass('anim');
+      timer = setTimeout(function(){
+        $('.block').removeClass('anim');
+      },1000);
+    });
+  </script>
+</html>

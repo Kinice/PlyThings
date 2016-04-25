@@ -13,7 +13,7 @@ body{
     border-radius: 50%;
     margin: 50px auto;
     animation:fade 1s infinite ease-in-out;
-	-webkit-animation:fade 1s infinite ease-in-out;
+	  -webkit-animation:fade 1s infinite ease-in-out;
 }
 @keyframes fade{
     from{
