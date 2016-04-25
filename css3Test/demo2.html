@@ -16,6 +16,7 @@
         <img src="5.png"/>
         <img src="6.png"/>
         <img src="7.png"/>
+        <img src="8.png"/>
     </div>
     <div class="btn">
         <a>上一页</a>
@@ -65,7 +66,7 @@
                 $('.imgcont').css('left',left-width-30);
                 setTimeout(function(){
                     if(left<-(imgLen-2)*width){
-                        $('.btn>a:last-child').html('完成');
+                        $('.btn>a:last-child').html('去上课！');
                     }
                     isAnimating = false;
                 },750);
@@ -73,7 +74,14 @@
                 return false;
             }
         }else{
-            return false;
+            if(window.localStorage){
+                localStorage.setItem('name','userGuide');
+            }else{
+                var oDate = new Date();
+                oDate.setDate(oDate.getDate()+30);
+                document.cookie = 'name=userGuide;expires='+oDate;
+            }
+            window.location.replace('http://online.1tai.com');
         }
     });
 </script>
