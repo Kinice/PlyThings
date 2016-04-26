@@ -2,9 +2,67 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>css3 Test Demo 2</title>
-    <link rel="stylesheet" href="demo2.css"/>
+    <title>新手上课引导</title>
     <script src="jquery-2.1.4.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont{
+            overflow: hidden;
+            position: relative;
+            margin: 9px auto;
+            letter-spacing: 0;
+        }
+        .imgcont{
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            transform:translateX(0px);
+            letter-spacing: 0;
+            transition:all 0.8s ease-in-out;
+        }
+        .imgcont>img{
+            float: left;
+            display: block;
+            margin:0 15px;
+        }
+        .btn{
+            position: absolute;
+            z-index: 2;
+            bottom:80px;
+            width: 100%;
+        }
+        .btn>a{
+            display: block;
+            padding: 2px 3px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: absolute;
+            color:#218ac3;
+            font-weight: bold;
+        }
+        .btn>a:hover{
+            border: 2px solid #218ac3;
+        }
+        .btn>a:first-child{
+            left: 50px;
+        }
+        .btn>a:last-child{
+            right: 50px;
+        }
+        @keyframes round{
+            from{
+                -webkit-transform:rotate(0deg);
+                transform:rotate(0deg);
+            }
+            to{
+                -webkit-transform:rotate(360deg);
+                transform:rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="cont">
@@ -59,13 +117,14 @@
     });
     $('.btn>a:last-child').on('click',function(){
         $('.btn>a:first-child').html('上一页');
-        var left = $('.imgcont').position().left;
+        var left = -getTranslate($('.imgcont').css('transform'));
         if($('.btn>a:last-child').html()=='下一页'){
             if(isAnimating == false){
                 isAnimating = true;
-                $('.imgcont').css('left',left-width-30);
+                $('.imgcont').css('transform','matrix(1,0,0,1,'+(-(left-0+width+30))+',0)');
+                console.log(left);
                 setTimeout(function(){
-                    if(left<-(imgLen-2)*width){
+                    if(left>(imgLen-2)*width){
                         $('.btn>a:last-child').html('去上课！');
                     }
                     isAnimating = false;
@@ -84,6 +143,30 @@
             window.location.replace('http://online.1tai.com');
         }
     });
+    function getTranslate(s){
+        var f = [];
+        var x = [];
+        for(var i = 0; i< s.length;i++){
+            var a = s.substr(i,1);
+            if(i<19){
+                continue;
+            }else if(a == ','){
+                continue;
+            }else{z`
+                f.push(a);
+            }
+        }
+        for(var j = 0; j< f.length; j++){
+            if(f[j]==' '){
+                //console.log(f[j]);
+                break;
+            }else{
+                x.push(f[j]);
+            }
+        }
+        var tx = x.join('');
+        return tx;
+    }
 </script>
 </body>
 </html>

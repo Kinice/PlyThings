@@ -19,11 +19,18 @@
     </div>
   </body>
   <script type="text/javascript">
+    var isAnimating = false;
     $('.add').click(function(){
-      $('.block').addClass('anim');
-      timer = setTimeout(function(){
-        $('.block').removeClass('anim');
-      },1000);
+      if(!isAnimating){
+        isAnimating = true;
+        $('.block').addClass('transR');
+        timer = setTimeout(function(){
+          isAnimating = false;
+          $('.block').removeClass('transR');
+        },400);
+      }else{
+        return;
+      }   
     });
   </script>
 </html>
