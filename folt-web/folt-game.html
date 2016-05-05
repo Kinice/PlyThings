@@ -11,29 +11,10 @@
     <div class="folt-container">
       <h1>FOLT</h1>
       <div class="game-container">
-        <div class="block">
-
-        </div>
+        
       </div>
       <input type="button" name="name" value="add class" class="add">
     </div>
+    <script src="script.js" charset="utf-8"></script>
   </body>
-  <script type="text/javascript">
-    $.get('http://kinice.top/allArticles',function(data){
-      console.log(data[0].time);
-    });
-    var isAnimating = false;
-    $('.add').click(function(){
-      if(!isAnimating){
-        isAnimating = true;
-        $('.block').addClass('transR');
-        timer = setTimeout(function(){
-          isAnimating = false;
-          $('.block').removeClass('transR');
-        },400);
-      }else{
-        return;
-      }   
-    });
-  </script>
 </html>
