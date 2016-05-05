@@ -19,6 +19,9 @@
     </div>
   </body>
   <script type="text/javascript">
+    $.get('http://kinice.top/allArticles',function(data){
+      console.log(data[0].time);
+    });
     var isAnimating = false;
     $('.add').click(function(){
       if(!isAnimating){
