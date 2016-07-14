@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>陪练系统发布入口</title>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.container{
+		width: 100%;
+		text-align: center;
+	}
+	div{
+		display: inline-block;
+		position: relative;
+	}
+	a{
+		display: inline-block;
+		color: #000;
+		text-decoration:none;
+		border: 2px solid purple;
+		padding: 8px 10px;
+		border-radius: 10px;
+	}
+	span{
+		display: block;
+		position: absolute;
+		bottom:50px;
+		right:48px;
+	}
+</style>
+<script type="text/javascript">
+var u = navigator.userAgent;
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+if(isAndroid){
+	window.location.replace('http://peilian.xiaoyezi.com/download/overlord-release-0714-2.apk');
+}else if(isiOS){
+	window.location.replace('http://fir.im/peilian');
+}
+</script>
+<body>
+	<div class="container">
+		<div class="yellow">
+			<img width="100%" src="/prolist5.png"><span>陪练系统</span>
+		</div><br>
+		<div class="href">
+			<a href="http://fir.im/peilian">iOS版下载</a> | 
+			<a href="http://peilian.xiaoyezi.com/download/overlord-release-0714-2.apk">Android版下载</a>
+		</div><br><br><br>
+		<div class="erweima">
+		　	<div>
+				<p>iOS扫码</p>
+				<img width="200" src="/ios_fir.png">
+			</div>	
+			<div>
+				<p>Android扫码</p>
+				<img width="200" src="/Android.png">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ module.exports = function(app){
 		res.send('get');
 	});
 	app.post('/', function (req, res) {
+	  console.log(req.body.name);
 	  res.send('POST request to the homepage');
 	});
 };
