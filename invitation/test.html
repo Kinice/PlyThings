@@ -5,6 +5,10 @@
 	<title>Document</title>
 </head>
 <style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
 	h1{
 		color:red;
 	}
@@ -20,17 +24,36 @@
 	#is{
 		color: grey;
 	}
-	div{
-		border:5px solid red;
-		margin-top:5px;
-		padding-top:5px;
+	.die{
+		border: 2px solid #000;
+		padding: 10px;
+	}
+	.sbling{
+		width: 100px;
+		height: 100px;
+		background: red;
+		margin:10px; 
+		color: #fff;
+	}
+	.sbling1{
+		float: left;
+	}
+	.clear{
+		display: block;
+		clear: both;
 	}
 </style>
 <body>
 	<h1>你好</h1>
 	<p class='notg' id='is'>hello</p>
 	<p class='notg'>world</p>
-	<div>123</div>
-	<div>456</div>
-	<span></span>
+	<div class="die">
+		<div class="sbling sbling1">
+			1
+		</div>
+		<div class="sbling sbling1">
+			2
+		</div>
+		<div class="clear"></div>
+	</div>
 </html>
