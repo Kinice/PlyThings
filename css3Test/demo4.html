@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8" />
+<title>linear-gradient</title>
+<style>
+div {
+	width: 200px;
+	height: 100px;
+	margin-top: 10px;
+	border: 1px solid #ddd;
+}
+.test {
+	background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
+}
+.test2 {
+	background: linear-gradient(#000, #f00 50%, #090);
+}
+.test3 {
+	background: linear-gradient(0deg, #000 20%, #f00 50%, #090 80%);
+}
+.test4 {
+	background: linear-gradient(45deg, #000, #f00 50%, #090);
+}
+.test5 {
+	background: linear-gradient(to top right, #000, #f00 50%, #090);
+}
+</style>
+</head>
+<body>
+<div class="test"></div>
+<div class="test2"></div>
+<div class="test3"></div>
+<div class="test4"></div>
+<div class="test5"></div>
+</body>
+</html>
