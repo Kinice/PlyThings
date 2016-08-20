@@ -1,0 +1,41 @@
+.g-hd{
+	margin: 15px 0;
+}
+.g-hd h1{
+	text-align: center;
+	font-size: 4rem;
+	font-family: Monaco, Consolas, 'Courier New';
+	letter-spacing: 7px;
+}
+.g-bd{
+	width: 500px;
+	margin: 0 auto;
+	position: relative;
+}
+.gameContainer{
+	width: 500px;
+	height: 500px;
+	position: relative;
+}
+.g-bd .block{
+	width: 47px;
+	height: 47px;
+	border-radius: 5px;
+	position: absolute;
+}
+.g-bd .sblock{
+	width: 29px;
+	height: 29px;
+	border-radius: 2px;
+	position: absolute;
+}
+.newBlocks{
+	height: 180px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin-top: 30px;
+}
+.newB{
+	width: 150px;
+	position: relative;
+}

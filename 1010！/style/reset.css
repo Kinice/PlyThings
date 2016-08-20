@@ -1,0 +1,19 @@
+html,body,*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 16px;
+}
+.dblue{
+	color: #1874CD;
+}
+.loringe{
+	color: #FFC125;
+}
+.dred{
+	color: #CD2626;
+}
+.grey{
+	background-color: #f2f2f2;
+}
