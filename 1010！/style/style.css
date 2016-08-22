@@ -17,25 +17,34 @@
 	height: 500px;
 	position: relative;
 }
-.g-bd .block{
+.block{
 	width: 47px;
 	height: 47px;
 	border-radius: 5px;
 	position: absolute;
 }
-.g-bd .sblock{
-	width: 29px;
-	height: 29px;
-	border-radius: 2px;
+.sblock{
+	width: 28px;
+	height: 28px;
+	border-radius: 3px;
 	position: absolute;
 }
 .newBlocks{
 	height: 180px;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
 	margin-top: 30px;
 }
-.newB{
+.newb{
 	width: 150px;
+	display: inline-block;
+	margin: 74px 6px;
 	position: relative;
 }
+.newbcon{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+}
+
+
+
