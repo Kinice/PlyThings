@@ -45,3 +45,11 @@ var randoms = {
 	18 : 'bl3',
 	19 : 'br3'
 }
+var params = {
+	left : 0,
+	top : 0,
+	currentX : 0,
+	currentY : 0,
+	flag : false,
+	mFlag : false
+}

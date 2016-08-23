@@ -70,10 +70,69 @@ function appendBlocks(element,matrix,color){//append new blocks
 	}
 }
 
-function startDrag(){
+function getCss(o,key){
+	return o.currentStyle ? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key]; 	
+};
 
+function dragEvent(element){
+	for(var i = 0; i<3; i++){
+		element[i].addEventListener('mousemove',function(){
+			console.log(this);
+			if(!params.mFlag){
+				startDrag(this,element);
+				params.mFlag = true;
+			}else{
+				return false;
+			}
+		});
+	}
 }
 
+function startDrag(element,elements,callback){
+	if(getCss(element, "left") !== "auto"){
+		params.left = getCss(element, "left");
+	}
+	if(getCss(element, "top") !== "auto"){
+		params.top = getCss(element, "top");
+	}
+
+	element.onmousedown = function(event){
+		params.flag = true;
+		if(!event){
+			event = window.event;
+			element.onselectstart = function(){
+				return false;
+			}
+		}
+		var e = event;
+		params.currentX = e.clientX;
+		params.currentY = e.clientY;
+	}
+
+	document.onmouseup = function(){
+		params.flag = false;
+		params.mFlag = false;
+		if(getCss(element, "left") !== "auto"){
+			params.left = getCss(element, "left");
+		}
+		if(getCss(element, "top") !== "auto"){
+			params.top = getCss(element, "top");
+		}
+		dragEvent(elements);
+	}
+
+	document.onmousemove = function(event){
+		var e = event ? event : window.event;
+		if(params.flag){
+			var nowX = e.clientX,
+				nowY = e.clientY;
+				disX = nowX - params.currentX,
+				disY = nowY - params.currentY;
+			element.style.left = parseInt(params.left) + disX + 'px';
+			element.style.top = parseInt(params.top) + disY + 'px';
+		}
+	}
+}
 function stopDrag(){
 
 }
