@@ -74,20 +74,21 @@ function getCss(o,key){
 	return o.currentStyle ? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key]; 	
 };
 
-function dragEvent(element){
+function dragEvent(elements){
 	for(var i = 0; i<3; i++){
-		element[i].addEventListener('mousemove',function(){
-			console.log(this);
-			if(!params.mFlag){
-				startDrag(this,element);
-				params.mFlag = true;
-			}else{
-				return false;
-			}
+		elements[i].addEventListener('mousedown',function(e){
+			dragElement(this)
 		});
 	}
 }
 
+function dragElement(newb){
+	var cnodes = newb.childNodes;
+	for(var i = 1; i < cnodes.length; i++){
+		console.log(cnodes[i].style);
+	}
+}
+/*
 function startDrag(element,elements,callback){
 	if(getCss(element, "left") !== "auto"){
 		params.left = getCss(element, "left");
@@ -136,3 +137,4 @@ function startDrag(element,elements,callback){
 function stopDrag(){
 
 }
+*/

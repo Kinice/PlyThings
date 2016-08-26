@@ -1,0 +1,14 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-family: Monaco, Consolas, 'Courier New';
+}
+body{
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

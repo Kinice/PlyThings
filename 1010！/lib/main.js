@@ -17,10 +17,9 @@ var GAME = [];
 //functions
 initGame(container,GAME,10,backBlock);
 
-appendBlocks(newb1,matrix.row5,redBlock);
+appendBlocks(newb1,matrix.col5,redBlock);
 appendBlocks(newb2,matrix.row5,blueBlock);
 appendBlocks(newb3,matrix.row5,origBlock);
 
 
 dragEvent(newbs);
-

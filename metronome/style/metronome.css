@@ -1,0 +1,122 @@
+.g-hd{
+	margin: 25px 0;
+}
+.g-hd h1{
+	text-align: center;
+	font-size: 4rem;
+	letter-spacing: 7px;
+}
+.intro{
+	text-align: center;
+	margin:10px 0 20px;
+	font-size: 20px;
+}
+.func{
+	width: 100px;
+	height: 100px;
+	border:1px solid #000;
+	font-size: 35px;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 50%;
+}
+.pointer{
+	cursor: pointer;
+}
+.rhythm{
+	margin: 20px 0;
+	position: relative;
+}
+.popcon{
+	position: absolute;
+	min-width: 500px;
+}
+.popout{
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	transform: translate(-30%);
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 15px 15px;
+	width: 207zcxpx;
+	box-shadow: 1px 3px 5px #ddd;
+	top: 10px;
+}
+.popout:before{
+	content: '';
+	border-width: 10px;
+	border-color: transparent transparent #aaa transparent;
+	border-style: solid;
+	position: absolute;
+	top: -20px;
+	left: 112px;
+}
+.popout:after{
+	content: '';
+	border-width: 10px;
+	border-color: transparent transparent #fff transparent;
+	border-style: solid;
+	position: absolute;
+	top: -19px;
+	left: 112px;
+}
+.choose{
+	float: left;
+	padding: 5px 10px;
+	margin:0 10px;
+	cursor: pointer;
+}
+.choose:hover{
+	background-color: #000;
+	color: #fff;
+}
+.beat{
+	position: relative;
+	margin: 20px 0;
+}
+.beat input{
+	border:none;
+	outline: none;
+	width: 90px;
+	font-size: 35px;
+	text-align: center;
+}
+.play{
+	margin: 60px 0 0;
+	border-style: solid;
+	border-width: 25px 35px;
+	border-color: transparent transparent transparent #000;
+	transform: translate(30%)
+}
+.pause{
+	display: none;
+	margin: 60px 0 0;
+	width: 11px;
+	height: 45px;
+	border-style: solid;
+	border-width: 0 13px 0 13px;
+	border-color: transparent #000 transparent #000;
+}
+.turn-small{
+	content: '';
+	border:1px solid;
+	border-color: #000 transparent transparent #000;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 40%;
+	left: -50%;
+	transform: rotate(-45deg);
+}
+.turn-big{
+	content: '';
+	border:1px solid;
+	border-color: #000 transparent transparent #000;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 40%;
+	left: 121%;
+	transform: rotate(135deg);
+}
