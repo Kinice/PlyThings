@@ -1,47 +1,48 @@
 .g-hd{
-	margin: 25px 0;
+	margin: 0.2rem 0;
 }
 .g-hd h1{
 	text-align: center;
-	font-size: 4rem;
-	letter-spacing: 7px;
+	font-size: 0.5rem;
+	letter-spacing: 0.07rem;
 }
 .intro{
 	text-align: center;
-	margin:10px 0 20px;
-	font-size: 20px;
+	margin:0.05rem 0 0.1rem;
+	font-size: 0.2rem;
 }
 .func{
-	width: 100px;
-	height: 100px;
+	width: 1rem;
+	height: 1rem;
 	border:1px solid #000;
-	font-size: 35px;
+	font-size: 0.35rem;
 	text-align: center;
-	line-height: 100px;
+	line-height: 1rem;
 	border-radius: 50%;
 }
 .pointer{
 	cursor: pointer;
 }
 .rhythm{
-	margin: 20px 0;
+	margin: 0.15rem 0;
 	position: relative;
 }
 .popcon{
 	position: absolute;
-	min-width: 500px;
+	min-width: 5rem;
 }
 .popout{
 	display: none;
 	position: absolute;
+	font-size: 0.2rem;
 	background-color: #fff;
 	transform: translate(-30%);
 	border: 1px solid #aaa;
 	border-radius: 5px;
-	padding: 15px 15px;
-	width: 207zcxpx;
+	padding: 0.15rem 0.15rem;
+	width: 2.07rem;
 	box-shadow: 1px 3px 5px #ddd;
-	top: 10px;
+	top: 0.1rem;
 }
 .popout:before{
 	content: '';
@@ -49,22 +50,22 @@
 	border-color: transparent transparent #aaa transparent;
 	border-style: solid;
 	position: absolute;
-	top: -20px;
-	left: 112px;
+	top: -0.2rem;
+	left: 1.12rem;
 }
 .popout:after{
 	content: '';
-	border-width: 10px;
+	border-width: 0.1rem;
 	border-color: transparent transparent #fff transparent;
 	border-style: solid;
 	position: absolute;
-	top: -19px;
-	left: 112px;
+	top: -0.19rem;
+	left: 1.12rem;
 }
 .choose{
 	float: left;
-	padding: 5px 10px;
-	margin:0 10px;
+	padding: 0.05rem 0.06rem;
+	margin:0 0.1rem;
 	cursor: pointer;
 }
 .choose:hover{
@@ -73,37 +74,37 @@
 }
 .beat{
 	position: relative;
-	margin: 20px 0;
+	margin: 0.2rem 0;
 }
 .beat input{
 	border:none;
 	outline: none;
-	width: 90px;
-	font-size: 35px;
+	width: 0.9rem;
+	font-size: 0.35rem;
 	text-align: center;
 }
 .play{
-	margin: 60px 0 0;
+	margin: 0.5rem 0 0;
 	border-style: solid;
-	border-width: 25px 35px;
+	border-width: 0.25rem 0.35rem;
 	border-color: transparent transparent transparent #000;
 	transform: translate(30%)
 }
 .pause{
 	display: none;
-	margin: 60px 0 0;
-	width: 11px;
-	height: 45px;
+	margin: 0.6rem 0 0;
+	width: 0.11rem;
+	height: 0.45rem;
 	border-style: solid;
-	border-width: 0 13px 0 13px;
+	border-width: 0 0.13rem 0 0.13rem;
 	border-color: transparent #000 transparent #000;
 }
 .turn-small{
 	content: '';
 	border:1px solid;
 	border-color: #000 transparent transparent #000;
-	width: 30px;
-	height: 30px;
+	width: 0.3rem;
+	height: 0.3rem;
 	position: absolute;
 	top: 40%;
 	left: -50%;
@@ -113,8 +114,8 @@
 	content: '';
 	border:1px solid;
 	border-color: #000 transparent transparent #000;
-	width: 30px;
-	height: 30px;
+	width: 0.3rem;
+	height: 0.3rem;
 	position: absolute;
 	top: 40%;
 	left: 121%;

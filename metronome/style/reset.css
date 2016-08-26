@@ -3,6 +3,7 @@
 	padding: 0;
 }
 html{
+	font-size: calc(100vw/3.75);
 	font-family: Monaco, Consolas, 'Courier New';
 }
 body{

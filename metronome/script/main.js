@@ -6,11 +6,13 @@ var beat = document.getElementById('beat');
 var play = document.getElementById('play');
 var pause = document.getElementById('pause');
 
-var context;
+var context,bufferLoader;
+var buffList = ['music/1.mp3','music/2.mp3'];
+var hard,light;
 
-window.addEventListener('load',init,false);
+window.addEventListener('load',init(buffList),false);
 
-popout(rhythm,pop);
+popEvent(rhythm,pop);
 
 appendRhythm(pop,rhythms,rhythm);
 
@@ -26,7 +28,7 @@ play.addEventListener('click',function(){
 	pause.style.display = 'block';
 	params.stop = false;
 	onceTime(beat.value);
-	playMusic(beat.value);
+	startMusic(beat.value);
 });
 
 pause.addEventListener('click',function(){
