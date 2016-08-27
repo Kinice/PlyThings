@@ -10,6 +10,18 @@ var context,bufferLoader;
 var buffList = ['music/1.mp3','music/2.mp3'];
 var hard,light;
 
+var playStyle = function(){
+	play.style.display = 'none';
+	pause.style.display = 'block';
+	params.stop = false;
+}
+
+var pauseStyle = function(){
+	pause.style.display = 'none';
+	play.style.display = 'block';
+	params.stop = true;
+}
+
 window.addEventListener('load',init(buffList),false);
 
 popEvent(rhythm,pop);
@@ -18,21 +30,20 @@ appendRhythm(pop,rhythms,rhythm);
 
 turnbig.addEventListener('click',function(){
 	beat.value = Number(beat.value) + 1;
+	pauseStyle();
 });
 turnsmall.addEventListener('click',function(){
 	beat.value = Number(beat.value) - 1;
+	pauseStyle();
 });
 
 play.addEventListener('click',function(){
-	this.style.display = 'none';
-	pause.style.display = 'block';
-	params.stop = false;
+	playStyle();
 	onceTime(beat.value);
 	startMusic(beat.value);
 });
 
 pause.addEventListener('click',function(){
-	this.style.display = 'none';
-	play.style.display = 'block';
-	params.stop = true;
+	pauseStyle();
 });
+
