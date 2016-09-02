@@ -23,7 +23,7 @@ function Block(color){ //block constructor
 }
 
 //functions
-function initGame(element,gameMatrix,columns,color){//initialize
+function initGame(element,candidates,gameMatrix,columns,color){//initialize
 	for(var i = 0; i < columns; i++){
 		var temp = [];
 		for(var j = 0; j < columns; j++){
@@ -32,6 +32,9 @@ function initGame(element,gameMatrix,columns,color){//initialize
 		gameMatrix.push(temp);
 	}
 	appendBackBlocks(element,columns,color);
+	for(i = 0;i < candidates.length;i++){
+		appendBlocks(candidates[i]);
+	}
 }
 
 function appendBackBlocks(element,columns,color){//append game container
@@ -45,19 +48,20 @@ function appendBackBlocks(element,columns,color){//append game container
 	}
 }
 
-function appendBlocks(element,matrix,color){//append new blocks
+function appendBlocks(element){//append new blocks
 	//set parent node's size for position
-	element.style.height = matrix.length * 30 + 'px';
-	element.style.width  = matrix[0].length * 30 + 'px';
-
+	var appendMatrix = randomMatrix();
+	color = new Block(getColor(appendMatrix.matrix));
+	element.style.height = appendMatrix.matrix.length * 30 + 'px';
+	element.style.width  = appendMatrix.matrix[0].length * 30 + 'px';
 	//append block
-	for(var m = 0; m < matrix.length; m++){
+	for(var m = 0; m < appendMatrix.matrix.length; m++){
 		var t = m*30;
-		if(matrix[m]!=undefined){
-			for(var n = 0; n < matrix[m].length; n++){
+		if(appendMatrix.matrix[m]!=undefined){
+			for(var n = 0; n < appendMatrix.matrix[m].length; n++){
 				var l = n*30;
 				var id = 'n3-'+m+'-'+n;
-				if(matrix[m][n] == 1){
+				if(appendMatrix.matrix[m][n] == 1){
 					element.appendChild(color.createBlock(id,t,l,'small'));
 				}else{
 					element.appendChild(tranBlock.createBlock(id,t,l,'small'));
@@ -68,37 +72,113 @@ function appendBlocks(element,matrix,color){//append new blocks
 			element.appendChild(color.createBlock(id,0,0,'small'));
 		}
 	}
+	candidate.push(appendMatrix.matrix);
 }
 
-function getCss(o,key){
+function getColor(m){ //provide color of each group of matrix
+	var res = ergodicMatrix(m);
+	var o = res['1'],
+		z = res['0'],
+		c = res['c'],
+		cc= res['cc'];
+	if(z == 0){
+		if(o==5){
+			return 'cr5'
+		}else if(o==3){
+			return 'cr3'
+		}else if(o==2){
+			return 'cr2'
+		}else if(o==1){
+			return 'one'
+		}else if(o==9){
+			return 'all3'
+		}else if(o==4){
+			if(c==2){
+				return 'all2'
+			}else{
+				return 'cr4'
+			}
+		}
+	}else{
+		if(cc==2){
+			return 'tr2'
+		}else if(cc==3){
+			return 'tr3'
+		}
+	}
+}
+
+function ergodicMatrix(m){ 
+	/* ergodic the matrix for 4 params: 
+	   1 for num of 1,
+	   0 for num of 0,
+	   c for num of child array,
+	   cc for num of child`s child
+	 */
+	var res = {
+		c : 0,
+		1 : 0,
+		0 : 0,
+		cc: 0
+	};
+	var cc = 0;
+	for(var i = 0; i<m.length;i++){
+		res.c++;
+		for(var j = 0; j<m[i].length;j++){
+			if(m[i][j] == 1){
+				res['1']++;
+			}else{
+				res['0']++;
+			}
+			cc++;
+		}
+	}
+	res.cc = cc/res.c;
+	return res;
+}
+
+function randomMatrix(){ //random 1 of 19 matrix
+	var rnd = Math.floor(Math.random()*20);
+	var mar = {
+		matrix : [],
+		color  : ''
+	};
+	if(rnd == 0)rnd = 1;
+	if(rnd == 20)rnd = 19;
+	mar.matrix = dict.matrix[dict.randoms[rnd]];
+	return mar;
+}
+
+function getCss(o,key){	//get elements` currentStyle in a compatible way
 	return o.currentStyle ? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key]; 	
 };
 
 function dragEvent(elements){
 	for(var i = 0; i<3; i++){
 		elements[i].addEventListener('mousedown',function(e){
-			dragElement(this)
+			dragElement(this,e)
 		});
 	}
 }
 
-function dragElement(newb){
+function dragElement(newb,e){
 	var cnodes = newb.childNodes;
 	for(var i = 1; i < cnodes.length; i++){
-		console.log(cnodes[i].style);
+		console.dir(cnodes[i].getBoundingClientRect().top);
+		console.log(e.clientY);
 	}
 }
 /*
 function startDrag(element,elements,callback){
 	if(getCss(element, "left") !== "auto"){
-		params.left = getCss(element, "left");
+		dict.params.left = getCss(element, "left");
 	}
 	if(getCss(element, "top") !== "auto"){
-		params.top = getCss(element, "top");
+		dict.params.top = getCss(element, "top");
 	}
 
 	element.onmousedown = function(event){
-		params.flag = true;
+		dict.params.flag = true;
 		if(!event){
 			event = window.event;
 			element.onselectstart = function(){
@@ -106,31 +186,31 @@ function startDrag(element,elements,callback){
 			}
 		}
 		var e = event;
-		params.currentX = e.clientX;
-		params.currentY = e.clientY;
+		dict.params.currentX = e.clientX;
+		dict.params.currentY = e.clientY;
 	}
 
 	document.onmouseup = function(){
-		params.flag = false;
-		params.mFlag = false;
+		dict.params.flag = false;
+		dict.params.mFlag = false;
 		if(getCss(element, "left") !== "auto"){
-			params.left = getCss(element, "left");
+			dict.params.left = getCss(element, "left");
 		}
 		if(getCss(element, "top") !== "auto"){
-			params.top = getCss(element, "top");
+			dict.params.top = getCss(element, "top");
 		}
 		dragEvent(elements);
 	}
 
 	document.onmousemove = function(event){
 		var e = event ? event : window.event;
-		if(params.flag){
+		if(dict.params.flag){
 			var nowX = e.clientX,
 				nowY = e.clientY;
-				disX = nowX - params.currentX,
-				disY = nowY - params.currentY;
-			element.style.left = parseInt(params.left) + disX + 'px';
-			element.style.top = parseInt(params.top) + disY + 'px';
+				disX = nowX - dict.params.currentX,
+				disY = nowY - dict.params.currentY;
+			element.style.left = parseInt(dict.params.left) + disX + 'px';
+			element.style.top = parseInt(dict.params.top) + disY + 'px';
 		}
 	}
 }
