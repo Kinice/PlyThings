@@ -33,7 +33,8 @@ function initGame(element,candidates,gameMatrix,columns,color){//initialize
 	}
 	appendBackBlocks(element,columns,color);
 	for(i = 0;i < candidates.length;i++){
-		appendBlocks(candidates[i]);
+		var appendMatrix = randomMatrix();
+		appendBlocks(candidates[i],appendMatrix,'small');
 	}
 }
 
@@ -48,31 +49,33 @@ function appendBackBlocks(element,columns,color){//append game container
 	}
 }
 
-function appendBlocks(element){//append new blocks
+function appendBlocks(element,appendMatrix,size){//append new blocks
 	//set parent node's size for position
-	var appendMatrix = randomMatrix();
+	var wid = 0;
+	if(size=='big')wid = 50;
+	else if(size=='small')wid = 30;
 	color = new Block(getColor(appendMatrix.matrix));
-	element.style.height = appendMatrix.matrix.length * 30 + 'px';
-	element.style.width  = appendMatrix.matrix[0].length * 30 + 'px';
+	element.style.height = appendMatrix.matrix.length * wid + 'px';
+	element.style.width  = appendMatrix.matrix[0].length * wid + 'px';
 	//append block
 	for(var m = 0; m < appendMatrix.matrix.length; m++){
-		var t = m*30;
+		var t = m*wid;
 		if(appendMatrix.matrix[m]!=undefined){
 			for(var n = 0; n < appendMatrix.matrix[m].length; n++){
-				var l = n*30;
+				var l = n*wid;
 				var id = 'n3-'+m+'-'+n;
 				if(appendMatrix.matrix[m][n] == 1){
-					element.appendChild(color.createBlock(id,t,l,'small'));
+					element.appendChild(color.createBlock(id,t,l,size));
 				}else{
-					element.appendChild(tranBlock.createBlock(id,t,l,'small'));
+					element.appendChild(tranBlock.createBlock(id,t,l,size));
 				}
 			}
 		}else{
 			var id = 'n3-'+m+'one'
-			element.appendChild(color.createBlock(id,0,0,'small'));
+			element.appendChild(color.createBlock(id,0,0,size));
 		}
 	}
-	candidate.push(appendMatrix.matrix);
+	candidate.push(appendMatrix);
 }
 
 function getColor(m){ //provide color of each group of matrix
@@ -154,7 +157,7 @@ function getCss(o,key){	//get elements` currentStyle in a compatible way
 };
 
 function dragEvent(elements){
-	for(var i = 0; i<3; i++){
+	for(var i = 0; i<elements.length; i++){
 		elements[i].addEventListener('mousedown',function(e){
 			dragElement(this,e)
 		});
@@ -162,11 +165,14 @@ function dragEvent(elements){
 }
 
 function dragElement(newb,e){
-	var cnodes = newb.childNodes;
-	for(var i = 1; i < cnodes.length; i++){
-		console.dir(cnodes[i].getBoundingClientRect().top);
-		console.log(e.clientY);
-	}
+	startDrag(newb,e);
+}
+
+function startDrag(element,e){
+	dict.params.left = getCss(element,'left');
+	dict.params.top  = getCss(element,'top');
+	var st = element.id.substr(-1,1)-1;
+	appendBlocks(dragContainer,candidate[st],'big');
 }
 /*
 function startDrag(element,elements,callback){

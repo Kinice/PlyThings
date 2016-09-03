@@ -4,6 +4,7 @@ var backBlock = new Block('grey'),
 //elements
 var bd = document.getElementById('bd'),
     container = document.getElementById('container'),
+    dragContainer = document.getElementById('drag'),
     newb1 = document.getElementById('newb1'),
     newb2 = document.getElementById('newb2'),
     newb3 = document.getElementById('newb3'),
