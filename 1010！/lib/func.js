@@ -162,6 +162,22 @@ function dragEvent(elements){
 			dragElement(this,e)
 		});
 	}
+	document.onmouseup = function(e){
+		dragContainer.style.visibility = 'hidden';
+		dragContainer.innerHTML = '';
+		dict.params.flag = false;
+	}
+	document.onmousemove = function(event){
+		var e = event ? event : window.event;
+		if(dict.params.flag){
+			var nowX = e.clientX,
+				nowY = e.clientY;
+				disX = nowX - dict.params.currentX,
+				disY = nowY - dict.params.currentY;
+			dragContainer.style.left = parseInt(dict.params.left) + disX - parseInt(dict.params.trnX) + 'px';
+			dragContainer.style.top = parseInt(dict.params.top) + disY - parseInt(dict.params.trnY) + 'px';
+		}
+	}
 }
 
 function dragElement(newb,e){
@@ -169,11 +185,18 @@ function dragElement(newb,e){
 }
 
 function startDrag(element,e){
-	dict.params.left = getCss(element,'left');
-	dict.params.top  = getCss(element,'top');
 	var st = element.id.substr(-1,1)-1;
 	appendBlocks(dragContainer,candidate[st],'big');
+	var trnY = ((e.pageY-element.getBoundingClientRect().top)/element.offsetHeight)*dragContainer.offsetHeight;
+	var trnX = ((e.pageX-element.getBoundingClientRect().left)/element.offsetWidth)*dragContainer.offsetWidth;
+	dragContainer.style.visibility = 'visible';
+	dragContainer.style.top = e.pageY - trnY + 'px';
+	dragContainer.style.left = e.clientX - trnX + 'px';
+	dict.params.trnX = trnX;
+	dict.params.trnY = trnY;
+	dict.params.flag = 'true';
 }
+
 /*
 function startDrag(element,elements,callback){
 	if(getCss(element, "left") !== "auto"){

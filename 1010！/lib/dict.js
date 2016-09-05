@@ -51,8 +51,9 @@ var dict = {
 		top : 0,
 		currentX : 0,
 		currentY : 0,
-		flag : false,
-		mFlag : false
+		trnX : 0,
+		trnY : 0,
+		flag : false
 	},
 	colors : {
 

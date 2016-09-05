@@ -5,7 +5,7 @@
 	text-align: center;
 	font-size: 4rem;
 	font-family: Monaco, Consolas, 'Courier New';
-	letter-spacing: 7px;
+	letter-spacing: 8px;
 }
 .g-bd{
 	width: 500px;
@@ -45,6 +45,12 @@
 	left: 50%;
 	transform:translate(-50%,-50%);
 }
-
+#drag{
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	cursor: move;
+}
 
 
