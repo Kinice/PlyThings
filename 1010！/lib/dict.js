@@ -53,6 +53,7 @@ var dict = {
 		currentY : 0,
 		trnX : 0,
 		trnY : 0,
+		nowE : {},
 		flag : false
 	},
 	colors : {

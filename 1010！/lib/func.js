@@ -34,19 +34,39 @@ function initGame(element,candidates,gameMatrix,columns,color){//initialize
 	appendBackBlocks(element,columns,color);
 	for(i = 0;i < candidates.length;i++){
 		var appendMatrix = randomMatrix();
+		candidate.push(appendMatrix);
 		appendBlocks(candidates[i],appendMatrix,'small');
 	}
+	backInfo = getElementsRect(backs,columns);
 }
 
 function appendBackBlocks(element,columns,color){//append game container
 	for(var i = 0; i < columns; i++){
-		for(var j = 0; j < columns; j++){
+		for(var j = 0; j < columns; j++){//i for rows,j for cols
 			var id = i+'-'+j;
 			var t = i*50;
 			var l = j*50;
 			element.appendChild(color.createBlock(id,t,l,'big'));
 		}
 	}
+}
+
+function getElementsRect(elements,columns){
+	var array = [];
+	for(var i = 0; i < columns; i++){
+		for(var j = 0; j < columns; j++){
+			var tmpObj = {
+				id:'',
+				rect:{},
+				row:i,
+				col:j
+			};
+			tmpObj.id = elements[i*10+j].id;
+			tmpObj.rect = elements[i*10+j].getBoundingClientRect();
+			array.push(tmpObj);
+		}
+	}
+	return array;
 }
 
 function appendBlocks(element,appendMatrix,size){//append new blocks
@@ -75,7 +95,19 @@ function appendBlocks(element,appendMatrix,size){//append new blocks
 			element.appendChild(color.createBlock(id,0,0,size));
 		}
 	}
-	candidate.push(appendMatrix);
+}
+
+function getClosest(array,num){
+	var tmp = 999;
+	var theOne = 0;
+	for(var i = 0; i < array.length; i++){
+		var nag = Math.abs(array[i]-num);
+		if(nag<tmp){
+			tmp = nag;
+			theOne = array[i];
+		}
+	}
+	return theOne;
 }
 
 function getColor(m){ //provide color of each group of matrix
@@ -122,6 +154,7 @@ function ergodicMatrix(m){
 		c : 0,
 		1 : 0,
 		0 : 0,
+		e : 0,
 		cc: 0
 	};
 	var cc = 0;
@@ -130,8 +163,10 @@ function ergodicMatrix(m){
 		for(var j = 0; j<m[i].length;j++){
 			if(m[i][j] == 1){
 				res['1']++;
-			}else{
+			}else if(m[i][j] == 0){
 				res['0']++;
+			}else{
+				res['e']++;
 			}
 			cc++;
 		}
@@ -159,13 +194,32 @@ function getCss(o,key){	//get elements` currentStyle in a compatible way
 function dragEvent(elements){
 	for(var i = 0; i<elements.length; i++){
 		elements[i].addEventListener('mousedown',function(e){
-			dragElement(this,e)
+			startDrag(this,e);
 		});
 	}
 	document.onmouseup = function(e){
 		dragContainer.style.visibility = 'hidden';
+		dict.params.nowE.style.visibility = 'visible';
 		dragContainer.innerHTML = '';
 		dict.params.flag = false;
+		var at = [];
+		var al = [];
+		for(var i = 0; i < backInfo.length; i++){
+			at.push(backInfo[i].rect.top);
+		}
+
+		for(var j = 0; j < backInfo.length; j++){
+			al.push(backInfo[j].rect.left);
+		}
+
+		var top = getClosest(at,dragContainer.getBoundingClientRect().top);
+		var left = getClosest(al,dragContainer.getBoundingClientRect().left);
+
+		for(var k = 0; k < backInfo.length; k++){
+			if(backInfo[k].rect.top == top&&backInfo[k].rect.left == left){
+				console.log(document.getElementById(backInfo[k].id));
+			}
+		}
 	}
 	document.onmousemove = function(event){
 		var e = event ? event : window.event;
@@ -192,6 +246,8 @@ function startDrag(element,e){
 	dragContainer.style.visibility = 'visible';
 	dragContainer.style.top = e.pageY - trnY + 'px';
 	dragContainer.style.left = e.clientX - trnX + 'px';
+	element.style.visibility = 'hidden';
+	dict.params.nowE = element;
 	dict.params.trnX = trnX;
 	dict.params.trnY = trnY;
 	dict.params.flag = 'true';
