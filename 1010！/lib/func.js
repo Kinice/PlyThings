@@ -202,6 +202,7 @@ function dragEvent(elements){
 		dict.params.nowE.style.visibility = 'visible';
 		dragContainer.innerHTML = '';
 		dict.params.flag = false;
+		if(dragContainer.getBoundingClientRect().top>backInfo[99].rect.top+40||dragContainer.getBoundingClientRect().top<backInfo[0].rect.top-40||dragContainer.getBoundingClientRect().left<backInfo[0].rect.left-40||dragContainer.getBoundingClientRect().left>backInfo[9].rect.left+40)return;
 		var at = [];
 		var al = [];
 		for(var i = 0; i < backInfo.length; i++){
@@ -217,7 +218,7 @@ function dragEvent(elements){
 
 		for(var k = 0; k < backInfo.length; k++){
 			if(backInfo[k].rect.top == top&&backInfo[k].rect.left == left){
-				console.log(document.getElementById(backInfo[k].id));
+				console.log(document.getElementById(backInfo[k].id).getBoundingClientRect().top);
 			}
 		}
 	}
