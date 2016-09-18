@@ -54,6 +54,7 @@ var dict = {
 		trnX : 0,
 		trnY : 0,
 		nowE : {},
+		nowA : {},
 		flag : false
 	},
 	colors : {

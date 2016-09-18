@@ -187,6 +187,23 @@ function randomMatrix(){ //random 1 of 19 matrix
 	return mar;
 }
 
+function cutMatrix(parent,son,id){
+	var pc = parent[0].length;
+	var sc = son.length;
+	var scc = son[0].length;
+	var arr = [];
+	var row = id.substr(0,1);
+	var col = id.substr(-1,1);
+	for(var i = 0; i < son.length; i++){
+		var temArr = [];
+		for(var j = 0; j < son[0].length; j++){
+			temArr.push(parent[parseInt(row)+i][parseInt(col)+j]);
+		}
+		arr.push(temArr);
+	}
+	return arr;
+}
+
 function getCss(o,key){	//get elements` currentStyle in a compatible way
 	return o.currentStyle ? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key]; 	
 };
@@ -205,6 +222,7 @@ function dragEvent(elements){
 		if(dragContainer.getBoundingClientRect().top>backInfo[99].rect.top+40||dragContainer.getBoundingClientRect().top<backInfo[0].rect.top-40||dragContainer.getBoundingClientRect().left<backInfo[0].rect.left-40||dragContainer.getBoundingClientRect().left>backInfo[9].rect.left+40)return;
 		var at = [];
 		var al = [];
+		var id = '';
 		for(var i = 0; i < backInfo.length; i++){
 			at.push(backInfo[i].rect.top);
 		}
@@ -218,9 +236,10 @@ function dragEvent(elements){
 
 		for(var k = 0; k < backInfo.length; k++){
 			if(backInfo[k].rect.top == top&&backInfo[k].rect.left == left){
-				console.log(document.getElementById(backInfo[k].id).getBoundingClientRect().top);
+				id = backInfo[k].id;
 			}
 		}
+		copArr = cutMatrix(GAME.game,dict.params.newA,id);
 	}
 	document.onmousemove = function(event){
 		var e = event ? event : window.event;
@@ -249,6 +268,7 @@ function startDrag(element,e){
 	dragContainer.style.left = e.clientX - trnX + 'px';
 	element.style.visibility = 'hidden';
 	dict.params.nowE = element;
+	dict.params.newA = candidate[st].matrix;
 	dict.params.trnX = trnX;
 	dict.params.trnY = trnY;
 	dict.params.flag = 'true';

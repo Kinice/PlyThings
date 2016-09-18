@@ -11,12 +11,18 @@ var bd = document.getElementById('bd'),
     newbs = document.getElementsByClassName('newbcon'),
     backs = document.getElementsByClassName('grey');
 //game matrix
-var GAME = [];
-var backInfo = [];
-var candidate = [];
-var temp = [];
+var GAME = {
+		game:[],
+		gameWithColor:{
+
+		}
+	},
+	backInfo = [],
+	candidate = [],
+	temp = [],
+	copArr = [];
 //functions
-initGame(container,newbs,GAME,10,backBlock);
+initGame(container,newbs,GAME.game,10,backBlock);
 
 
 dragEvent(newbs);
