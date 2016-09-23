@@ -1,1 +1,66 @@
-table.html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+	<style type="text/css">
+		.tb{
+			width: 100%;
+			border-spacing: 0;
+		}
+		.tb td,.tb th{
+			text-align: center;
+			font-size: 14px;
+			padding:0;
+		}
+		.tb thead{
+			height: 30px;
+			
+		}
+		.tb thead th{
+			font-weight: normal;
+			line-height: 30px;
+			border-top: 1px solid rgb(204,204,204);
+			border-bottom: 1px solid rgb(204,204,204);
+			background-color: rgb(243, 243, 243);
+		}
+		.nopass{
+			font-size: 18px;
+		}
+		.date{
+			color: #999;
+			font-size: 12px;
+		}
+		.notgoing{
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	<table class="tb">
+		<thead>
+			<tr>
+				<th>总分</th>
+				<th>学习时间</th>
+				<th>卡拉PK</th>
+				<th>曲谱PK</th>
+				<th>无灯PK</th>
+				<th>演奏</th>
+				<th>乐理</th>
+				<th>听力</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><div class="nopass">加油</div></td>
+				<td><div class="date">07月22日</div><div class="name">一起出发</div></td>
+				<td><div class="notgoing">未进行</div></td>
+				<td><div class="notgoing">未进行</div></td>
+				<td><div class="notgoing">未进行</div></td>
+				<td>0 <i>i</i></td>
+				<td>0/4</td>
+				<td>0/4</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
