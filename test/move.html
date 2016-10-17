@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Move Test</title>
+	<style>
+		
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			height: 100%;
+		}
+		#praCon{
+			position: absolute;
+		}
+		#ch1{
+			background-color: red;
+		}
+		#ch2{
+			background-color: blue;
+		}
+		#ch3{
+			background-color: yellow;
+		}
+		#ch4{
+			background-color: grey;
+		}
+		#ch5{
+			background-color: green;
+		}
+		#ch6{
+			background-color: purple;
+		}
+		#ch7{
+			background-color: black;
+		}
+		#ch8{
+			background-color: yellow;
+		}
+		#ch9{
+			background-color: blue;
+		}
+		#ch10{
+			background-color: red;
+		}
+		#ch11{
+			background-color: orange;
+		}
+		#window{
+			position: relative;
+			overflow: hidden
+		}
+		.c{
+			position: absolute;
+		}
+	</style>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	<div id="window">
+		<div id="praCon">
+			
+		</div>
+	</div>
+	<script>
+		$(function(){
+
+			var $pc = $('#praCon');
+			var $wd = $('#window');
+			var lnth = 11;
+
+			console.dir($pc);
+
+			var isAnimating = false;
+
+			var cw = document.body.clientWidth;
+	        var ch = document.body.clientHeight;
+
+	        for(var i = 1; i <= lnth; i++){
+				$pc[0].appendChild(createElement('c','ch'+i,cw,ch,(i-1)*cw));
+			}
+
+			for(var i = 0; i < lnth;i++){
+				$pc[0].children[i].appendChild(createElement('cc','c'+i,cw,ch,i*cw))
+			}
+
+	        $pc.height(ch);
+	       	$wd.height(ch);
+
+	        $pc.width(cw*3);
+	        $wd.width(cw);
+
+	        $pc.css('left',0);
+	     
+
+	        window.onkeydown = function(e){
+	            if (e.key == 'PageDown') {
+	            	var l = parseInt($pc.css('left'));
+	            	if(l > -cw*(lnth-1)){
+	            		if(!isAnimating){
+	            			isAnimating = true;
+	            			$pc.animate({left: l-cw+'px'},500,function(){
+	            				isAnimating = false;
+	            			});
+	            		}
+	            	}
+	            }
+	            if (e.key == 'PageUp') {
+	               	var l = parseInt($pc.css('left'));
+	               	if(l < 0){
+	               		if(!isAnimating){
+	               			isAnimating = true;
+	               			$pc.animate({left: l+cw+'px'},500,function(){
+	               				isAnimating = false;
+	               			});
+	               		}
+	               	}
+	                
+	            }
+	        }
+		});
+		function createElement(className,id,w,h,l){
+			var cdiv = document.createElement('div');
+			cdiv.className = className;
+			cdiv.id = id;
+			cdiv.style.width = w + 'px';
+			cdiv.style.height = h + 'px';
+			cdiv.style.left = l + 'px';
+			return cdiv;
+		}
+	</script>
+</body>
+</html>
