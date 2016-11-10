@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hawaii class1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        object{
+            margin:0 auto;
+            display: block;
+        }
+        #praCon{
+            position: absolute;
+        }
+        #window{
+            position: relative;
+            overflow: hidden
+        }
+        .c{
+            position: absolute;
+        }
+        .btn{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 7px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+        .b1{
+            background-image:url('imgs/btn1.png'); 
+        }
+        .b2{
+            background-image:url('imgs/btn2.png');
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="window">
+        <div id="praCon">
+            
+        </div>
+    </div>
+
+    <script src="swfobject.js"></script>
+    <script>
+        function createElement(className,id,w,h,l){
+            var cdiv = document.createElement('div');
+            cdiv.className = className;
+            cdiv.id = id;
+            cdiv.style.width = w + 'px';
+            cdiv.style.height = h + 'px';
+            cdiv.style.left = l + 'px';
+            return cdiv;
+        }
+        function embedJpg(pic,music,el,w,h){
+            var img = document.createElement('img');
+            var mp3 = document.createElement('audio');
+            var btn = document.createElement('div');
+
+            img.src = pic;
+            img.style.width = w + 'px';
+            img.style.height = h + 'px';
+            img.style.display = 'block';
+            img.style.margin = '0'+' '+'auto';
+
+            mp3.src = music;
+
+            btn.className = 'btn'+' '+'b1';
+            btn.style.right = (document.body.clientWidth-w)/2 + 7 + 'px';
+            
+            el.appendChild(img);
+            el.appendChild(mp3);
+            el.appendChild(btn);
+
+            return mp3;
+        }
+        function embedMP4(video,el,w,h){
+            var mp4 = document.createElement('video');
+            var btn = document.createElement('btn')
+
+            mp4.src = video;
+            mp4.style.width = w + 'px';
+            mp4.style.height = h + 'px';
+            mp4.style.display = 'block';
+            mp4.style.margin = '0'+' '+'auto';
+
+            btn.className = 'btn'+' '+'b2';
+            btn.style.right = (document.body.clientWidth-w)/2 + 7 + 'px';
+
+            el.appendChild(mp4);
+            el.appendChild(btn);
+
+            return mp4;
+        }
+        function clickHandler(o,isPlayingM,obj){
+            o.addEventListener('click', function(){
+                 if(obj.nodeName == 'VIDEO'){
+                        obj.play()
+                    }
+                    if(obj.nodeName == 'AUDIO'){
+                        if(!isPlayingM){
+                            obj.play();
+                            isPlayingM = true;
+                        }else{
+                            obj.load();
+                            isPlayingM = false;
+                        }
+                    }
+            })
+        }
+        $(function(){
+            var nchapters = [
+                {
+                    type:'swf',
+                    name:'L0101.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L0102.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L010401.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L010402.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L010403.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L010501.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L010502.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L0108.swf'
+                },
+                {
+                    type:'swf',
+                    name:'L0110.swf'
+                }
+            ];
+            var chapterIdx = 0;
+
+            var $pc = $('#praCon');
+            var $wd = $('#window');
+            var lnth = nchapters.length;
+
+            var isAnimating = false;
+            var isPlayingM = false;
+
+            var cw = document.body.clientWidth;
+            var ch = document.body.clientHeight;
+
+            var swfw = 0;
+            var swfh = 0;
+            var jpgw = 0;
+            var jpgh = 0;
+            var mp4w = 0;
+            var mp4h = 0;
+
+            var obj = null;
+
+            if(cw/889*500>ch){
+                swfh = ch;
+                swfw = ch*889/500;
+            }else{
+                swfw = cw;
+                swfh = cw*500/889;
+            }
+
+            if(cw/1920*1080>ch){
+                jpgh = ch;
+                jpgw = ch*1920/1080;
+            }else{
+                jpgw = cw;
+                jpgh = cw*1080/1920;
+            }
+
+            if(cw/1280*720>ch){
+                mp4h = ch;
+                mp4w = ch*1280/720;
+            }else{
+                mp4w = cw;
+                mp4h = cw*720/1280;
+            }        
+
+             for(var i = 1; i <= lnth; i++){
+                 $pc[0].appendChild(createElement('c','ch'+i,cw,ch,(i-1)*cw));
+             }
+
+             for(var i = 0; i < lnth; i++){
+                 $pc[0].children[i].appendChild(createElement('cc','c'+i,cw,ch,i*cw))
+             }
+
+            $pc.height(ch);
+            $wd.height(ch);
+            $pc.width(cw*3);
+            $wd.width(cw);
+            $pc.css('left',0);
+
+            swfobject.embedSWF(nchapters[chapterIdx].name, $pc[0].children[0].children[0].id, swfw, swfh, 10)
+
+            setTimeout(function(){
+                obj = $pc[0].children[0].children[0];
+            },500)
+
+            window.onkeydown = function(e){
+                if(e.keyCode == '82'){//r
+                    e.preventDefault();
+                    window.location.reload();
+                }
+                if(e.keyCode == '66'){//b
+                    e.preventDefault();
+                    window.history.go(-1);
+                }
+                if(e.keyCode == '116'||e.keyCode == '27'){//f5
+                     e.preventDefault();
+                    if(obj.nodeName == 'OBJECT'){
+                        obj.start()
+                    }
+                    if(obj.nodeName == 'VIDEO'){
+                        obj.play()
+                    }
+                    if(obj.nodeName == 'AUDIO'){
+                        if(!isPlayingM){
+                            obj.play();
+                            isPlayingM = true;
+                        }else{
+                            obj.load();
+                            isPlayingM = false;
+                        }
+                    }
+                }
+                if(e.keyCode == '34'){//pageDown
+                    var l = parseInt($pc.css('left'));
+                    if(l > -cw*(lnth-1)){
+                        if(!isAnimating){
+                            if(chapterIdx<lnth-1){
+                                chapterIdx+=1;
+                            }
+                            isAnimating = true; 
+                            var lo = obj.parentNode.parentNode;
+                            if(nchapters[chapterIdx].type == 'swf'){
+                                swfobject.embedSWF(nchapters[chapterIdx].name, $pc[0].children[chapterIdx].children[0].id, swfw, swfh, 10)
+                                setTimeout(function(){
+                                    obj = $pc[0].children[chapterIdx].children[0];
+                                },500)
+                                
+                                if(nchapters[chapterIdx-1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx-1].children[0].id);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                            if(nchapters[chapterIdx].type == 'music'){
+                                obj = embedJpg(nchapters[chapterIdx].photo,nchapters[chapterIdx].name,$pc[0].children[chapterIdx].children[0],jpgw,jpgh);
+                                
+                                if(nchapters[chapterIdx-1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx-1].children[0].id);
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj,isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                            if(nchapters[chapterIdx].type == 'video'){
+                                obj = embedMP4(nchapters[chapterIdx].name,$pc[0].children[chapterIdx].children[0],mp4w,mp4h);
+                                
+                                if(nchapters[chapterIdx-1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx-1].children[0].id);
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx-1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l-cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx-1].appendChild(createElement('cc','c'+(chapterIdx-1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                        }
+                    }
+                }
+                if(e.keyCode == '33'){//pageUp
+                    var l = parseInt($pc.css('left'));
+                    if(l < 0){
+                        if(!isAnimating){
+                            if(chapterIdx>0){
+                                chapterIdx-=1;
+                            }
+                            isAnimating = true; 
+                            var lo = obj.parentNode.parentNode;
+                            if(nchapters[chapterIdx].type == 'swf'){
+                                swfobject.embedSWF(nchapters[chapterIdx].name, $pc[0].children[chapterIdx].children[0].id, swfw, swfh, 10)
+                                setTimeout(function(){
+                                    obj = $pc[0].children[chapterIdx].children[0];
+                                },500)
+                                
+                                if(nchapters[chapterIdx+1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx+1].children[0].id);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                            if(nchapters[chapterIdx].type == 'music'){
+                                obj = embedJpg(nchapters[chapterIdx].photo,nchapters[chapterIdx].name,$pc[0].children[chapterIdx].children[0],jpgw,jpgh);
+
+                                if(nchapters[chapterIdx+1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx+1].children[0].id);
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                            if(nchapters[chapterIdx].type == 'video'){
+                                obj = embedMP4(nchapters[chapterIdx].name,$pc[0].children[chapterIdx].children[0],mp4w,mp4h);
+                            
+                                if(nchapters[chapterIdx+1].type == 'swf'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            swfobject.removeSWF($pc[0].children[chapterIdx+1].children[0].id);
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'music'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isPlayingM = false;
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                                if(nchapters[chapterIdx+1].type == 'video'){
+                                    setTimeout(function(){
+                                        $pc.animate({left: l+cw+'px'},500,function(){
+                                            lo.removeChild(lo.children[0])
+                                            clickHandler(document.getElementsByClassName('btn')[0],isPlayingM,obj);
+                                            $pc[0].children[chapterIdx+1].appendChild(createElement('cc','c'+(chapterIdx+1),cw,ch,i*cw))
+                                            isAnimating = false;
+                                        });
+                                    },200)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+         });
+    </script>
+</body>
+</html>

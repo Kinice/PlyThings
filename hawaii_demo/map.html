@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大地图</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			height: 100%;
+		}
+		#container{
+			background-image: url('map.jpg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin:0 auto;
+			position: relative;
+		}
+		.m{
+			display: block;
+			position: absolute;
+			z-index: 10;
+		}
+		.m1{
+			width: 7.7%;
+			height: 9%;
+			left: 2.4%;
+			top: 4.5%;
+		}
+		.m2{
+			width: 7.7%;
+			height: 9%;
+			left: 12.5%;
+			top: 4.5%;
+		}
+		.c1{
+			width: 4%;
+			height: 9%;
+			left: 10%;
+			top: 37%;
+		}
+		.c2{
+			width: 4%;
+			height: 9%;
+			left: 5%;
+			top: 48%;
+		}
+		.c5{
+			width: 4%;
+			height: 9%;
+			left: 23.5%;
+			top: 69%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<a href="demoA.html" class="m m1"></a>
+		<a href="demoB.html" class="m m2"></a>
+		<a href="class1.html" class="m c1"></a>
+		<a href="class2.html" class="m c2"></a>
+		<a href="class5.html" class="m c5"></a>
+	</div>
+	<script>
+		var con = document.getElementById('container');
+		var cw = document.body.clientWidth;
+        var ch = document.body.clientHeight;
+        var swfw = 0;
+        var swfh = 0;
+        if(cw/3100*1536>ch){
+            swfh = ch;
+            swfw = ch*3100/1536;
+        }else{
+            swfw = cw;
+            swfh = cw*1536/3100;
+        }
+        con.style.width = swfw+'px';
+        con.style.height = swfh+'px';
+        if(swfh<ch){
+        	var mt = (ch-swfh)/2 + 'px';
+        	con.style.backgroundPositionY = mt;
+        	for(var i = 0; i < con.children.length; i++){
+        		console.log(con.children[i])
+        		con.children[i].style.marginTop = mt;
+        	}
+        }
+	</script>
+</body>
+</html>
