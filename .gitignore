@@ -4,3 +4,5 @@ bdim/
 *.mp3
 *.mp4
 *.flv
+node_modules/
+
