@@ -4,5 +4,6 @@ bdim/
 *.mp3
 *.mp4
 *.flv
+npm-debug.log
 node_modules/
 
