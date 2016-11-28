@@ -1,6 +1,6 @@
 (function(window, $){
 
-	var HTML = {
+	var HTM = {
         ovl: '<div id="pop-mask"></div>' + '<div id="pop-container">' + '<div class="pop-main"></div>' + '<div class="pop-btn"></div>' + '</div>',
         alert: '<input type="button" value="确定">',
         confirm: '<input type="button" value="取消">' + '<input type="button" value="确定">'
@@ -20,15 +20,16 @@
 	winPop.prototype = {
 
 		init: function(){
-
+			this.createDom();
+			this.bindEvent();
 		},
 
 		createDom :function(){
 			var $body = $('body'),
 				$ovl = $('#pop-container');
 
-			if($ovl.length === 0){
-				$body.append(HTML.ovl);
+			if($ovl.length == 0){
+				$body.append(HTM.ovl);
 			}
 
 			this.set('ovl', $('#pop-container'));
@@ -68,8 +69,6 @@
 				var kc = e.keyCode,
 					cb = that.get('confirmBack');
 
-				console.log(e);
-
 				if(kc === 27) {
 					that.hide();
 				}else if(kc === 13) {
@@ -81,28 +80,61 @@
 			});
 		},
 
-		alert: function(str, btnstr){
-			var str = typeof str === 'string' ? str.stoString(),
+		kalert: function(str, btnstr){
+			var str = typeof str === 'string' ? str : str.toString(),
 				$ovl = this.get('ovl');
 
 			this.set('type','alert');
-			$ovl.find
+
+			$ovl.find('.pop-main').html(str);
+
+			if(typeof btnstr == 'undefined'){
+				$ovl.find('.pop-btn').html(HTM.alert);
+			}else{
+				$ovl.find('.pop-btn').html(btnstr);
+			}
+
+			this.show();
 		},
 
-		confirm: function(){
+		kconfirm: function(){
+			var str = typeof str === 'string' ? str : str.toString(),
+				$ovl = this.get('ovl');
 
+			this.set('type','confirm');
+
+			ovl.find('.pop-main').html(str);
+			ovl.find('.pop-btn').html(HTM.confirm);
+			this.set('confirmBack', (callback || function(){}));
+			this.show();
 		},
 
 		show: function(){
-
+			this.get('ovl').show();
+			this.get('mask').show();
 		},
 
 		hide: function(){
-
+			var $ovl = this.get('ovl');
+			$ovl.find('.pop-main').html('');
+			$ovl.find('.pop-btn').html('');
+			$ovl.hide();
+			this.get('mask').hide();
 		},
 
 		destory: function(){
-
+			this.get('ovl').remove();
+			this.get('mask').remove();
 		}
+	};
+
+	var obj = new winPop();
+
+	window.kalert = function(str){
+		obj.kalert.call(obj, str);
+	}
+
+	window.kconfirm = function(str){
+		obj.kalert.call(obj, str);
 	}
 })(window, $);
