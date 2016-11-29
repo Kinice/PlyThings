@@ -16,8 +16,11 @@
 	<h1>HELLO WORLD!</h1>
 	<script src="k-alert/k-alert.min.js"></script>
 	<script>
+		var hello = function(e){
+			console.log(e)
+		}
 		$(function(){
-			kalert('这是alert出现的内容');
+			kconfirm('con',hello);
 		})
 	</script>
 </body>

@@ -1,9 +1,9 @@
 (function(window, $){
 
 	var HTM = {
-        ovl: '<div id="pop-mask"></div>' + '<div id="pop-container">' + '<div class="pop-main"></div>' + '<div class="pop-btn"></div>' + '</div>',
-        alert: '<input type="button" value="确定">',
-        confirm: '<input type="button" value="取消">' + '<input type="button" value="确定">'
+        ovl: '<div class="k-alert">'+'<div id="pop-mask"></div>' + '<div id="pop-container">' + '<div class="pop-main"></div>' + '<div class="pop-btn"></div>' + '</div>'+'</div>',
+        alert: '<input type="button" class="alertBtn" value="确定">',
+        confirm: '<input type="button" class="confirmFalse" value="取消">' + '<input type="button" class="confirmTrue" value="确定">'
     }
 
 	function winPop(){
@@ -31,6 +31,7 @@
 			if($ovl.length == 0){
 				$body.append(HTM.ovl);
 			}
+			console.log(window)
 
 			this.set('ovl', $('#pop-container'));
 			this.set('mask', $('#pop-mask'));
@@ -97,14 +98,15 @@
 			this.show();
 		},
 
-		kconfirm: function(){
+		kconfirm: function(str, callback){
 			var str = typeof str === 'string' ? str : str.toString(),
 				$ovl = this.get('ovl');
 
 			this.set('type','confirm');
 
-			ovl.find('.pop-main').html(str);
-			ovl.find('.pop-btn').html(HTM.confirm);
+			$ovl.find('.pop-main').html(str);
+			$ovl.find('.pop-btn').html(HTM.confirm);
+
 			this.set('confirmBack', (callback || function(){}));
 			this.show();
 		},
@@ -134,7 +136,7 @@
 		obj.kalert.call(obj, str);
 	}
 
-	window.kconfirm = function(str){
-		obj.kalert.call(obj, str);
+	window.kconfirm = function(str,callback){
+		obj.kconfirm.call(obj, str, callback);
 	}
 })(window, $);
