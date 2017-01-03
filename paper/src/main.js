@@ -3,11 +3,15 @@
 
 // =============== Base libraries integration ==================
 import Vue from 'vue'
+import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'
 import VueTranslate from 'vue-translate-plugin'
 
+import 'element-ui/lib/theme-default/index.css'
+
 Vue.use(VueResource)
 Vue.use(VueTranslate)
+Vue.use(ElementUI)
 
 import store from './store'
 import router from './router'

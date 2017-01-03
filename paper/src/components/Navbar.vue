@@ -1,19 +1,23 @@
 <template>
-  <nav class="navbar navbar-default">
-    <a class="navbar-brand" href="/"> {{$store.state.appTitle}} {{$store.state.appVersion}}</a>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <router-link to="/" class="nav-item nav-link"> Home </router-link>
-      </li>
-      <li>
-        <router-link to="/test" class="nav-item nav-link"> Test </router-link>
-      </li>
-      <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-    </ul>
-  </nav>
+  <div class="g-hd">
+    <div class="m-logo">
+      
+    </div>
+    <div class="m-user">
+      
+    </div>
+  </div>
 </template>
 
 <script>
   export default {
+
   }
 </script>
+
+<style lang="less" scoped>
+  .g-hd{
+    height: 70px;
+    background: #324057;
+  }
+</style>
