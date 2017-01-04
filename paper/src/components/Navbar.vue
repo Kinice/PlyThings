@@ -1,12 +1,12 @@
 <template>
-  <div class="g-hd">
+  <header class="g-hd">
     <div class="m-logo">
       
     </div>
     <div class="m-user">
       
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

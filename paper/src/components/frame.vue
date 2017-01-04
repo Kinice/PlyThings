@@ -1,15 +1,11 @@
 <template>
   <div class="g-bd">
     <navbar></navbar>
-    <div class="g-main">
-      <el-row>
-        <el-col :span="3">
-          <sidebar></sidebar>
-        </el-col>
-        <el-col :span="21">
-          <router-view></router-view>
-        </el-col>
-      </el-row>
+    <div class="g-container">
+      <sidebar></sidebar>
+      <div class="g-main">
+        <router-view></router-view>
+      </div>
     </div> 
   </div>
 </template>
@@ -35,18 +31,18 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-  .g-main{
+  .g-container{
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 70px;
-    .el-row{
+    right: 0;
+    bottom: 0;
+    .g-main{
+      position: relative;
+      margin-left: 200px;
       height: 100%;
-      .el-col{
-        height: 100%;
-      }
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 </style>
