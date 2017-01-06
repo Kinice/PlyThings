@@ -31,6 +31,7 @@
     left: 0;
     top: 0;
     background: #eff2f7;
+    text-align: center;
     a:link,a:visited,a:hover,a:active{
       text-decoration: none;
     }
