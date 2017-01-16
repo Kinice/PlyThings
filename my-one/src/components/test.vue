@@ -6,6 +6,9 @@
     <div class="block world">
       
     </div>
+    <div class="block radius">
+      
+    </div>
   </div>
 </template>
 
@@ -49,5 +52,12 @@
     border-radius: 10px;
     outline: 1px dashed #fff;
     outline-offset: -20px;
+  }
+  .radius{
+    background: turquoise;
+    border-radius: .8em;
+    padding: 1em;
+    box-shadow: 0 0 0 .55em #655;
+    outline: .6em solid #655;
   }
 </style>
