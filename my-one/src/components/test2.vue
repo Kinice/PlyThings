@@ -24,6 +24,12 @@
     <div class="block test8">
       
     </div>
+    <div class="block test9">
+      
+    </div>
+    <div class="block test10">
+      
+    </div>
   </div>
 </template>
 
@@ -78,5 +84,21 @@
   }
   .test8{
     background: repeating-linear-gradient(70deg,#fb3,#fb3 15px,#58a 15px,#58a 30px);
+  }
+  .test9{
+    background: #655;
+    background-image: radial-gradient(tan 25%, transparent 0),
+                      radial-gradient(tan 25%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+  }
+  .test10{
+    background: #eee;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 0),
+                      linear-gradient(45deg, transparent 74.99%, #ccc 0),
+                      linear-gradient(45deg, #ccc 25%, transparent 0),
+                      linear-gradient(45deg, transparent 74.99%, #ccc 0);
+    background-position: 0 0,15px 15px,15px 15px,30px 30px;
+    background-size: 30px 30px;
   }
 </style>
