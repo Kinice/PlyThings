@@ -4,6 +4,7 @@
       <router-link to="/"><el-menu-item index="1"><i class="el-icon-message"></i>导航一</el-menu-item></router-link>
       <router-link to="/test"><el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item></router-link>
       <router-link to="/test2"><el-menu-item index="3"><i class="el-icon-star-on"></i>导航三</el-menu-item></router-link>
+      <router-link to="/test3"><el-menu-item index="4"><i class="el-icon-star-off"></i>导航四</el-menu-item></router-link>
     </el-menu>
   </div>
 </template>

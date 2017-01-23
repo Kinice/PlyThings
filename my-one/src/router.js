@@ -7,6 +7,7 @@ Vue.use(Router)
 import Hello from './components/Hello'
 import Test  from './components/test'
 import Test2 from './components/test2'
+import Test3 from './components/test3'
 
 // ==================== Router registration ====================
 export default new Router({
@@ -14,6 +15,7 @@ export default new Router({
   routes: [
     { path: '/', component: Hello },
     { path: '/test', component: Test},
-    { path: '/test2', component: Test2}
+    { path: '/test2', component: Test2},
+    { path: '/test3', component: Test3}
   ]
 })
