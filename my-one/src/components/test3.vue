@@ -37,7 +37,7 @@
         				tagsArr.push(document.all[i].tagName)
         			}
         		}else{
-        		tagsAarr.push(document.all[i].tagName)
+        		tagsArr.push(document.all[i].tagName)
         		}
         	}
         }
@@ -46,7 +46,7 @@
     },
     mounted: function () {
       this.$nextTick(function () {
-        console.log(getAllTags())
+        console.log(this.getAllTags())
       })
     }
   }
