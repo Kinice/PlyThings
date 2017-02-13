@@ -10,7 +10,7 @@
       <div class="ball blue1"></div>
       <div class="ball black1"></div>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -21,7 +21,33 @@
       }
     },
     methods: {
-
+      getAllTags(){
+        let tagsArr = [];
+        for(var i in document.all){
+        	if(document.all[i].tagName){
+        		if(tagsArr.length !== 0){
+        			var hasThisTag = false;
+        			for(var j = 0; j < tagsArr.length; j++){
+        				if(document.all[i].tagName==tagsArr[j]){
+        					hasThisTag = true;
+        					break;
+        				}
+        			}
+        			if(!hasThisTag){
+        				tagsArr.push(document.all[i].tagName)
+        			}
+        		}else{
+        		tagsAarr.push(document.all[i].tagName)
+        		}
+        	}
+        }
+        return tagsArr;
+      }
+    },
+    mounted: function () {
+      this.$nextTick(function () {
+        console.log(getAllTags())
+      })
     }
   }
 </script>
