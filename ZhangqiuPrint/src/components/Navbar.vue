@@ -22,9 +22,9 @@
       nowTime (){
         let time = new Date(),
             year = time.getFullYear(),
-            month = time.getMonth(),
+            month = time.getMonth()+1,
             day = time.getDate();
-        this.time = year+'年'+(month+1)+'月'+day+'日';
+        this.time = year+'年'+month+'月'+day+'日';
       }
     },
     mounted(){
