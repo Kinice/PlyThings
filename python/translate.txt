@@ -1,0 +1,370 @@
+1|*班级类型一旦选择不可更改|*Class type cannot be changed after chosen
+2|*课程类型一旦选择不可更改|*Lesson type cannot be changed after chosen
+3|*老师帐号找回密码请联系机构管理员|*Please contact school administrator to retrieve teacher’s password 
+4|- 计时规则：新购教室（指直接购买2.0教室，非1.0升级、非续费）以教室首次初始化开始计时；从1.0升级到2.0的教室，以及后续续费，从订单“申请发货”开始计时|Timing rule: New purchased classroom (new purchased 2.0 version classroom, not 1.0 upgrade version classroom) will start timing after the first initialization. Classrooms updated to 2.0 from 1.0 and renewed classrooms will start timing from order’s “apply shipments”
+5|- 系统使用权限是指教学系统是否可以使用，在有系统使用权限的前提下可以使用已购买的课程|System access means teaching system is functional and able to use purchased lesson
+6|- 系统维护费到期未续费，系统将无法使用，原先拥有的课程权限继续保留，续费成功后，可以继续使用尚未过期的课程|System cannot be used until the maintenance fee is paid. The lessons’ access will be saved, and will be usable after it’s being paid.
+7|0.未开课|Class pending
+8|Excel {row}行，{col}列：{val}，{msg}, 请重新上传|Excel {row}row，{col}column：{val}，{msg}, Please upload again
+9|Excel 行数不能超过500|Excel maximum number of rows is 500
+10|Excel 用户名列所填内容不能重复，请检查后重新上传|Excel username list can not be repeated, please check and upload again.
+11|The ONE智能音乐教室资料库|The ONE Smart Piano Classroom database
+12|email不能为空|Email cannot be empty
+13|email格式不正确|Email format is incorrect
+14|无分句PK|None pieces' duel
+15|无分句PK|None pieces' duel
+16|月|Month
+17|日|Day
+18|(体验班)|(open house)
+19|(体验课)|(open house lesson)
+20|{}学生列表.xls|{}student list.xls
+21|© The ONE 智能音乐教室|© The ONE Smart Piano Classroom
+22|©The ONE 智能音乐教室|©The ONE Smart Piano Classroom
+23|女|Female
+24|无|None
+25|男|Male
+26|页|Page
+27|与 The ONE 共同成长|Get better with The ONE
+28|取 消|Cancel
+29|完 成|Finish
+30|登 录|Login
+31|乐理|Music theory
+32|位置|Location
+33|保存|Save
+34|修改|Modify
+35|入门|Beginning
+36|全部|All
+37|关闭|Close
+38|初学|Primer
+39|删除|Delete
+40|取消|Cancel
+41|听力|Aural
+42|在职|Employed
+43|在读|Full-time student
+44|备注|Memo
+45|姓名|Name
+46|完成|Ok
+47|密码|Password
+48|年龄|Age
+49|性别|Gender
+50|总分|Points
+51|所有|All
+52|提交|Submit
+53|操作|Operation
+54|教室|Classroom
+55|新建|New
+56|昵称|Nickname
+57|更多|More
+58|查找|Search
+59|查看|View
+60|标题|Tittle
+61|演奏|Play
+62|熟练|Proficient
+63|版本|Version
+64|状态|Status
+65|班级|Class
+66|生日|Birthday
+67|电话|Phone
+68|确定|Ok
+69|确认|Confirm
+70|管理|Manage
+71|规模|Size
+72|评价|Comment
+73|跳至|Skip to
+74|返回|Return
+75|还原|Restore
+76|退出|Exit
+77|首页|Homepage
+78|系统/教师评分|System/teacher's evaluation
+79|总数:|Sum:
+80|家长Email|Parent's email
+81|上传Excel列表|Upload Excel list
+82|导出Excel列表|Export Excel list
+83|设备ID|Device's ID
+84|钢琴ID|Piano's ID
+85|全曲PK|Duel
+86|分句PK|Pieces' duel
+87|卡拉PK|Rhythm game duel
+88|无灯PK|Non-LED light duel
+89|曲谱PK|Duel
+90|曲谱PK(中速)|Duel (Slow pace)
+91|曲谱PK(原速)|Duel (Regular pace)
+92|曲谱PK(慢速)|Duel (Extra slow pace)
+93|家长email|Parent's email
+94|上一页|Previous page
+95|下一页|Next page
+96|不评价|No comment
+97|优惠码|Coupon code
+98|体验班|Trial class
+99|使用中|Using
+100|出勤率|Attendance rate
+101|原密码|Old password
+102|图例：|Figure:
+103|已验证|Verified
+104|待使用|Waiting
+105|成绩单|Report
+106|新密码|New password
+107|未分配|Undistributed
+108|未购买|Unpurchased
+109|未验证|Unverified
+110|正式班|Standard class
+111|用户名|Username
+112|移动至|Move to
+113|联系人|Contact
+114|说明：|Description:
+115|请选择|Please select
+116|零基础|New learner
+117|验证码|Verification code
+118|状态：|Status:
+119|本课无PK/小考核|This lesson doesn't have duels/tests
+120|教室：|Classroom：
+121|学生|Student
+122|人|保留空白
+123|上课时间|Time for class
+124|下载模板|Download template
+125|任课老师|Instructor
+126|修改密码|Change password
+127|儿童课程|不翻译
+128|分配班级|Distribute classes
+129|创建时间|Create date
+130|即将到期|Expiring
+131|售后热线|Customer service
+132|学习时间|Time for study
+133|学习课程|Study lesson
+134|学习进度|Study progress
+135|学生信息|Student information
+136|学生列表|Student list
+137|学生姓名|Student name
+138|学生成绩|Student report
+139|学生点评|Student feedback
+140|家长姓名|Parent's name
+141|家长电话|Parent's phone
+142|密码错误|Password incorrect
+143|已有学生|Already have student
+144|常见问题|FAQ
+145|当前状态|Current status
+146|怀旧金曲|Classic songs
+147|意见反馈|Feedback
+148|所在班级|Class NO.
+149|手机号码|Cell phone
+150|批量删除|Batch delete
+151|找回密码|Recover password
+152|教室信息|Classroom information
+153|教室名称|Classroom name
+154|教室容量|Classroom capacity
+155|教室管理|Classroom manage
+156|教师信息|Teacher's information
+157|教师列表|Teacher list
+158|教师姓名|Teacher name
+159|教师评价|Teacher's evaluation
+160|教育类型|Education type
+161|新建学生|New student
+162|新建教师|New teacher
+163|新建班级|New class
+164|暂无成绩|No report
+165|更新时间|Update time
+166|最新成绩|Latest report
+167|机构名称|School's Name
+168|正常上课|Attend class
+169|正常开课|Start class
+170|每页显示|Page display
+171|流行经典|Popular classic songs
+172|班级人数|Student number
+173|班级名称|Class name
+174|班级管理|Class manage
+175|班级类型|Class type
+176|班级设置|Class setting
+177|确认删除|Delete
+178|确认密码|Ok
+179|确认添加|Ok
+180|系统评分|System grade
+181|联系电话|Contact information
+182|自动登陆|Auto login
+183|课堂点评|Class review
+184|课程类型|Lesson type
+185|账号信息|Account information
+186|账号安全|Account security
+187|账号设置|Account setting
+188|身份验证|Phone number verification
+189|重置密码|Reset password
+190|钢琴教室|Piano classroom
+191|钢琴水平|Piano level
+192|音乐教室|Music classroom
+193|验证成功|Verified
+194|机构信息| 若需更改机构信息，请与管理员联系|School information|Please contact the administrator to change school's information
+195|上传图片(或附件）|Upload picture (or attach file)
+196|已有学生:|Existing students
+197|安卓设备ID|Android device ID
+198|欢迎您：|Welcome：
+199|使用到期日|Expired on 
+200|修改成功！|Successfully modified!
+201|发送验证码|Send verification code
+202|威尔第雪山|Verdi Snowy Mountain
+203|学生不存在|Student does not exist
+204|已处理评价|Feedback reviewed
+205|已验证学生|Student verified
+206|待处理评价|Pending feedback
+207|教师不存在|Teacher does not exist
+208|未验证学生|Unverified student
+209|爱丽丝小镇|Alice Town
+210|班级不存在|Class does not exist
+211|系统维护费|System maintenance fee
+212|索拉朵之海|Sea Sollado
+213|联系方式：|Contact information:
+214|请输入分数|Please enter the score
+215|请输入评语|Please enter a feedback
+216|请选择性别|Please select the gender
+217|重置成功！|Reset successful
+218|验证码无效|Verification code invalid
+219|班级类型：|Class type:
+220|分数请输入 0-100 之间的整数|Please enter a whole number between 0-100 for the score
+221|感谢您选择 The ONE|Thank you for choosing The ONE
+222|生日格式：1990/01/07|Birthday format: 1990/01/07
+223|注：儿童课2.0版、成人课、老年课，分别从课程第一次“开始上课“开始计时。|Note: Children course, adult course and elder course will start timing after the first "Class begin"
+224|开课日期：2015/8/26（周日）|Class start date: 2015/8/26 (Sunday)
+225|姓名长度在2~20之间|Please keep the name character length between 2-20
+226|姓名长度在2~20之间，中文和字母，不包含数字|Please keep the name character length between 2-20, this does not include numbers
+227|已验证学生:|Authorized student:
+228|未验证学生:|Unauthorized student:
+229|班级数量：|Class number：
+230|所在班级：|Current class：
+231|任课教师：|Course teacher：
+232|教室数量：|Classroom number：
+233|教室数量：|Classroom number：
+234|教师数量：|Teacher number：
+235|优惠码说明：|Coupon code intro:
+236|修改手机号码|Change cell phone number
+237|删除学生错误|Delete error student
+238|删除班级错误|Delete error class
+239|删除老师错误|Delete error teacher
+240|原密码不正确|Old password incorrect
+241|发生未知错误|Unknown error detected
+242|后台存储错误|Background storage error
+243|备注名称过长|Memo name's length exceeded
+244|姓名不能为空|Name cannot be empty
+245|学生成绩查询|Student report inquire
+246|学生账号管理|Student account management
+247|密码不能为空|Password cannot be empty
+248|开始使用日期|Start date
+249|成功删除学生|Student deleted
+250|成功删除班级|Class deleted
+251|成功删除老师|Teacher deleted
+252|教师账号管理|Teacher account management
+253|机构管理系统|School management system
+254|班级名称过长|Class name is too long
+255|班级开课时间|Class start date
+256|用户名不存在|Username does not exist
+257|用户已被禁用|This account has been banned
+258|禁止删除自己|Unable to delete your account
+259|秒后重新发送|Resend after # seconds
+260|系统使用权限|System permission
+261|该学生不存在|Student does not exist
+262|该教室不存在|Classroom does not exist
+263|该教师不存在|Teacher does not exist
+264|该班级不存在|Class does not exist
+265|该老师不存在|Teacher does not exist
+266|身份验证成功|Authentication successful
+267|输入不能为空|Input cannot be empty
+268|选择班级类型|Please choose a class type
+269|钢琴教室管理|Piano classroom management
+270|首次任课时间|First time of teaching
+271|验证手机号码|Verify the phone number
+272|验证码不正确|Incorrect verification code
+273|性别填写：男 或 女|Gender: Male or Female
+274|用户名不存在! (机构代码.用户名）|Username does not exist (school code. Username)
+275|请输入正确的6位手机验证码|Please enter the correct 6 digits phone verification code
+276|请输入正确的6位短信验证码|Please enter the correct 6 SMS phone verification code
+277|成功创建老师: {}, 请用默认密码{}登陆|Teacher create successful: {}, Please use the default password to{}login
+278|成功创建学生:{}，默认登陆密码为:{}|Student create successful:{}，Default login password:{}
+279|待点评数量：{{ pagination.total }}个|Numbers of pending review：{{ pagination.total }}个
+280|上一次上课时间|Last class time
+281|上一次任课时间|Last teaching time
+282|上次初始化时间|Last initialization time
+283|不存在这个班级|Class does not exist
+284|感谢您的反馈！|Thank you for your feedback!
+285|教学示范与支持|Teaching demo and support
+286|暂无可分配学生|All students are assigned
+287|未选择班级类型|Class type need to be selected
+288|班级名称已存在|Class name already existed
+289|用户名不能为空|Username cannot be empty
+290|确定不评价吗？|No feedback?
+291|该手机号码有效|Phone number valid
+292|该手机好已存在|Phone number already existed
+293|该班级暂无学生|No students are in this class
+294|请添加文字描述|Please enter a description
+295|请输入手机号！|Please enter a phone number!
+296|请选择班级类型|Please select a class type
+297|首次初始化时间|First initialization date
+298|成功创建班级：%s|Class created : %s
+299|成功删除学生：%s|Student deleted: %s 
+300|成功删除老师：%s|Teacher deleted : %s
+301|成功更改班级：%s|Class changed : %s
+302|成功更改老师：%s|Teacher changed :%s
+303|已成功修改密码,请重新登录|Your password has been changed. Please login again.
+304|教室名字长度在2~20之间|Choose a class name that is 2-20 characters long.
+305|家长姓名不能为空|Parent names required.
+306|家长电话不能为空|Parent mobile number required.
+307|尤克里里教室管理|Ukulele classroom management
+308|成功移动所选学生|Student has been moved successfully.
+309|手机号码不能为空|Mobile number required.
+310|手机号码验证成功|Mobile number verification succeeded.
+311|机构名称不能为空|School name required.
+312|班级名称不能为空|Class name required.
+313|确定推送评价：|Feedback send: 
+314|获取班级信息失败|Unable to acquire class information.
+315|该手机号码已存在|Mobile number exists.
+316|请输入机构代码！|Please enter school code.
+317|请输入评语和分数|Please provide feedback and performance scores.
+318|请选择班级类型！|Please select the class.
+319|已成功修改老师：%s|Teacher modification succeeded：%s
+320|成功添加了学生：%s|Student has been added successfully:：%s
+321|进度：我的旅途－3.林间小路|Progress: My journey-3.Path Through the Woods
+322|评语长度不能超过70个字|The maximum length of feedback message that you can send is 70 characters. 
+323|不存在的机构代码:|%s School code does not exist:%s.
+324|进度：我的旅途－{{ data[0].number }}.{{ data[0].lesson }}|Progress: My journey－{{ data[0].number }}.{{ data[0].lesson }}
+325|已完成点评数量：{{ pagination.total }}个|Reviews completed：{{ pagination.total }}个
+326|进度：我的旅途－{{ sessions[0].number }}.{{ sessions[0].lesson }}|Progress: My journey－{{ sessions[0].number }}.{{ sessions[0].lesson }}
+327|不包含钢琴音乐教室|Does not contain piano music classroom
+328|不能和其他教室重名|This entry cannot have the same name with other class.
+329|两次输入密码不一致|The passwords you entered do not match.
+330|两次输入密码需相同|Passwords need to match.
+331|只能为中文英文字符|This entry can only contain Chinese and English letters.
+332|扫描二维码推送成绩|Scan the QR Code to send the lesson results.
+333|确定要放弃评价吗？|Are you sure you want to leave the comment page?
+334|验证码错误或已过期|Verification code is incorrect or has been expired.
+335|成功更改同学信息：%s|Student information has been updated successfully:：%s
+336|成功更改为默认密码: %s|Default password has been changed successfully: %s
+337|任老师您好，您还有xx个学生未进行评价|Ms.Ren, you have xx more students that needs be evaluated
+338|默认填写机构联系电话|Choose the default contact information.
+339|请添加正确的文件格式,仅支持{}|Please select the correct file format. You can upload a {} file.
+340|请输入正确的手机号码！|Please enter the correct mobile number.
+341|上传图片或附件（不超过8MB，任意格式）|Upload a picture or a file (maximum size: 8 MB).
+342|发验证码失败，请稍后再试|Verification code failed to send, please try again later.
+343|输入的手机号不符合规范！|This entry can only contain numbers.
+344|验证码不正确，请重新输入|Verification code you entered is incorrect, please try again.
+345|只能为英文大小写，数字，"_"和"-"|This entry can only contain lowercase or capital letters, numbers, "_" and "-".
+346|输入的手机号码不符合规范！|This entry can only contain numbers.
+347|上传文件格式不正确，只支持.xlsx, xls|Please select the correct file format. You can upload a .xlsx or xls file.
+348|手机号码格式不正确，请填写11位手机号码|Please enter a 10-digital number.
+349|未验证学生不能移动到正式班级|Unverified student cannot be moved to the official class.
+350|该手机号已被占用，请重新输入|This mobile number has been registered. Please check.
+351|请先输入手机获取短信验证码！|Please enter your mobile number to obtain the verification code.
+352|请点击复选框选中要删除的学生|Please click the check box to select the students you want to delete
+353|请点击复选框选中要删除的老师|Please click the check box to select the teachers you want to delete
+354|请点击复选框选中要移动的学生|Please click the check box to select the students you want to move
+355|列数量不正确，请检查后重新上传|The number of rows is incorrect, please check and re-upload
+356|删除自己将产生错误，禁止该操作|Please do not delete yourself, otherwise it will produce an error
+357|该手机号码已被占用，请重新输入|This mobile number has been registered. Please check.
+358|该班级所在教室容纳不了所选学生|The number of students in this class has exceeded the maximum numbers.
+359|班级里存在未验证的学生，请先验证|Class contains unverified student, please verify first.
+360|当前班级的总人数已经超出教室钢琴数,请添加钢琴|The number of pianos and students mismatched. Please add piano. 
+361|班级学生数超出教室钢琴数，请减少学生|The number of pianos and students mismatched, please reduce some students
+362|用户名已被占用，不可还原，请重新创建。|This username has been already taken. Please create a new account.
+363|该用户名在该机构已经被使用，请更换用户名|Username exists in this school. Please change your username.
+364|输入的手机号已经被占用，请检查后重新输入！|This mobile number has been registered. Please check.
+365|所选教室未开通任何课程，请更换教室或购买课程|No course has been activated under this class, please switch to another class or purchase the course.
+366|用户名以字母开头，只能含有数字字母下划线，长度在3~32之间|Choose a username that is 3-32 characters long and must start with a lowercase or capital letter. User name can contain numbers and underlines.
+367|删除班级会导致该班学生变为未分配班级状态，确认删除？|Deleting the class will cause an unassigned class situation. Are you sure you want to delete this class?
+368|用户名已经存在于该机构。注：也不能同已删除用户名相同|Username exists in this school. Note: This entry cannot have the same name with the deactivated user.
+369|输入文字过长，请尝试使用附件上传的方式进行长文本编辑|You have exceeded the maximum characters limit. Please try to upload attachment to edit.
+370|请在下方输入您的意见或建议，我们将非常认真对待每一条反馈，谢谢！|We would greatly appreciate if you can leave your comments and suggestions below.
