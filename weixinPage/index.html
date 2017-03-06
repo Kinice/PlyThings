@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>vip用户</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/weui.min.css"/>
+        <script src="script/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="g-hd">
+            <h1 class="m-title" id="hui">
+                VIP用户好6
+            </h1>
+            <p class="m-desc">这里是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的说明文字</p>
+        </div>
+        <div class="g-bd">
+            <div class="flex-container">
+                <div class="cell-title">
+                    这是列表项的说明
+                </div>
+                <div class="weui-flex">
+                    <p class="item">自付款VIP用户</p>
+                    <img src="image/icon_nav_form.png" class="icon">
+                </div>
+                <div class="hidden-item">
+                    <img src="image/down.png">
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="cell-title">
+                    这是列表项的说明
+                </div>
+                <div class="weui-flex">
+                    <p class="item">机构VIP用户</p>
+                    <img src="image/icon_nav_form.png" class="icon">
+                </div>
+                <div class="hidden-item">
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd">
+                                <label class="weui-label">校验码</label>  
+                            </div>
+                            <div class="weui-cell__bd">
+                                <input class="weui-input" id="discountCode" type="text" onKeyUp="value=value.replace(/[^a-zA-Z0-9]/g,'')" placeholder="请输入机构校验码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-btn-area">
+                        <a href="javascript:" class="weui-btn weui-btn_primary" id="confirm">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script/handler.js"></script>
+    </body>
+</html>

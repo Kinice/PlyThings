@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>vip用户</title>
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/weui.min.css"/>
+        <script src="script/jquery.min.js"></script>
+        <script>
+            $(function(){
+                var search = window.location.search.split('&');
+                    code = '',
+                    status = '';
+                if(search.length>0){
+                    for(var i = 0; i < search.length; i++){
+                        var arr = search[i].split('=');
+                        if(arr[0]=='?code')code = arr[1];
+                        if(arr[0]=='status')status = arr[1];
+                    }
+                }
+                if(status == 'ok'){
+                    $('i.weui-icon_msg').addClass('weui-icon-success')
+                }else{
+                    $('i.weui-icon_msg').addClass('weui-icon-warn')
+                    $('h3.icon-box__title').text('验证激活码失败')
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="g-hd">
+            <div class="icon-box">
+                <i class="weui-icon_msg"></i>
+                <div class="icon-box__ctn">
+                    <h3 class="icon-box__title">成功完成验证</h3>
+                    <p class="icon-box__desc"></p>
+                </div>
+            </div>
+        </div>
+        <div class="g-bd">
+           <div class="result-container">
+               <div class="result-title">
+                   你的验证码为：
+               </div>
+               <div class="result-code">
+                   XYZIANWIRNU029
+               </div>
+               <div class="result-title">
+                   确认码：
+               </div>
+               <div class="result-code">
+                   XYZIANWIRNU029
+               </div>
+           </div>
+        </div>
+        <script src="script/handler.js"></script>
+    </body>
+</html>

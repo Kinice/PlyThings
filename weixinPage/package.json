@@ -1,0 +1,14 @@
+{
+  "name": "weixin",
+  "version": "1.0.0",
+  "description": "A weui page proj",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "weui": "^1.1.1"
+  }
+}
