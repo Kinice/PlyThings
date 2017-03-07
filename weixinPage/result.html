@@ -4,26 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>vip用户</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/style.css?ver=1.3">
         <link rel="stylesheet" href="style/weui.min.css"/>
         <script src="script/jquery.min.js"></script>
         <script>
             $(function(){
                 var search = window.location.search.split('&');
                     code = '',
-                    status = '';
+                    status = '',
+                    school = '',
+                    verify = '',
+                    info = '';
+
                 if(search.length>0){
                     for(var i = 0; i < search.length; i++){
                         var arr = search[i].split('=');
-                        if(arr[0]=='?code')code = arr[1];
-                        if(arr[0]=='status')status = arr[1];
+
+                        switch(arr[0]){
+                            case '?code': code = arr[1];
+                            case 'status': status = arr[1];
+                            case 'school': school = arr[1];
+                            case 'verify': verify = arr[1];
+                            case 'info': info = arr[1];
+                            default : break;
+                        }
                     }
                 }
+                $('#code').text(code);
                 if(status == 'ok'){
-                    $('i.weui-icon_msg').addClass('weui-icon-success')
+                    $('#school').text(school);
+                    $('#verify').text(verify);
+                    if(info == 'ok'){
+                        $('i.weui-icon_msg').addClass('weui-icon-success');
+                    }else{
+                        $('i.weui-icon_msg').addClass('weui-icon-info');
+                        $('h3.icon-box__title').text('激活码已经验证过')
+                    }
                 }else{
                     $('i.weui-icon_msg').addClass('weui-icon-warn')
                     $('h3.icon-box__title').text('验证激活码失败')
+                    $('#school_title').css('display','none')
+                    $('#verify_title').css('display','none')
+                    $('#message').text('激活失败，请检查你的激活码是否正确')
                 }
             });
         </script>
@@ -33,24 +55,33 @@
             <div class="icon-box">
                 <i class="weui-icon_msg"></i>
                 <div class="icon-box__ctn">
-                    <h3 class="icon-box__title">成功完成验证</h3>
+                    <h3 class="icon-box__title">激活码验证成功</h3>
                     <p class="icon-box__desc"></p>
                 </div>
             </div>
         </div>
         <div class="g-bd">
-           <div class="result-container">
+            <div class="result-container">
+                <div class="message" id="message">
+                    
+                </div>
                <div class="result-title">
-                   你的验证码为：
+                   你输入的激活码为
                </div>
-               <div class="result-code">
-                   XYZIANWIRNU029
+               <div class="result-code" id="code">
+
                </div>
-               <div class="result-title">
-                   确认码：
+               <div class="result-title" id="school_title">
+                   机构代码
                </div>
-               <div class="result-code">
-                   XYZIANWIRNU029
+               <div class="result-code" id="school">
+
+               </div>
+               <div class="result-title" id="verify_title">
+                   确认码
+               </div>
+               <div class="result-code" id="verify">
+
                </div>
            </div>
         </div>

@@ -63,6 +63,7 @@ body{
     font-size: 15px;
     text-align: left;
 }
+
 .icon-box {
     margin-bottom: 25px;
     display: -webkit-box;
@@ -92,4 +93,12 @@ body{
 }
 .result-container .result-title{
     margin: 10px;
+    font-size: 15px;
+}
+.result-container .result-code{
+    font-size: 17px;
+    color: red;
+}
+.message{
+    font-size: 17px;
 }
