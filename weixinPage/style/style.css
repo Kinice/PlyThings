@@ -10,7 +10,10 @@ body{
     padding: 40px;
 }
 .g-bd{
-    padding: 0 15px;
+    padding: 50px 0px;
+}
+.m-info{
+    padding: 5px 13px;
 }
 .m-title{
     text-align: center;
@@ -21,49 +24,17 @@ body{
     color: #999;
     font-size: 14px;
 }
-
-.g-bd .weui-flex{
-    box-sizing: border-box;
-    align-items: center;
-    background-color: #fff;
-    width: 100%;
-    padding: 22px 15px;
-}
-.g-bd .weui-flex .item{
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-}
-.g-bd .weui-flex .icon{
-    width: 30px;
-    height: 30px;
-}
 .cell-title{
     margin-top: .77em;
     margin-bottom: .3em;
     padding-left: 7px;
     padding-right: 15px;
-    color: #999999;
+    color: #999;
     font-size: 16px;
 }
-.flex-container{
-    margin-bottom: 30px;
+.weui-btn_disabled{
+    color: #999 !important;
 }
-.flex-container .hidden-item{
-    border-top: 1px solid #ddd;
-    text-align: center;
-    background-color: #fff;
-    padding: 10px 0px;
-    display: none;
-}
-.flex-container .hidden-item img{
-    width: 60%;
-}
-.flex-container .hidden-item .weui-cells{
-    font-size: 15px;
-    text-align: left;
-}
-
 .icon-box {
     margin-bottom: 25px;
     display: -webkit-box;
