@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机构码生成后台</title>
+</head>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="jquery.min.js"></script>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .g-bd{
+        width: 560px;
+        margin: 0 auto;
+    }
+    .g-bd h1{
+        text-align: center;
+    }
+    .g-bd form{
+        margin: 40px 0;
+    }
+    .result{
+        text-align: center;
+        background: #f2f2f2;
+        padding: 30px;
+    }
+    .result p{
+        font-size: 18px;
+        margin: 7px 0;
+    }
+    .result span{
+        color: #888;
+    }
+</style>
+<body>
+     <div class="g-bd">
+        <h1>激活码生成工具</h1>
+         <form>
+             <div class="form-group">
+                <label>请输入机构代码</label>
+                <input type="text" class="form-control" id="school_code">
+             </div>
+             <div class="form-group">
+                <label>请输入要生成的激活码数量</label>
+                <input type="text" class="form-control" id="code_number">
+             </div>
+             <button type="submit" class="btn btn-default" id="generate">生成</button>
+         </form>
+         <div class="result" id="result">
+            <span>生成区</span>
+         </div>
+     </div>
+     <script>
+         $(function(){
+            var apiGenerate = '/api/1.0/coupon/generate';
+
+            $('#generate').on('click',function(e){
+                e.preventDefault();
+                var school_code = $('#school_code').val(),
+                    code_number = $('#code_number').val();
+                var d = {
+                    'school_code':school_code,
+                    'number_of_coupons':parseInt(code_number)
+                }
+                console.log(JSON.stringify(d))
+                if(school_code==''||code_number==''){
+                    alert('请输入正确数据')
+                }else{
+                    $.ajax(apiGenerate,{
+                        'data': JSON.stringify(d),
+                        'type': 'POST',
+                        'processData': false,
+                        'contentType': 'application/json',
+                        'success': function(data){
+                            if(data.data.coupons){
+                                $('#result').empty();
+                                for(var i =0; i < data.data.coupons.length; i++){
+                                    var s = '<p>'+data.data.coupons[i]+'</p>';
+                                    $('#result').append(s);
+                                }
+                            }else{
+                                alert('生成失败')
+                            }
+                        }
+                    })
+                }
+            })
+
+         });
+     </script>
+</body>
+</html>
