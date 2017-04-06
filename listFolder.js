@@ -12,26 +12,34 @@ const fs = require('fs')
 // })
 const baseDir = '/Users/sunzhaopeng/WebProjects/element-spa-sample'
 let finalObj = {}
-let layerCount = 0
 
 
 let listFolder = (dir,parentObj) => {
-    let childObj = {}
     let count = 0
 
     let files = fs.readdirSync(dir)
 
     for(let i = 0; i < files.length; i++){
+        let childObj = {}
+        let tempObj = {
+            name: '',
+            isFile: '',
+            subDir: {}
+        }
         let stat = fs.statSync(dir+'/'+files[i])
 
-        if(files[i].substr(0,1)!=='.') continue
+        if(files[i].substr(0,1)=='.') continue
+
+        tempObj.name = files[i]
 
         if(stat.isDirectory()){
-            childObj[count++] = listFolder(dir+'/'+files[i],childObj)
+            tempObj.isFile = false
+            tempObj.subDir = listFolder(dir+'/'+files[i],childObj)
+            parentObj[count++] = tempObj
         }else{
-            childObj[count++] = files[i]
+            tempObj.isFile = true
+            parentObj[count++] = tempObj
         }
-        parentObj[files[i]] = childObj
     }
     return parentObj
 }
