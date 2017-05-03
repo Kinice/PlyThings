@@ -1,0 +1,22 @@
+1. 进入 http://nodejs.cn/download/，下载 node windows系统(.msi) 版本，32位64位请参考自己的电脑。
+
+2. 打开.msi文件安装
+
+3. 开始菜单->运行->输入框内输入cmd->回车，会打开一个命令提示符窗口
+
+4. 请先验证node是否验证成功：在命令提示符窗口内输入 node -v，看是否出现v几点几，不成功的话要重新安装
+
+5. 成功的话，在里面输入以下的代码：
+
+    npm install -g browser-sync
+
+   这是一个下载代码，等待下载完成。
+
+6. 将Hawaii课件（hawaii_demo文件夹）放到“我的文档”文件夹里
+
+7. 在命令提示符里输入：
+
+   cd hawaii_demo
+   browser-sync start --server
+
+   ok大功告成帅到爆炸
