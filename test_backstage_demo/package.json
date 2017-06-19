@@ -13,5 +13,9 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.1",
     "gulp-less": "^3.3.0"
+  },
+  "dependencies": {
+    "materialize-css": "^0.98.2",
+    "normalize.css": "^7.0.0"
   }
 }

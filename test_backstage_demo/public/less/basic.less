@@ -1,0 +1,70 @@
+//public style
+@headerHeight: 65px;
+@baseColor: #324057;
+@mainColor: #eff2f7;
+
+.clearfix { &:after{content: "."; display: block; height:0; clear:both; visibility: hidden;};zoom:1; }
+
+//body
+html,body{
+    -webkit-font-smoothing:antialiased;
+    height: 100%;
+}
+
+//header
+.g-hd{
+    background-color: @baseColor;
+    height: @headerHeight;
+    line-height: @headerHeight;
+    min-width: 875px;
+    color: #fff;
+    .title{
+        float: left;
+        font-size: 26px;
+        margin: 0 40px;
+        line-height: @headerHeight;
+    }
+    .hd-func{
+        float: right;
+        margin-right: 50px;
+        .hd-user{
+            display: inline-block;
+            padding-right: 15px;
+            vertical-align: top;
+        }
+        .hd-exit{
+            display: inline-block;
+            padding-left: 15px;
+            vertical-align: top;
+        }
+        .hd-line{
+            font-size: 30px;
+            font-weight: 100;
+        }
+    }
+}
+
+//body
+.g-bd{
+    position: absolute;
+    top: @headerHeight;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0 !important;
+    .g-side{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 200px;
+        background-color: #eff2f7;
+    }
+    .g-main{
+        position: relative;
+        margin-left: 200px;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
