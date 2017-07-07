@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/reset.css">
+        <link rel="stylesheet" href="../static/css/new-page.css">
+        <title>专属课管老师</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px';
+        </script>
+        <div class="g-bd">
+            <div class="g-sec m-teacher-con">
+                <h1 class="teacher-title">专属课管老师</h1>
+                <img src="../static/images/teacher2.jpg" class="teacher-head" id="thd">
+                <div class="teacher-name">
+                    <h2>陈老师</h2>
+                </div>
+            </div>
+            <div class="g-sec m-qrcode">
+                <div class="qr-intro">
+                    长按扫码，及时解答
+                </div>
+                <img src="../static/images/qr.jpg" class="qrcode">
+                <div class="u-ft-intro">
+                    客服电话: 010-59453732  工作时间10:00~19:00
+                </div>
+            </div>
+        </div>
+        <script>
+            var arr = [1,2]
+            var thd = document.getElementById('thd')
+            thd.src = '../static/images/teacher' + (arr[Math.floor(Math.random()*arr.length)]==0?1:arr[Math.floor(Math.random()*arr.length)]) + '.jpg'
+        </script>
+    </body>
+</html>
