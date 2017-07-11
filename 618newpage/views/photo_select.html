@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>Photo Select</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/photo_select.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_bp0j6z07pagiudi.css">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
+    <script src="../static/js/jQuery.min.js"></script>
+</head>
+<body>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px';
+    </script>
+    <div class="g-photo-select">
+        <div class="img-con">
+        </div>
+        <div class="g-photo-confirm">
+            <a href="#" class="cancel">
+                取消
+            </a>
+            <a href="#" class="confirm">
+                完成
+            </a>
+        </div>
+    </div>
+    <script>
+        var imglist = [
+            '../static/images/teacher2.jpg',
+            '../static/images/teacher1.jpg'
+        ]
+        var num = {
+            beauty: 0,
+            ugly: 0
+        }
+        for(var i = 0; i < 1000; i++){
+            var ran = (imglist[Math.floor(Math.random()*imglist.length)]),
+                rannum = Math.floor(Math.random()*imglist.length)
+            if(rannum == 0) num.beauty++
+            else if(rannum == 1) num.ugly++
+
+            $('.img-con').append('<div class="img-item"><img src="'+ran+'"><div class="f-select-con"><i class="f-select iconfont icon-test"></i></div></div>')
+        }
+        console.log(num)
+    </script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+    <script src="../static/js/imgPrev.js"></script>
+    <script src="../static/js/photo_select.js"></script>
+</body>
+</html>
