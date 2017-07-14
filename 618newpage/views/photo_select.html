@@ -26,27 +26,28 @@
             </a>
         </div>
     </div>
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+    <script src="../static/js/imgPrev.js"></script>
+    <script src="../static/js/photo_select.js"></script>
     <script>
         var imglist = [
             '../static/images/teacher2.jpg',
             '../static/images/teacher1.jpg'
         ]
-        var num = {
-            beauty: 0,
-            ugly: 0
-        }
-        for(var i = 0; i < 1000; i++){
-            var ran = (imglist[Math.floor(Math.random()*imglist.length)]),
-                rannum = Math.floor(Math.random()*imglist.length)
-            if(rannum == 0) num.beauty++
-            else if(rannum == 1) num.ugly++
+        for(var i = 0; i < 23; i++){
+            var ran = (imglist[Math.floor(Math.random()*imglist.length)])
 
             $('.img-con').append('<div class="img-item"><img src="'+ran+'"><div class="f-select-con"><i class="f-select iconfont icon-test"></i></div></div>')
         }
-        console.log(num)
+        var config = {
+            maxCount : 10,
+            setCount : 7
+        }
+        var photo_select = new photoSelect(config)
+
+        $('.confirm').click(function(){
+            console.log(photo_select.selectResult)
+        })
     </script>
-    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
-    <script src="../static/js/imgPrev.js"></script>
-    <script src="../static/js/photo_select.js"></script>
 </body>
 </html>
