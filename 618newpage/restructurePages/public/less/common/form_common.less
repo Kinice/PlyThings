@@ -1,0 +1,37 @@
+@import url(./common_color.less);
+.clearfix{
+    *zoom: 1;
+    &:after{
+        content: '';
+        display: table;
+        line-height: 0;
+        clear: both;
+    }
+}
+.m-form{
+    padding: 0 .3rem;
+    .input-con{
+        margin-bottom: .4rem;
+        line-height: 1;
+        input,button{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100%;
+            outline: none;
+            height: .9rem;
+            padding: 0 .27rem;
+            font-size: .28rem;
+            -webkit-appearance: none;
+        }
+        input{
+            border: .02rem solid @inputBorder;
+        }
+    }
+    .f-inline{
+        vertical-align: top;
+        .clearfix;
+        &>div{
+            float: left;
+        }
+    }
+}

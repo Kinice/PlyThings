@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/reset.css">
+        <link rel="stylesheet" href="../static/css/login_common.css">
+        <title>用户中心</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px';
+        </script>
+        <div class="g-bd">
+            <div class="g-login-banner"></div>
+            <div class="g-sec">
+                <div class="m-form">
+                    <div class="input-con">
+                        <input type="text" id="mobile" placeholder="请输入您的手机号码">
+                    </div>
+                    <div class="input-con f-inline">
+                        <div class="vcode">
+                            <input type="text" id="code" placeholder="短信验证码">
+                        </div>
+                        <div class="vcode-btn">
+                            <button class="btn" id="sendVcode">获取验证码</button>
+                        </div>
+                    </div>
+                    <div class="input-con">
+                        <button class="btn btn-primary">登 录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

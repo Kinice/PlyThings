@@ -1,0 +1,80 @@
+.clearfix{
+    *zoom: 1;
+    &:after{
+        content: '';
+        display: table;
+        line-height: 0;
+        clear: both;
+    }
+}
+.timepick-radio{
+    .clearfix;
+    padding-left: 5%;
+    &>div{
+        margin-bottom: .3rem;
+        .default{
+            display: block;
+            position: relative;
+            border: .01rem solid #d2d2d2;
+            border-radius: 3px;
+            padding: .16rem 0;
+            text-align: center;
+            cursor: pointer;
+            font-size: .26rem;
+        }
+        .selected{
+            border: .01rem solid #fe573d;
+            &:after{
+                content: '✓';
+                display: block;
+                position: absolute;
+                font-size: 0.32rem;
+                right: 0.02rem;
+                bottom: 0;
+                line-height: 1;
+                color: #fff;
+            }
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                right: -.32rem;
+                bottom: -.32rem;
+                height: 0;
+                width: 0;
+                border-width: .32rem;
+                border-color: transparent transparent transparent #fe573d;
+                border-style: solid;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg)
+            }
+        }
+        .disabled{
+            color: #c9c9c9;
+            &:after{
+                content: '满';
+                display: block;
+                position: absolute;
+                font-size: .18rem;
+                top: 0;
+                left: 0;
+                line-height: 1;
+                padding: .05rem;
+                background: #8f8f8f;
+            }
+        }
+    }
+    .line-three{
+        width: 30%;
+        float: left;
+        margin-right: 3%;
+    }
+    .line-four{
+        width: 22%;
+        float: left;
+        margin-right: 3%;
+    }
+    input[type="checkbox"],input[type="radio"]{
+        display: none;
+    }
+}

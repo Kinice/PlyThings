@@ -1,0 +1,35 @@
+@import url(./common/common_color.less);
+@import url(./common/layout_common.less);
+@import url(./common/form_common.less);
+
+.g-login-banner{
+    width: 100%;
+    height: 3.46rem;
+    background: url(../images/banner1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.g-sec{
+    padding-top: .2rem;
+    .m-form{
+       width: 6rem;
+       margin: 0 auto;
+       padding: .6rem 0 0 0;
+       .f-inline{
+            .vcode{
+                width: 4rem;
+            }
+            .vcode-btn{
+                width: 2rem;
+                button{
+                    background-color: #fff;
+                    border: .02rem solid @inputBorder;
+                    border-left: none;
+                }
+            }
+        }
+        .btn-primary{
+            font-size: .36rem
+        }
+    }
+}

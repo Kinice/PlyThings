@@ -1,0 +1,204 @@
+@musicBase: 0.1rem;
+.f-inline{
+    vertical-align: top;
+    &>div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .vcode{
+        width: 4rem;
+        margin-right: .2rem;
+    }
+    .vcode-btn{
+        width: 2rem;
+    }
+}
+.explain{
+    padding-top: .1rem;
+}
+.m-sec{
+    margin: 0 0 .4rem;
+    .sec-intro{
+        position: relative;
+        font-size: .25rem;
+        text-align: center;
+        padding: .26rem .15rem;
+        border: .05rem dotted #ff3366;
+        border-radius: .12rem;
+        margin: .5rem 0;
+        &:after{
+            content: '';
+            position: absolute;
+            left: -2*@musicBase;
+            top: .8*@musicBase;
+            background-image: url(../img/music.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 8*@musicBase;
+            width: 3*@musicBase;
+        }
+    }
+    .sec-title{
+        background-image: url(../img/title.jpg);
+        background-size: cover;
+        background-position: -.2rem;
+        width: 90%;
+        padding-bottom: .2rem;
+        margin: 0 auto;
+        margin-bottom: .4rem;
+        h2{
+            font-size: .32rem;
+            font-weight: normal;
+            color: #666;
+            text-align: center;
+        }
+    }
+}
+.character-content{
+    width: 100%;
+    margin: .1rem 0 .3rem;
+    .content-left{
+        width: 25%;
+        padding-top: .1rem;
+        line-height: 1;
+        margin-right: 2.5%;
+    }
+    .content-right{
+        width: 70%;
+        h3{
+            font-size: .35rem;
+            font-weight: normal;
+            margin-bottom: .12rem;
+            color: #fe573d;
+        }
+        p{
+            text-align: justify;
+            font-size: .24rem;
+            color: #666;
+        }
+    }
+}
+
+.good-content{
+    width: 100%;
+    margin: .1rem 0 .5rem;
+    .good-banner{
+        margin-bottom: .34rem;
+        line-height: 1;
+    }
+    .good-talk{
+        position: relative;
+        border: .02rem solid #ff3366;
+        border-radius: .1rem;
+        padding: .1rem;
+        text-align: justify;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: -.52rem;
+            left: .8rem;
+            width: 0;
+            height: 0;
+            border-width: .26rem .4rem;
+            border-style: solid;
+            border-color: transparent transparent #ff3366 transparent;
+        }
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: -.5rem;
+            left: .8rem;
+            width: 0;
+            height: 0;
+            border-width: .26rem .4rem;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        p{
+            font-size: .28rem;
+            color: #666;
+        }
+    }
+}
+.expert-row{
+    margin: .2rem 0;
+    .expert-content{
+        width: 30%;
+        text-align: center;
+        line-height: 1;
+        margin-right: 2.5%;
+        &:last-child{
+            margin-right: 0;
+        }
+        h4{
+            font-size: .26rem;
+            font-weight: normal;
+            line-height: 1.6;
+        }
+        p{
+            color: #666;
+            text-align: inherit;
+            font-size: .18rem;
+            line-height: 1.6;
+        }
+    }
+}
+.prize-content{
+    padding: 0 0 .8rem;
+    p{
+        font-size: .28rem;
+        text-align: center;
+        color: #444;
+        margin-bottom: .1rem;
+        span{
+            color: #ee0f3e;
+        }
+    }
+}
+.tip-new{
+    display: inline-block;
+    position: relative;
+    &:after{
+        content: '';
+        display: inline-block;
+        width: .37rem;
+        height: .16rem;
+        background-image: url(../img/new.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: .09rem;
+        right: -.42rem;
+    }
+}
+.getNow{
+    position: fixed;
+    bottom: -1.4rem;
+    left: 0;
+    width: 100%;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    box-shadow: 0 .08rem .28rem #fe573d;
+    background: #fff;
+    align-items: center;
+    transition: bottom .15s ease-out;
+    padding: 0 .8rem;
+    p{
+        font-size: .28rem;
+        display: inline-block;
+        margin-right: 1.4rem;
+    }
+    button{
+        display: inline-block;
+        width: 2.1rem;
+        height: .7rem;
+        line-height: .7rem;
+        font-size: .28rem;
+        p{
+            color: #333;
+            font-size: .32rem;
+        }
+    }
+}

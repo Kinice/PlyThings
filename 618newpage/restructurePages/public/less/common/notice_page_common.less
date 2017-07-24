@@ -1,0 +1,89 @@
+@import url(common_color.less);
+
+.g-notice-bd{
+    height: 100%;
+    padding-top: .65rem;
+    .u-ft-intro{
+        color: @introColor;
+        font-size: .26rem;
+    }
+    .u-normal-intro{
+        color: @introColor;
+        font-size: .28rem;
+        margin: .4rem 0 0;
+        padding: 0 .7rem;
+    }
+    //g`s
+    .g-sec{
+        display: block;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .g-hd{
+        text-align: center;
+        .notice-title{
+            font-size: .40rem;
+            margin-bottom: .1rem;
+        }
+    }
+    //icons
+    .view-icon{
+        display: inline-block;
+        width: 1.7rem;
+        height: 1.7rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-bottom: .4rem;
+    }
+    .icon-ok{
+        background-image: url(../images/oicon2.png);
+    }
+    .icon-book{
+        background-image: url(../images/oicon1.png);
+    }
+    .icon-panda{
+        background-image: url(../images/logo.png);
+        border-radius: 50%;
+    }
+    //btns
+    .g-btn-con{
+        text-align: center;
+        margin-top: 1.6rem;
+        .btn{
+            text-decoration: none;
+            color: @btnColor;
+            display: inline-block;
+            border: .02rem solid @btnColor;
+            padding: .2rem .6rem;
+            font-size: .36rem;
+            border-radius: .57rem;
+            &:link,&:visited,&:hover,&:active{
+                color: @btnColor;
+            }
+        }
+    }
+    //qrs
+    .g-qr-con{
+        text-align: center;
+        .qr{
+            width: 3.8rem;
+        }
+    }
+    //ft
+    .g-ft{
+        margin: .6rem 0;
+        text-align: center;
+    }
+    .g-ft-abs{
+        position: absolute;
+        bottom: .8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        text-align: center;
+    }
+}

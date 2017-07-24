@@ -23,6 +23,7 @@ gulp.task('browser-sync',['script','less'],function(){
         }
     });
     gulp.watch('public/less/*.less',['less']);
+    gulp.watch('public/less/common/*.less',['less']);
     gulp.watch('public/js/*.js',['script']);
     gulp.watch('static/css/*.css').on('change',reload);
     gulp.watch('static/js/*.js').on('change',reload);
