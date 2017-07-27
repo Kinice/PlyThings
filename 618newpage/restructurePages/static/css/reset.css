@@ -21,12 +21,12 @@ body {
 }
 a {
   text-decoration: none;
-  color: #43adff;
+  color: #000;
   transition: color 0.3s ease-out;
 }
 a,
 a:hover {
-  color: #43adff;
+  color: #000;
 }
 abbr[title] {
   border-bottom: 1px dotted;
