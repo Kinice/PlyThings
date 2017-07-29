@@ -1,7 +1,7 @@
 /*reset*/
 html {
   height: 100%;
-  font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: -apple-system-font, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #fff;
 }
@@ -13,7 +13,7 @@ html * {
 body {
   margin: 0;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #333;
   background-color: #fff;
   word-break: break-word;
@@ -225,7 +225,7 @@ textarea::-webkit-input-placeholder {
   background-color: #02c9aa;
 }
 .bd-darkgreen {
-  background-color: #3cbebe;
+  background-color: #0ea984;
 }
 .bd-lightgreen {
   background-color: #3dc4a4;

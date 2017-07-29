@@ -1,0 +1,69 @@
+@import url(./common/layout_common.less);
+@import url(./common/notice_common.less);
+
+.notice-icon{
+    text-align: center;
+    margin-bottom: .2rem;
+    img{
+        width: 1.9rem;
+    }
+}
+
+.notice-notice{
+    text-align: center;
+    font-size: .36rem;
+    font-weight: 500;
+    color: @darkGreen;
+    margin-bottom: .2rem;
+}
+
+.notice-intro{
+    text-align: center;
+}
+
+.notice-btn{
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: .3rem;
+    font-weight: 500;
+    font-size: .30rem;
+    background-image: linear-gradient(170deg,#00f3ab,#00d2ed);
+    padding: .14rem .4rem;
+    box-shadow: .04rem .06rem 0 @boxShadow;
+    &:hover{
+        color: #fff;
+    }
+}
+
+.notice-hr{
+    width: 83%;
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #e0e0e0;
+    margin: .4rem auto;
+}
+
+.notice-says{
+    vertical-align: middle;
+    width: 4.7rem;
+    margin: 0 auto;
+    text-align: center;
+    .says-words{
+        display: inline-block;
+        width: 3.8rem;
+        font-size: .28rem;
+    }
+    span{
+        display: inline-block;
+        font-size: .9rem;
+        color: @lightGrey;
+        font-weight: bold;
+    }
+    .xiayinhao{
+        transform: rotate(180deg) translateY(-.15rem);
+        -webkit-transform: rotate(180deg) translateY(-.15rem);
+    }
+}
