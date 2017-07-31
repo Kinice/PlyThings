@@ -434,6 +434,10 @@ textarea::-webkit-input-placeholder {
 .g-sec .m-form .btn-primary {
   font-size: 0.36rem;
 }
+html,
+body {
+  max-width: 750px;
+}
 .g-bd {
   width: 100%;
   padding-bottom: 1.3rem;
