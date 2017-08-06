@@ -253,6 +253,10 @@ textarea::-webkit-input-placeholder {
   color: #fff;
   background-color: #02c9aa;
 }
+.btn-disabled {
+  color: #fff;
+  background-color: #aaa;
+}
 .btn-simple {
   border: 1px solid #c0c0c0;
   padding: .12rem .28rem;
@@ -370,7 +374,7 @@ textarea::-webkit-input-placeholder {
   margin-bottom: .4rem;
   line-height: 1;
 }
-.m-form .input-con input,
+.m-form .input-con input[type="text"],
 .m-form .input-con button {
   box-sizing: border-box;
   display: inline-block;
@@ -382,8 +386,19 @@ textarea::-webkit-input-placeholder {
   -webkit-appearance: none;
   border-radius: 0;
 }
-.m-form .input-con input {
+.m-form .input-con input[type="text"] {
   border: 0.02rem solid #c0c0c0;
+}
+.m-form .agreement-container {
+  font-size: .28rem;
+}
+.m-form .agreement-container #agreement-checkbox {
+  width: .3rem;
+  height: .3rem;
+  vertical-align: top;
+}
+.m-form .agreement-container .agreement-link {
+  color: #43adff;
 }
 .m-form .f-inline {
   vertical-align: top;
@@ -431,7 +446,8 @@ textarea::-webkit-input-placeholder {
   border-left: none;
   padding: 0 0;
 }
-.g-sec .m-form .btn-primary {
+.g-sec .m-form .btn-primary,
+.g-sec .m-form .btn-disabled {
   font-size: 0.36rem;
 }
 html,

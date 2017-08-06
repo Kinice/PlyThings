@@ -25,11 +25,30 @@
                             <button class="btn" id="sendVcode">获取验证码</button>
                         </div>
                     </div>
+                    <div class="input-con agreement-container">
+                        <input type="checkbox" id="agreement-checkbox"> 我已阅读并同意<a href="#" class="agreement-link">《熊猫陪练教师规章手册》</a>
+                    </div>
                     <div class="input-con">
-                        <button class="btn btn-primary">登 录</button>
+                        <button class="btn btn-disabled" disabled id="login">登 录</button>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            var btn = document.getElementById('login'),
+                checkbox = document.getElementById('agreement-checkbox')
+            checkbox.onchange = function(){
+                if(this.checked){
+                    btn.className = 'btn btn-primary'
+                    btn.disabled = false
+                }else{
+                    btn.className = 'btn btn-disabled'
+                    btn.disabled = true
+                }
+            }
+            btn.onclick = function(){
+                alert('yes!')
+            }
+        </script>
     </body>
 </html>

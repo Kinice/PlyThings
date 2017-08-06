@@ -13,7 +13,7 @@
     .input-con{
         margin-bottom: .4rem;
         line-height: 1;
-        input,button{
+        input[type="text"],button{
             box-sizing: border-box;
             display: inline-block;
             width: 100%;
@@ -24,8 +24,19 @@
             -webkit-appearance: none;
             border-radius: 0;
         }
-        input{
+        input[type="text"]{
             border: .02rem solid @inputBorder;
+        }
+    }
+    .agreement-container{
+        font-size: .28rem;
+        #agreement-checkbox{
+            width: .3rem;
+            height: .3rem;
+            vertical-align: top;
+        }
+        .agreement-link{
+            color: @linkColor;
         }
     }
     .f-inline{

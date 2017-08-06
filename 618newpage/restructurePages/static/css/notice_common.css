@@ -253,6 +253,10 @@ textarea::-webkit-input-placeholder {
   color: #fff;
   background-color: #02c9aa;
 }
+.btn-disabled {
+  color: #fff;
+  background-color: #aaa;
+}
 .btn-simple {
   border: 1px solid #c0c0c0;
   padding: .12rem .28rem;
