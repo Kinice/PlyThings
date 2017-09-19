@@ -78,19 +78,13 @@
         <div class="subtitle">
             及时指导纠错，让孩子在家练琴精力集中、事半功倍
         </div>
-        <div class="video-container" id="playerbox">
-            <script type="text/javascript"> 
-                var yy_player_conf =  {
-                    "vid":"v8bf5a0c5c0bcb14c54c6f1e26fc938b917712212722",
-                    "vquality":"3",
-                    "width":800,
-                    "height":600,
-                    "auto_play":0,
-                    "auto_init":1,
-                    "token":"tgCEAGyY83UBAEmAklkAAAAAOXKSWQAAAADazZ5yA1VJRAMEAI0BAAAHQ09OVEVYVAliAGh0dHA6Ly9yZXN0LnZvZC5odWFuanV5dW4uY29tOjgwL3BsYXlsaXN0L3Y4YmY1YTBjNWMwYmNiMTRjNTRjNmYxZTI2ZmM5MzhiOTE3NzEyMjEyNzIyLzEvNDAwLzMwMC8wBEFVVEgDBAADAAAALXUZW3LathJyOvVzi35vOgdzeu8"
-                };
-            </script>
-            <script type="text/javascript" src="http://vod.huanjuyun.com/ycloudplayer/js/yycloud.js"></script>
+        <div class="video-container">
+            <div class="video-pre" id="video-pre">
+                <div class="video-back" id="video-back"></div>
+            </div>
+            <video controls class="video-box" id="video-box">
+                <source src="http://theone-static.b0.upaiyun.com/videos/熊猫钢琴陪练-20170623.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 
@@ -101,21 +95,109 @@
     <div class="g-sec g-character">
         <div class="cha-line">
             <div class="cha-item">
-                <div class="cha-intro">
+                <div class="cha-intro cha-hide">
                     <h3>名校教师指导</h3>
                     <p>教师团队均来自国内外各大优秀音乐院校钢琴、作曲系，具有3年以上教龄</p>
                 </div>
+                <img src="static/images/pic4.jpg" alt="">
+                <div class="cha-title">名校教师指导</div>
             </div>
             <div class="cha-item">
-                <img src="static/images/pic1.jpg" alt="">
+                <div class="cha-intro cha-hide">
+                    <h3>针对性考级陪练</h3>
+                    <p>针对全国不同城市、不同主办方的考级体系，安排针对性的老师进行陪练辅导</p>
+                </div>
+                <img src="static/images/pic3.jpg" alt="">
+                <div class="cha-title">针对性考级陪练</div>
             </div>
         </div>
         <div class="cha-line">
             <div class="cha-item">
+                <div class="cha-intro cha-hide">
+                    <h3>流畅在线视频</h3>
+                    <p>孩子的手形和老师的示范，通过视频对比，及时纠错，师生互动更顺畅</p>
+                </div>
                 <img src="static/images/pic2.jpg" alt="">
+                <div class="cha-title">流畅在线视频</div>
             </div>
             <div class="cha-item">
-                <img src="static/images/pic3.jpg" alt="">
+                <div class="cha-intro cha-hide">
+                    <h3>使用主课曲谱</h3>
+                    <p>使用带有主课老师的笔记和曲谱，快速直接的了解到孩子的问题所在</p>
+                </div>
+                <img src="static/images/pic1.jpg" alt="">
+                <div class="cha-title">使用主课曲谱</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="g-sec g-teacher">
+        <img src="static/images/bg6.jpg" class="intro-hd">
+        <div class="teacher-container">
+            <div class="teacher-item">
+                <div class="teacher-avartar">
+                    <img src="static/images/teacher4.png" alt="">
+                </div>
+                <div class="teacher-name">
+                    <div class="name">
+                         刚妍
+                    </div>
+                    <div class="sub">
+                        <p>中央音乐学院作曲系博士在读</p>
+                        <p>中国音乐学院作曲系毕业生</p>
+                    </div>
+                </div>
+                <div class="teacher-intro">
+                    教学风格亲切自然，重点突出。重视学生的基础训练及对音乐情绪的把控，善于引导学生将音符转化为个人情感的表达。
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-avartar">
+                    <img src="static/images/teacher3.png" alt="">
+                </div>
+                <div class="teacher-name">
+                    <div class="name">
+                            马硕
+                    </div>
+                    <div class="sub">
+                        <p>中央音乐学院钢琴系</p>
+                    </div>
+                </div>
+                <div class="teacher-intro">
+                    针对中央音乐学院钢琴考级1至9级和乐理视唱练耳有自己教学方式，善于跟孩子交流根据孩子性格进度技巧等制定教学计划。
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-avartar">
+                    <img src="static/images/teacher2.png" alt="">
+                </div>
+                <div class="teacher-name">
+                    <div class="name">
+                        田佳慧
+                    </div>
+                    <div class="sub">
+                        <p>中国音乐学院作曲系硕士</p>
+                    </div>
+                </div>
+                <div class="teacher-intro">
+                        自幼熏陶于祖父田维勤的音乐启蒙，且系统受学于钢琴教育家许玮教授学习钢琴。多次担任各类音乐活动艺术指导，音乐总监，特约作曲，钢琴指导等。
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-avartar">
+                    <img src="static/images/teacher1.png" alt="">
+                </div>
+                <div class="teacher-name">
+                    <div class="name">
+                        杨金子
+                    </div>
+                    <div class="sub">
+                        <p>中国音乐学院作曲系硕士</p>
+                    </div>
+                </div>
+                <div class="teacher-intro">
+                        多次受北京科技大学、北京航空航天大学等高校邀请进行艺术宣讲。2014年参与改编创作的“琴瑟掠光影”音乐会在北京各高校及港澳、美国等地区演出。
+                </div>
             </div>
         </div>
     </div>
@@ -229,5 +311,41 @@
             </div>
         </div>
     </div>
+    <script>
+        function show_video() {
+            var videoBox = document.getElementById('video-box'),
+                videoPre = document.getElementById('video-pre'),
+                videoBack = document.getElementById('video-back')
+            videoPre.addEventListener('click',function(){
+                videoBox.play()
+                this.style.display = 'none'
+                videoBack.style.display = 'none'
+            })
+            videoBox.addEventListener('pause',function(){
+                videoPre.style.display = 'block'
+            })
+            videoBox.addEventListener('play',function(){
+                videoPre.style.display = 'none'
+            })
+            videoBox.addEventListener('click',function(){
+                this.pause()
+            })
+        }
+        function hover_intro() {
+            var intro = document.getElementsByClassName('cha-item')
+            for(var i = 0; i < intro.length; i++){
+                intro[i].addEventListener('mouseover',function(){
+                    this.children[0].className = 'cha-intro cha-show'
+                })
+                intro[i].addEventListener('mouseout',function(){
+                    this.children[0].className = 'cha-intro cha-hide'
+                })
+            }
+        }
+        window.onload = function(){
+            show_video()
+            hover_intro()
+        }
+    </script>
 </body>
 </html>
