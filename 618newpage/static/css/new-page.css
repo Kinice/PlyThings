@@ -1,1 +1,54 @@
-.g-bd{height:100%}.g-bd .u-ft-intro{color:#666;font-size:.26rem}.g-bd .g-sec{display:block;position:relative;width:100%;background-size:cover;background-repeat:no-repeat;background-position:center}.g-bd .m-teacher-con{text-align:center}.g-bd .m-teacher-con .teacher-title{font-weight:400;color:#333;font-size:.4rem;padding:.3rem 0}.g-bd .m-teacher-con .teacher-head{display:inline-block;width:3.4rem;border-radius:50%}.g-bd .m-teacher-con .teacher-name{background-image:url(../images/title.jpg);background-size:cover;background-position:-.2rem;width:2.4rem;padding-bottom:.2rem;margin:20px auto 0;margin-bottom:.4rem}.g-bd .m-teacher-con .teacher-name h2{font-size:.35rem;font-weight:700;color:#666;text-align:center}.g-bd .m-qrcode{text-align:center}.g-bd .m-qrcode .qr-intro{font-size:.38rem;color:#777}.g-bd .m-qrcode .qrcode{width:230px}
+.g-bd {
+  height: 100%;
+}
+.g-bd .u-ft-intro {
+  color: #666;
+  font-size: .26rem;
+}
+.g-bd .g-sec {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.g-bd .m-teacher-con {
+  text-align: center;
+}
+.g-bd .m-teacher-con .teacher-title {
+  font-weight: normal;
+  color: #333;
+  font-size: .4rem;
+  padding: .3rem 0;
+}
+.g-bd .m-teacher-con .teacher-head {
+  display: inline-block;
+  width: 3.4rem;
+  border-radius: 50%;
+}
+.g-bd .m-teacher-con .teacher-name {
+  background-image: url(../images/title.jpg);
+  background-size: cover;
+  background-position: -0.2rem;
+  width: 2.4rem;
+  padding-bottom: .2rem;
+  margin: 20px auto 0;
+  margin-bottom: .4rem;
+}
+.g-bd .m-teacher-con .teacher-name h2 {
+  font-size: .35rem;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+}
+.g-bd .m-qrcode {
+  text-align: center;
+}
+.g-bd .m-qrcode .qr-intro {
+  font-size: .38rem;
+  color: #777;
+}
+.g-bd .m-qrcode .qrcode {
+  width: 230px;
+}
