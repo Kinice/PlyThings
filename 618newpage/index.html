@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indiegogo test</title>
+    <style>
+        .igg-wrapper {
+        height: 300px;
+        width: 900px;
+        margin: 0 auto;
+        }
+
+        .igg-boxes {
+        height: 90%;
+        width: 290px;
+        float: left;
+        background-color: #2E2E1F;
+        margin: 5px 5px 5px 5px;
+        opacity: 0.8;
+        border-radius: 30px;
+        }
+
+        .igg-boxes h2 {
+        color: #FFFFFF;
+        opacity: 1.0;
+        text-align: center;
+        font-size: 35px;
+        }
+
+        .igg-boxes h3 {
+        color: #FFFFFF;
+        opacity: 1.0;
+        text-align: center;
+        font-size: 25px;
+        }
+
+        .igg-boxes p {
+        color: #FFFFFF;
+        opacity: 1.0;
+        text-align: center;
+        font-size: 16px;
+        }
+    </style>
+    <script src="static/js/jQuery.min.js"></script>
+</head>
+<body>
+    <div class="igg-wrapper" id="igg-wrapper">
+
+     </div>
+     <script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        $.getJSON("https://api.indiegogo.com/2/campaigns/2206032/perks.json?api_token=04acbb7a053fc49eda395245a91c44446ed94b5eb3e8a0952190ca2fe4c9ad63",
+
+        function(gogodata) {
+            var perks = gogodata.response;
+            perks.forEach(function(item){
+                var html = '<a href="https://www.indiegogo.com/projects/piano-hi-lite-play-piano-in-3-minutes-music/payments/new" target="_blank"><div class="igg-boxes"><h3>$'+ item.amount +'</h3><h3>'+ item.label +'</h3><p>'+ item.description +'</p></div></a>'
+                //https://www.indiegogo.com/projects/piano-hi-lite-play-piano-in-3-minutes-music/payments/new
+                $('#igg-wrapper').append(html)
+            })
+        });
+     
+        function numberWithCommas(x) {
+         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    })
+     </script>
+</body>
+</html>

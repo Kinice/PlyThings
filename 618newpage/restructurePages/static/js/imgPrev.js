@@ -1,5 +1,5 @@
 ;(function(){
-    var html = '<div class="img-prev-con"><div class="img-prev-close"></div><img class="img-prev"/></div>'
+    var html = '<div class="img-prev-con"><span class="img-prev"></span></div>'
 
     $('.img-con').on('click','.img-item img',function(e){
         var thisImgSrc = this.src
@@ -8,19 +8,7 @@
             $('body').append(html)
         }
 
-        $('.img-prev').attr('src',thisImgSrc)
-
-        if(window.innerHeight<$('.img-prev')[0].naturalHeight){
-            $('.img-prev').css({
-                width: 'auto',
-                height: '100%'
-            })
-        }else{
-            $('.img-prev').css({
-                width: '100%',
-                height: 'auto'
-            })
-        }
+        $('.img-prev').attr('style','background-image: url('+thisImgSrc+')')
 
         $('.img-prev-con').fadeIn()
     })

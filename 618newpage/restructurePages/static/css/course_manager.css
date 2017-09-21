@@ -410,26 +410,11 @@ textarea::-webkit-input-placeholder {
   background-color: #02c9aa;
   color: #fff;
 }
-.notice-footer .notice-qr .qr-intro {
-  display: inline-block;
-  width: 3.7rem;
-  font-size: .28rem;
+.notice-footer .notice-qr p {
+  text-align: center;
 }
-.notice-footer .notice-qr .qr-intro .intro-title {
-  font-size: .31rem;
-  font-weight: 500;
-  margin-bottom: .1rem;
-}
-.notice-footer .notice-qr .qr-code {
-  vertical-align: top;
-  display: inline-block;
-  width: 1.56rem;
-  border: 1px solid #000;
-  border-radius: .2rem;
-  background-color: #fff;
-}
-.notice-footer .notice-qr .qr-code img {
-  border-radius: inherit;
+.notice-footer .notice-qr p.qr-title {
+  margin-bottom: .2rem;
 }
 .notice-footer .notice-qr-shadow {
   position: absolute;
