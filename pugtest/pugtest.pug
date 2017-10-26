@@ -1,0 +1,32 @@
+-var data = 'yoyoyoyoyoyo'
+-var htmlData = '<strong>yuyuyuyuy</strong>'
+
+doctype html
+html
+    head
+            title hello pug 
+    body
+        h1 pug pug
+
+        a.button
+        a(class="button",href="1tai.com",title="壹抬") helloworld
+
+        p.
+            asdasdasdas
+            asdasdadasd
+        p
+            | dfas 
+                strong key
+            | asdasdasda
+            | asdasd
+        title #{data}
+
+        p #{htmlData}
+
+        p!=htmlData
+
+        p !{htmlData}
+
+        p=htmlData
+
+
