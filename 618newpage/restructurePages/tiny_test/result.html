@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/tiny_test.css">
+        <title>音商小测试</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd result-bd">
+            <div class="loading">
+                <div class="circle"></div>
+            </div>
+            <div class="result-container">
+                <div class="result-score">
+                    <div class="score-name">
+                        
+                    </div>
+                    <div class="score-word">
+                        <img src="../static/images/tiny_test/word_score.png">
+                    </div>
+                    <div class="score-img">
+                        
+                    </div>
+                    <div class="score-defeat">
+                        
+                    </div>
+                </div>
+                <div class="result-board">
+                    <div class="levels accomplish">
+                        <div class="level fine">
+                            要加油
+                        </div>
+                        <div class="level good">
+                            不错哦
+                        </div>
+                        <div class="level great">
+                            你真棒
+                        </div>
+                    </div>
+                    <div class="levels knowledge">
+                        <div class="level fine">
+                            要加油
+                        </div>
+                        <div class="level good">
+                            不错哦
+                        </div>
+                        <div class="level great">
+                            你真棒
+                        </div>
+                    </div>
+                    <div class="levels talent">
+                        <div class="level fine">
+                            要加油
+                        </div>
+                        <div class="level good">
+                            不错哦
+                        </div>
+                        <div class="level great">
+                            你真棒
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-get"></div>
+            </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script src="../static/js/test_dict.js"></script>
+        <script>
+            window.onload = function() {
+                var finalScore = JSON.parse(localStorage['finalScore']) || {"accomplish":0 ,"talent":0 ,"knowledge":0 ,"score":0,"percent":"0%","count":0}
+                var accomplish = DICT.items['accomplish'][finalScore.accomplish],
+                    knowledge = DICT.items['knowledge'][finalScore.knowledge],
+                    talent = DICT.items['talent'][finalScore.talent]
+
+                //渲染结果
+                $('.score-name').append(localStorage['name'])
+                $('.score-img').append('<img src="../static/images/tiny_test/scores/'+ finalScore.score +'.png">')
+                if(finalScore.count == 0){
+                    $('.score-defeat').append('一道都没对，你要加油啦！')
+                }else if(finalScore.count == 10){
+                    $('.score-defeat').append('全对了！你遥遥领先，天份十足！')
+                }else{
+                    $('.score-defeat').append('答对<span>'+ finalScore.count +'</span>题，击败<span>'+ finalScore.percent +'</span>的测试者')
+                }
+                $('.accomplish').find('.'+accomplish).addClass('current')
+                $('.knowledge').find('.'+knowledge).addClass('current')
+                $('.talent').find('.'+talent).addClass('current')
+                $('.loading').hide();
+            }
+        </script>
+    </body>
+</html>

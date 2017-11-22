@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/teacher.css">
+        <link rel="stylesheet" href="../static/css/mobileSelect.css">
+        <title>账号注册</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd">
+            <div class="g-header">
+                <div class="back"></div>
+                <div class="title">
+                    账号注册
+                </div>
+                <div class="func close"></div>
+            </div>
+            <section class="g-sec m-signin">
+                <form id="form" action="#" method="POST">
+                    <div class="input-con">
+                        <input type="text" id="name" class="i-name nml-input" placeholder="请输入真实姓名">
+                    </div>
+                    <div class="input-con">
+                        <input type="text" id="mobile" class="i-mobile nml-input" placeholder="请输入手机号">
+                    </div>
+                    <div class="input-con captcha-input">
+                        <input type="text" id="captcha" class="i-captcha" placeholder="短信验证码">
+                        <button class="btn-captcha" id="btn-captcha">获取验证码</button>
+                    </div>
+
+                    <div class="select-con">
+                        <input name="seniority" type="hidden" id="seniority" value="">
+                        <input name="gender" type="hidden" id="gender" value="">
+                        <div class="m-info">
+                            以下信息为必填＊
+                        </div>
+                        <div class="selections">
+                            <div class="select-item" id="select_seniority">
+                                钢琴教龄
+                            </div>
+                            <div class="select-item" id="select_gender">
+                                性别
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-con btn-input">
+                        <button class="btn-submit" id="btn-submit">注册</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script src="../static/js/mobileSelect.min.js"></script>
+        <script src="../static/js/main.js"></script>
+    </body>
+</html>

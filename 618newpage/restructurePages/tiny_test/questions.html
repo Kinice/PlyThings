@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/tiny_test.css">
+        <title>音商小测试</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd question-bd">
+            <div class="loading">
+                <div class="circle"></div>
+            </div>
+            <div class="question-container">
+                <div class="question-index"></div>
+                <div class="question-title"></div>
+                <div class="question-items">
+                    
+                </div>
+                <div class="question-answers">
+                    
+                </div>
+                <div class="question-next"></div>
+            </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script src="../static/js/utils.js"></script>
+        <script src="../static/js/test_dict.js"></script>
+        <script>
+            var answers = {
+                length: 10,
+                0: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                },
+                1: {
+                    rightAnswer: 1,
+                    userAnswer: 0
+                },
+                2: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                },
+                3: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                },
+                4: {
+                    rightAnswer: 2,
+                    userAnswer: 0
+                },
+                5: {
+                    rightAnswer: 1,
+                    userAnswer: 0
+                },
+                6: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                },
+                7: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                },
+                8: {
+                    rightAnswer: 1,
+                    userAnswer: 0
+                },
+                9: {
+                    rightAnswer: 0,
+                    userAnswer: 0
+                }
+            }
+            //索引全局变量
+            var index = 0
+            //音频全局变量
+            var audio = new Audio()
+            //正在播放flag
+            var playing = false
+            //渲染题目方法
+            function renderQuestion(questions, index) {
+                $('.question-index').empty().append(index+1)
+                $('.question-title').empty().append(questions[index].title)
+                $('.question-items').empty()
+                if(questions[index].type == 'music'){
+                    var musicHtml = '<div class="music-item" data-music="'+questions[index].path+'"><img src="../static/images/tiny_test/cd.png"><div class="music-tip">点击播放</div></div>'
+                    $('.question-items').append(musicHtml)
+                }else if(questions[index].type == 'image'){
+                    var imageHtml = '<img src="'+questions[index].path+'">'
+                    $('.question-items').append(imageHtml)
+                }
+                $('.question-answers').empty()
+                for(var i = 0; i < 3; i++){
+                    var oneAnswer = '<div class="answer" data-answer="'+i+'">'+ questions[index].answers[i] +'</div>'
+                    $('.question-answers').append(oneAnswer)
+                }
+            }
+            /******* 事件 *******/
+            //答题事件
+            $('.question-answers').on('click','.answer',function() {
+                $(this).siblings('.answer').removeClass('checked')
+                $(this).addClass('checked')
+                answers[index].userAnswer = this.dataset.answer
+            })
+            //下一步事件
+            $('.question-next').click(function() {
+                if($('.question-answers .checked').length <= 0){
+                    UTILS.kalert('请选择答案')
+                    return
+                }
+                index++
+                if(index >= 10){//答题结束时的事情
+                    var finalScore = {
+                        accomplish: 0,
+                        talent: 0,
+                        knowledge: 0,
+                        score: 0,
+                        percent: '0%',
+                        count: 0
+                    }
+                    Array.prototype.forEach.call(answers, function(item, index){
+                        if(item.rightAnswer == item.userAnswer){
+                            finalScore[DICT.questions[index].question_type]++
+                            finalScore.count++
+                        }
+                    })
+                    finalScore.score = DICT.standard[finalScore.count].score
+                    finalScore.percent = DICT.standard[finalScore.count].percent
+                    try{
+                        localStorage['finalScore'] = JSON.stringify(finalScore)
+                    }catch(e){
+                        console.error(e)
+                    }
+                    window.location = '/tiny_test/result.html'
+                }else{
+                    if(playing){
+                        audio.pause()
+                    }
+                    $('.question-answers').removeClass('show')
+                    setTimeout(function(){
+                        renderQuestion(DICT.questions, index)
+                        $('.question-answers').addClass('show')  
+                    },300)
+                }
+            })
+            //播放音乐事件
+            $('.question-items').on('click', '.music-item', function(){
+                if(playing){
+                    playing = false
+                    audio.pause()
+                    $(this).find('img').removeClass('roll')
+                }else{
+                    if(audio){
+                        audio.src = this.dataset.music
+                        audio.play()
+                        $(this).find('img').addClass('roll')
+                    }else{
+                        toast('error')
+                    }
+                }
+            })
+            audio.onplay = function(){
+                playing = true
+            }
+            audio.onpause = function(){
+                playing = false
+                $('.music-item').find('img').removeClass('roll')
+            }
+            //加载后，先渲染第一题，再关闭loading，显示题目
+            window.onload = function() {
+                renderQuestion(DICT.questions, index)
+                $('.loading').hide()
+                $('.question-answers').addClass('show')
+            }
+        </script>
+    </body>
+</html>

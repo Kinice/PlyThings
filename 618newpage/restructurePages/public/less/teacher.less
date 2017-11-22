@@ -1,0 +1,124 @@
+@import url(./reset.less);
+@import url(./common/teacher-signin.less);
+
+html{
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.k-alert{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    .alert-container{
+        background-color: #fff;
+        text-align: justify;
+        min-width: 265px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        border-radius: 5px;
+        .title{
+            text-align: center;
+            color: #000;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .content{
+            color: #666;
+            padding: 20px 0;
+        }
+        .confirm{
+            background-color: #f2a02b;
+            width: 100%;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: .1rem 0;
+            border-radius: .1rem;
+        }
+    }
+}
+.toast{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    background-color: rgba(100, 100, 100, 0.9);
+    padding: 12px 20px;
+    z-index: 999999;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 26px;
+}
+.g-bd{
+    .g-header{
+        height: 1rem;
+        line-height: 1rem;
+        position: relative;
+        box-shadow: 0 0 4px 0 #e0e0e0;
+        .back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1.4rem;
+            background-image: url(../images/teacher/icon_back.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 37%;
+        }
+        .func{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1.4rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 37%;
+        }
+        .close{
+            background-image: url(../images/teacher/icon_close.png);
+        }
+        .title{
+            text-align: center;
+            font-size: .38rem;
+        }
+    }
+    .m-signin{
+        form{
+            input[type="text"]{
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: auto 70%;
+            }
+            .i-name{
+                background-image: url(../images/teacher/icon_name.png)
+            }
+            .i-mobile{
+                background-image: url(../images/teacher/icon_phone.png)
+            }
+            .i-captcha{
+                background-image: url(../images/teacher/icon_lock.png)
+            }
+            .select-con{
+                margin-top: .5rem;
+            }
+            .btn-input{
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}

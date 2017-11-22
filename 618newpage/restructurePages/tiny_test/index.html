@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/tiny_test.css">
+        <title>音商小测试</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd index-bd">
+            <div class="loading">
+                <div class="circle"></div>
+            </div>
+            <div class="index-container">
+                <img src="../static/images/tiny_test/title.png" class="title">
+                <div class="input-con btn-input">
+                    <input type="text" id="name" placeholder="请输入宝宝姓名">
+                </div>
+                <img src="../static/images/tiny_test/word_self.png" class="sub-title">
+                <div class="input-con btn-start" id="start"></div>
+            </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script src="../static/js/utils.js"></script>
+        <script>
+            window.onload = function() {
+                $('.loading').hide();
+                $('.index-container').addClass('show');
+                try{
+                    localStorage['name'] = ''
+                    localStorage['finalScore'] = ''
+                }catch(e){
+                    console.error(e)
+                }
+            }
+            $('#start').click(function(){
+                var name =  $('#name')[0].value
+                if(name == ''){
+                    UTILS.kalert('请先输入宝宝姓名')
+                    return
+                }
+                if(!/^[\u4e00-\u9fa5a-zA-Z\s]{1,10}$/.test(name)){
+                    UTILS.kalert('请最多输入10个字符')
+                    return
+                }
+                try{
+                    localStorage['name'] = name
+                }catch(e){
+                    console.error(e)
+                }
+                location.href = "/tiny_test/questions.html"
+            })
+        </script>
+    </body>
+</html>
