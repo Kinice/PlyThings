@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/invite.css">
+        <title>邀请记录</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd">
+            <div class="g-header">
+                <div class="title">
+                    总奖励学分<span>95</span>
+                </div>
+                <div class="sub-title">
+                    5学分=1节赠课
+                </div>
+                <div class="rules" id="showRules">
+                    查看奖励规则
+                </div>
+                <div class="get-class" id="getClass">
+                    学分兑换
+                </div>
+            </div>
+            <div class="g-main">
+                <div class="table-container">
+                    <div class="table-title">
+                        邀请明细
+                    </div>
+                    <table class="normal">
+                        <thead>
+                            <tr>
+                                <th>好友</th>
+                                <th>已注册</th>
+                                <th>预约未体验</th>
+                                <th>预约已体验</th>
+                                <th>已付费</th>
+                                <th>累计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>兔美酱</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>兔美酱</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>兔美酱酱酱</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>兔美</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 当还没邀请时显示这个 <div class="no-invite">
+                <img src="../static/images/invite/i_inv_logo.png">
+                <div class="invite-word">
+                    还没有邀请记录，快去邀请好友吧～
+                </div>
+                <div class="invite-btn">
+                    立即邀请
+                </div>
+            </div> -->
+            <div class="rule-container">
+                <div class="rule-title">
+                    奖励规则
+                </div>
+                <div class="rule-main">
+                    <div class="main-head">
+                        <span>好友</span>扫描你的二维码
+                    </div>
+                    <div class="close">×</div>
+                    <div class="main-body">
+                        <p>1.预约体验课（未上），得2学分；</p>
+                        <p>2.预约体验课（完成），得4学分；</p>
+                        <p>3.购买陪练课程，根据好友课包课时数赠送15-50不等的学分；</p>
+                        <p>4.学分可以累积，5学分可以兑换1节赠课。</p>
+                        <p>5.赠课统一月底发放。</p>
+                    </div>
+                </div>
+                <div class="rule-foot">
+                    · 本活动最终解释权归熊猫钢琴陪练所有
+                </div>
+            </div>
+        </div>
+        
+        <script src="../static/js/jQuery.min.js"></script>
+        <script src="../static/js/utils.js"></script>
+        <script>
+            $(function(){
+                $('#getClass').click(function(){
+                    UTILS.kprompt('请输入要兑换的赠课数（5学分=1节赠课）',function(ele){
+                        var value = parseInt(ele.value)
+                        if(isNaN(value)){
+                            UTILS.kalert('请输入数字！')
+                            return
+                        }
+                        if(value > 30){
+                            UTILS.kalert('一次性兑换过多！')
+                            return
+                        }
+                        var url = '/badboy/hey'
+                        var params = {
+                            mobile: '13126882233',
+                            number: value
+                        }
+                        $.post(url, params, function (res) {
+                            var res = JSON.parse(res);
+                            if (res.code == 0) {
+                                UTILS.kalert('兑换成功',function(){
+                                    window.location.reload()
+                                });
+                            } else {
+                                UTILS.kalert(res.message);
+                            }
+                        });
+                    })
+                })
+                $('#showRules').click(function(){
+                    $('.rule-container').fadeIn('200')
+                })
+                $('.rule-container .close').click(function(){
+                    $('.rule-container').fadeOut('200')
+                })
+                $('.invite-btn').click(function(){
+                    WeixinJSBridge.call('closeWindow');
+                })
+            })
+        </script>
+    </body>
+</html>

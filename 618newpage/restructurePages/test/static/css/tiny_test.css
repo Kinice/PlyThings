@@ -267,21 +267,21 @@ html {
   border-radius: .1rem;
 }
 .index-bd {
-  background-image: url(../images/tiny_test/bg_1.jpg);
+  background-image: url(../images/bg_1.jpg);
 }
 .question-bd {
-  background-image: url(../images/tiny_test/bg_2.jpg);
+  background-image: url(../images/bg_2.jpg);
   padding-top: 1.9rem;
 }
 .result-bd {
-  background-image: url(../images/tiny_test/bg_3.jpg);
+  background-image: url(../images/bg_3.jpg);
   padding-top: 1.9rem;
 }
 .g-bd {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 .g-bd .loading {
   width: 100%;
@@ -342,16 +342,16 @@ html {
   background: transparent;
 }
 .g-bd .index-container .btn-input {
-  background-image: url(../images/tiny_test/btn_input.png);
+  background-image: url(../images/btn_input.png);
   margin: 1rem auto 0;
 }
 .g-bd .index-container .btn-start {
   display: block;
-  background-image: url(../images/tiny_test/btn_start.png);
+  background-image: url(../images/btn_start.png);
   margin: .1rem auto 0;
 }
 .g-bd .question-container {
-  background-image: url(../images/tiny_test/bg_board.png);
+  background-image: url(../images/bg_board.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 5.9rem;
@@ -401,18 +401,18 @@ html {
 .g-bd .question-container .question-answers .answer {
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(../images/tiny_test/btn_ans.png);
+  background-image: url(../images/btn_ans.png);
   background-position: center;
   height: .66rem;
   line-height: .66rem;
   margin-top: .33rem;
 }
 .g-bd .question-container .question-answers .checked {
-  background-image: url(../images/tiny_test/btn_ans_check.png);
+  background-image: url(../images/btn_ans_check.png);
 }
 .g-bd .question-container .question-next {
   display: block;
-  background-image: url(../images/tiny_test/btn_ok.png);
+  background-image: url(../images/btn_ok.png);
   margin: .35rem auto 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -454,7 +454,7 @@ html {
   width: 5.33rem;
   height: 3.03rem;
   margin: .2rem auto 0;
-  background-image: url(../images/tiny_test/bg_talent.png);
+  background-image: url(../images/bg_talent.png);
   background-repeat: no-repeat;
   background-size: contain;
   padding-top: .6rem;
@@ -482,25 +482,10 @@ html {
 }
 .g-bd .result-container .btn-get {
   display: block;
-  background-image: url(../images/tiny_test/btn_get.png);
+  background-image: url(../images/btn_get.png);
   margin: .5rem auto 0;
   background-repeat: no-repeat;
   background-size: contain;
   width: 4.6rem;
   height: 1.1rem;
-  position: relative;
-  padding-bottom: .6rem;
-  box-sizing: content-box;
-}
-.g-bd .result-container .btn-get:after {
-  content: '';
-  display: block;
-  background-image: url(../images/tiny_test/word_share.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height: 0.44rem;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
 }

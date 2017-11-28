@@ -331,31 +331,13 @@ html {
   background-image: url(../images/new_index/banner1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  height: 4.78rem;
 }
-.index-bd .index-banner .banner-detail {
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: .52rem .12rem .52rem .3rem;
-}
-.index-bd .index-banner .banner-detail p {
-  font-size: .28rem;
-  font-weight: 500;
-  text-indent: 0.23rem;
-}
-.index-bd .index-banner .banner-detail h2 {
-  margin: .2rem 0 .15em 0;
-  font-size: .35rem;
-  font-weight: 500;
-  color: #1eccb5;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-  background-image: -webkit-linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-}
-.index-bd .index-banner .banner-detail .ask {
-  background-image: url(../images/new_index/i-right.png);
+.index-bd .index-banner-2 {
+  background-image: url(../images/new_index/banner4.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center;
-  background-size: auto .26rem;
+  height: 3.8rem;
 }
 .index-bd .index-form {
   background-color: #fff;
@@ -424,33 +406,32 @@ html {
   display: inline-block;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-title {
-  background-color: #eaeaea;
   padding: .15rem 0 .05rem .3rem;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-title p {
-  font-size: .27rem;
+  font-size: .3rem;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-title h3 {
   display: inline-block;
   font-size: .3rem;
-  font-weight: 500;
-  margin-left: .7rem;
+  margin-left: .27rem;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-title h3:before {
   content: '';
   width: .45rem;
   height: 1px;
-  background-color: #fff;
+  background-color: #ddd;
   display: inline-block;
   margin-right: .2rem;
   margin-bottom: .1rem;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-word {
-  padding-top: .3rem;
+  padding-top: .1rem;
 }
 .index-bd .index-advance .adv-item .adv-intro .intro-word p {
   font-size: .23rem;
-  text-align: center;
+  padding: 0 .2rem;
+  text-align: left;
 }
 .index-bd .index-intro {
   background-color: #fff;

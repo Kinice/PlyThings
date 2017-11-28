@@ -23,7 +23,7 @@
                         
                     </div>
                     <div class="score-word">
-                        <img src="../static/images/tiny_test/word_score.png">
+                        <img src="../static/images/word_score.png">
                     </div>
                     <div class="score-img">
                         
@@ -70,7 +70,7 @@
                 <div class="btn-get"></div>
             </div>
         </div>
-        <script src="../static/js/jQuery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
         <script src="../static/js/test_dict.js"></script>
         <script>
             window.onload = function() {
@@ -81,7 +81,7 @@
 
                 //渲染结果
                 $('.score-name').append(localStorage['name'])
-                $('.score-img').append('<img src="../static/images/tiny_test/scores/'+ finalScore.score +'.png">')
+                $('.score-img').append('<img src="../static/images/scores/'+ finalScore.score +'.png">')
                 if(finalScore.count == 0){
                     $('.score-defeat').append('一道都没对，你要加油啦！')
                 }else if(finalScore.count == 10){

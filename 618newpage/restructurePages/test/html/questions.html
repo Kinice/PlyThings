@@ -29,7 +29,7 @@
                 <div class="question-next"></div>
             </div>
         </div>
-        <script src="../static/js/jQuery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
         <script src="../static/js/utils.js"></script>
         <script src="../static/js/test_dict.js"></script>
         <script>
@@ -88,7 +88,7 @@
                 $('.question-title').empty().append(questions[index].title)
                 $('.question-items').empty()
                 if(questions[index].type == 'music'){
-                    var musicHtml = '<div class="music-item" data-music="'+questions[index].path+'"><img src="../static/images/tiny_test/cd.png"><div class="music-tip">点击播放</div></div>'
+                    var musicHtml = '<div class="music-item" data-music="'+questions[index].path+'"><img src="../static/images/cd.png"><div class="music-tip">点击播放</div></div>'
                     $('.question-items').append(musicHtml)
                 }else if(questions[index].type == 'image'){
                     var imageHtml = '<img src="'+questions[index].path+'">'
