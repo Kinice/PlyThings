@@ -15,7 +15,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader'
+            scss: 'vue-style-loader!css-loader!sass-loader!less-loader'
           }
         }
       },
@@ -27,6 +27,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.(png|jpg|gif|svg)|((eot|woff|ttf|svg)[\?]?.*)$/,
