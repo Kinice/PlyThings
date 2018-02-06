@@ -1,0 +1,1 @@
+webpackJsonp([9],{1032:function(e,t,n){e.exports=n(1033)},1033:function(e,t){Object.defineProperty(window,"ppea",{enumerable:!0,configurable:!0,writable:!1,value:{testcall:function(){document.write("You called testcall!")}}})}},[1032]);
