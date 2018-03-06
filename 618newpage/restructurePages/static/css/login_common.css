@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -295,7 +296,8 @@ textarea::-webkit-input-placeholder {
   background-color: #fff;
   margin-bottom: .2rem;
   padding: 0 .4rem 1px;
-  box-shadow: 0 0 .07rem #ddd;
+  -webkit-box-shadow: 0 0 .07rem #ddd;
+          box-shadow: 0 0 .07rem #ddd;
 }
 .m-card .card-title {
   padding: .35rem 0;
@@ -400,7 +402,8 @@ textarea::-webkit-input-placeholder {
 }
 .m-form .input-con input[type="text"],
 .m-form .input-con button {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   width: 100%;
   outline: none;

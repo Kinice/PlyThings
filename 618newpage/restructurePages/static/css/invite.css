@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -318,8 +319,8 @@ html {
 .g-bd .g-header {
   position: relative;
   background: #ffaf0b;
+  background: -webkit-gradient(linear, left top, right top, from(#ffbd04), to(#ff7a08));
   background: linear-gradient(to right, #ffbd04, #ff7a08);
-  background: -moz-linear-gradient(to right, #ffbd04, #ff7a08);
   background: -o-linear-gradient(to right, #ffbd04, #ff7a08);
   height: 3.2rem;
   padding-top: .7rem;
@@ -405,7 +406,8 @@ html {
   font-size: .43rem;
   border-radius: .5rem;
   border: .04rem solid #FFCC66;
-  box-shadow: 0 0 .15rem .05rem #FFAD8A;
+  -webkit-box-shadow: 0 0 .15rem .05rem #FFAD8A;
+          box-shadow: 0 0 .15rem .05rem #FFAD8A;
   color: #fff;
   display: inline-block;
   margin-top: .45rem;
@@ -423,7 +425,8 @@ html {
   border: .04rem solid #ffd47e;
   border-radius: .3rem;
   color: #fff;
-  box-shadow: 0 0 .15rem 0 #FC8A56;
+  -webkit-box-shadow: 0 0 .15rem 0 #FC8A56;
+          box-shadow: 0 0 .15rem 0 #FC8A56;
 }
 .g-bd .rule-container .rule-title {
   position: absolute;
@@ -438,7 +441,8 @@ html {
   font-weight: bold;
   border-radius: .5rem;
   border: .04rem solid #feb928;
-  box-shadow: 0 0 .15rem .05rem #FA7B44;
+  -webkit-box-shadow: 0 0 .15rem .05rem #FA7B44;
+          box-shadow: 0 0 .15rem .05rem #FA7B44;
 }
 .g-bd .rule-container .close {
   position: absolute;
@@ -452,7 +456,8 @@ html {
   width: .6rem;
   line-height: .495rem;
   border-radius: 50%;
-  box-shadow: 0 0 .2rem .08rem #FFCBB6;
+  -webkit-box-shadow: 0 0 .2rem .08rem #FFCBB6;
+          box-shadow: 0 0 .2rem .08rem #FFCBB6;
   vertical-align: middle;
   text-align: center;
   vertical-align: top;
@@ -497,5 +502,6 @@ html {
   -webkit-transform: translate(-50%, -50%);
   background-color: #fec029;
   border-radius: 50%;
-  box-shadow: 0 0 .15rem .05rem #FDBBA1;
+  -webkit-box-shadow: 0 0 .15rem .05rem #FDBBA1;
+          box-shadow: 0 0 .15rem .05rem #FDBBA1;
 }

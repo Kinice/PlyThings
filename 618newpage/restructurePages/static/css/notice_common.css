@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -295,7 +296,8 @@ textarea::-webkit-input-placeholder {
   background-color: #fff;
   margin-bottom: .2rem;
   padding: 0 .4rem 1px;
-  box-shadow: 0 0 .07rem #ddd;
+  -webkit-box-shadow: 0 0 .07rem #ddd;
+          box-shadow: 0 0 .07rem #ddd;
 }
 .m-card .card-title {
   padding: .35rem 0;
@@ -393,7 +395,8 @@ textarea::-webkit-input-placeholder {
   position: relative;
   top: -0.6rem;
   border-radius: .2rem;
-  box-shadow: 0 0.13rem 0.5rem #ccc;
+  -webkit-box-shadow: 0 0.13rem 0.5rem #ccc;
+          box-shadow: 0 0.13rem 0.5rem #ccc;
 }
 .notice-footer {
   position: relative;
@@ -450,7 +453,8 @@ textarea::-webkit-input-placeholder {
   font-size: .30rem;
   background-image: linear-gradient(170deg, #00f3ab, #00d2ed);
   padding: .14rem .4rem;
-  box-shadow: 0.04rem 0.06rem 0 #c6c6c6;
+  -webkit-box-shadow: 0.04rem 0.06rem 0 #c6c6c6;
+          box-shadow: 0.04rem 0.06rem 0 #c6c6c6;
 }
 .notice-btn:hover {
   color: #fff;
@@ -515,7 +519,8 @@ textarea::-webkit-input-placeholder {
   border: 1px solid #000;
   padding: .1rem;
   border-radius: 50%;
-  box-shadow: 0.06rem 0.07rem 0 #ccc;
+  -webkit-box-shadow: 0.06rem 0.07rem 0 #ccc;
+          box-shadow: 0.06rem 0.07rem 0 #ccc;
 }
 .notice-card .manager-avatar img {
   border-radius: inherit;

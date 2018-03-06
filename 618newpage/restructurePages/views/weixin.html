@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/weixin.css">
+        <title>我的课程</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd">
+            <div class="g-banner"></div>
+            <div class="g-dashboard">
+                <div class="dash-intro">
+                    Nicole, <span>123456</span>正在参加
+                </div>
+                <div class="dash-class">
+                    <div class="class-name">
+                        趣味编程营
+                    </div>
+                    <div class="class-period">
+                        第十一期
+                    </div>
+                </div>
+                <div class="dash-numbers">
+                    <div class="num-item">
+                        <p class="item-intro">
+                            作品被打开
+                        </p>
+                        <p class="times">
+                            <span>327</span>次
+                        </p>
+                    </div>
+                    <div class="num-item">
+                        <p class="item-intro">
+                            被点赞次数
+                        </p>
+                        <p class="times">
+                            <span>1096</span>次
+                        </p>
+                    </div>
+                    <div class="num-item">
+                        <p class="item-intro">
+                            累计练习小时
+                        </p>
+                        <p class="times">
+                            <span>15.9</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="g-main">
+                <a class="m-list" href="#">
+                    <span class="list-name">
+                        <img src="../images/i-doc.png"> 我的作品
+                    </span>
+                    <span class="list-go">
+                        查看 <img src="../images/i-right.png">
+                    </span>
+                </a>
+                <a class="m-list" href="javascript:void(0)" id="changePassword">
+                    <span class="list-name">
+                        <img src="../images/i-lock.png"> 修改密码
+                    </span>
+                    <span class="list-go">
+                        
+                    </span>
+                </a>
+                <a class="m-list" href="#">
+                    <span class="list-name">
+                        <img src="../images/i-what.png"> 阅读常见问题FAQ
+                    </span>
+                    <span class="list-go">
+                        查看 <img src="../images/i-right.png">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="popup">
+            <div id="mask"></div>
+            <div class="change-pass-con">
+                <h3 class="pass-title">
+                    修改密码
+                </h3>
+                <input type="password" id="password" placeholder="新密码不少于6位">
+                <button id="confirm">确认</button>
+            </div>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script>
+            //url和其他数据
+            var url = '/student/changePassword'
+            var stu_id = 1
+            //utils
+            function toast(content, timeout){
+                content = content || ''
+                timeout = timeout || 2000
+            
+                var html = document.createElement('div')
+                html.className = 'toast'
+                html.innerHTML = content
+
+                $('body').append(html)
+                $('.toast').fadeIn(300)
+                setTimeout(function(){
+                    $(html).fadeOut(300,function(){
+                        this.remove()
+                    })
+                },timeout)
+            }
+            function clearOld() {
+                $('#password').val('')
+            }
+            //handlers
+            $('#changePassword').click(function() {
+                $('.popup').fadeIn()
+            })
+
+            $('#mask').click(function() {
+                $('.popup').fadeOut()
+                clearOld()
+            })
+
+            $('#confirm').click(function() {
+                var password = $('#password').val()
+                if(password.length < 6) {
+                    toast('密码长度不少于6位')
+                    return
+                }
+                $.ajax({
+                    url: url,
+                    data: {
+                        stu_id: stu_id,
+                        password: password
+                    },
+                    success: function(data) {
+                        if(data.meta.code == 0) {
+                            $('.popup').fadeOut()
+                            clearOld()
+                            toast('修改成功')
+                        } else {
+                            toast('修改失败')
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err)
+                        toast('修改失败')
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

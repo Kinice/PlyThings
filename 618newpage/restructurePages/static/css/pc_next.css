@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,

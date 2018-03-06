@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -367,14 +368,17 @@ html {
   color: #fff;
   font-size: .34rem;
   padding: .12rem .24rem;
-  box-shadow: 0 .05rem .1rem 0 #bbb;
+  -webkit-box-shadow: 0 .05rem .1rem 0 #bbb;
+          box-shadow: 0 .05rem .1rem 0 #bbb;
 }
 .index-bd .index-form form .captcha-input input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 4rem;
 }
 .index-bd .index-form form .captcha-input button {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 1.5rem;
   padding: .18rem 0;
   background-color: transparent;
@@ -394,7 +398,8 @@ html {
   width: 6.8rem;
   margin: .4rem auto 0;
   background-color: #fff;
-  box-shadow: 0 .06rem .2rem 0 #ccc;
+  -webkit-box-shadow: 0 .06rem .2rem 0 #ccc;
+          box-shadow: 0 .06rem .2rem 0 #ccc;
 }
 .index-bd .index-advance .adv-item img {
   width: 50%;

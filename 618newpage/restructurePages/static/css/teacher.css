@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -295,14 +296,16 @@ textarea::-webkit-input-placeholder {
   clear: both;
 }
 .m-signin form .captcha-input input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 4rem;
   float: left;
 }
 .m-signin form .captcha-input button {
   font-size: .26rem;
   margin-top: .1rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: right;
   width: 1.7rem;
   padding: .1rem .1rem;
@@ -382,7 +385,8 @@ html {
   height: 1rem;
   line-height: 1rem;
   position: relative;
-  box-shadow: 0 0 4px 0 #e0e0e0;
+  -webkit-box-shadow: 0 0 4px 0 #e0e0e0;
+          box-shadow: 0 0 4px 0 #e0e0e0;
 }
 .g-bd .g-header .back {
   position: absolute;

@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -295,7 +296,8 @@ textarea::-webkit-input-placeholder {
   background-color: #fff;
   margin-bottom: .2rem;
   padding: 0 .4rem 1px;
-  box-shadow: 0 0 .07rem #ddd;
+  -webkit-box-shadow: 0 0 .07rem #ddd;
+          box-shadow: 0 0 .07rem #ddd;
 }
 .m-card .card-title {
   padding: .35rem 0;
@@ -400,7 +402,8 @@ textarea::-webkit-input-placeholder {
 }
 .m-form .input-con input[type="text"],
 .m-form .input-con button {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   width: 100%;
   outline: none;
@@ -494,7 +497,9 @@ body {
 .sec-form .m-form .input-con input,
 .sec-form .m-form .input-con .vcode-btn button {
   border-width: 1px;
-  border-image: linear-gradient(#5ef6c8, #16c6e1) 2;
+  -o-border-image: linear-gradient(#5ef6c8, #16c6e1) 2;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#5ef6c8), to(#16c6e1)) 2;
+     border-image: linear-gradient(#5ef6c8, #16c6e1) 2;
   border-image: -webkit-linear-gradient(#5ef6c8, #16c6e1) 2;
 }
 .sec-form .m-form .input-con .btn-gradient {
@@ -571,7 +576,8 @@ body {
   border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: .2rem;
-  box-shadow: 3px 5px 0 rgba(180, 180, 180, 0.55);
+  -webkit-box-shadow: 3px 5px 0 rgba(180, 180, 180, 0.55);
+          box-shadow: 3px 5px 0 rgba(180, 180, 180, 0.55);
 }
 .sec-fixed .fixed-intro {
   color: #fff;

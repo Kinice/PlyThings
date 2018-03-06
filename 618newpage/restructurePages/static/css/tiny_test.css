@@ -22,6 +22,7 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a,
@@ -212,6 +213,16 @@ html {
   max-width: 750px;
   margin: 0 auto;
 }
+@-webkit-keyframes round {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @keyframes round {
   from {
     -webkit-transform: rotate(0deg);
@@ -305,7 +316,8 @@ html {
   -webkit-animation: round 1s infinite linear;
 }
 .g-bd .show {
-  transform: scale(1) !important;
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
 }
 .g-bd .index-container {
   transform: scale(0);
@@ -490,7 +502,8 @@ html {
   height: 1.1rem;
   position: relative;
   padding-bottom: .6rem;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .g-bd .result-container .btn-get:after {
   content: '';

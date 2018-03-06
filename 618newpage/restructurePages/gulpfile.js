@@ -1,13 +1,20 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     browserSync = require('browser-sync').create(),
-    cleancss = require('gulp-clean-css')
-    reload = browserSync.reload;
+    cleancss = require('gulp-clean-css'),
+    reload = browserSync.reload,
+    autoprefixer = require('gulp-autoprefixer')
 
 
 gulp.task('less', function(){
     gulp.src('public/less/*.less')
         .pipe(less())
+        .pipe(autoprefixer({
+            browsers: [
+                '>1%',
+                'last 2 version'
+            ]
+        }))
         //.pipe(cleancss())
         .pipe(gulp.dest('static/css'))
         .pipe(reload({stream:true}));
