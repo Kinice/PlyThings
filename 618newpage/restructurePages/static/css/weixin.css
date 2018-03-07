@@ -225,6 +225,7 @@ textarea::-webkit-input-placeholder {
 }
 .g-master-container {
   background-color: #efeff4;
+  padding-bottom: 1px;
 }
 .g-bd {
   font-size: .31rem;
