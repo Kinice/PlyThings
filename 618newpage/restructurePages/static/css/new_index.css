@@ -536,10 +536,6 @@ html {
   font-size: .43rem;
 }
 .next-bd .next-banner {
-  background-image: url(../images/new_index/banner3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 4.32rem;
   position: relative;
 }
 .next-bd .next-banner .qr {
@@ -548,29 +544,6 @@ html {
   bottom: .2rem;
   width: 1.2rem;
   margin-left: -0.6rem;
-}
-.next-bd .next-steps {
-  padding: .3rem .3rem .45rem;
-}
-.next-bd .next-steps .step-item {
-  margin-top: .55rem;
-  position: relative;
-}
-.next-bd .next-steps .step-item:after {
-  content: '';
-  display: inline-block;
-  background-image: url(../images/new_index/i-arrow.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: .28rem;
-  height: .3rem;
-  position: absolute;
-  bottom: -0.38rem;
-  left: 50%;
-  margin-left: -0.14rem;
-}
-.next-bd .next-steps .step-item:last-child:after {
-  display: none;
 }
 .next-bd .next-sheld .sheld-list {
   text-align: center;
