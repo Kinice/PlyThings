@@ -269,25 +269,30 @@ textarea::-webkit-input-placeholder {
   height: 2rem;
 }
 .g-bd .g-homeworks .homework-list .list-item .homework-status {
+  padding-top: .2rem;
   float: right;
   width: 4rem;
 }
 .g-bd .g-homeworks .homework-list .list-item .homework-status .name {
   font-size: .3rem;
-  padding-top: .2rem;
 }
 .g-bd .g-homeworks .homework-list .list-item .homework-status .nums {
-  margin-top: .8rem;
+  margin-top: .35rem;
 }
 .g-bd .g-homeworks .homework-list .list-item .homework-status .nums img {
   width: .3rem;
 }
+.g-bd .g-homeworks .homework-list .list-item .homework-status .nums:after {
+  display: block;
+  content: '';
+  clear: both;
+}
 .g-bd .g-homeworks .homework-list .list-item .homework-status .nums .like {
   float: left;
-  margin-right: 2rem;
+  width: 1.12rem;
 }
-.g-bd .g-homeworks .homework-list .list-item .homework-status .nums .like:last-child {
-  margin-right: 0;
+.g-bd .g-homeworks .homework-list .list-item .homework-status .nums .viewed {
+  float: right;
 }
 .g-bd .g-master {
   background-color: #fff;

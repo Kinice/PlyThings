@@ -60,21 +60,26 @@
                 .homework-status{
                     .name{
                         font-size: .3rem;
-                        padding-top: .2rem;
                     }
                     .nums{
-                        margin-top: .8rem;
+                        margin-top: .35rem;
                         img{
                             width: .3rem;
                         }
+                        &:after{
+                            display: block;
+                            content: '';
+                            clear: both;
+                        }
                         .like{
                             float: left;
-                            margin-right: 2rem;
-                            &:last-child{
-                                margin-right: 0;
-                            }
+                            width: 1.12rem;
+                        }
+                        .viewed{
+                            float: right;
                         }
                     }
+                    padding-top: .2rem;
                     float: right;
                     width: 4rem;
                 }
