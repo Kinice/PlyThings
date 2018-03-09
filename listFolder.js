@@ -6,7 +6,7 @@
 const fs = require('fs')
 const path = require('path')
 const baseDir = process.cwd()
-const helpTips = '\n用法: node listFolder.js <paths> \n\n      <paths>是目录路径，可以写多个，用空格隔开。'
+const helpTips = '\n用法: node listFolder.js <paths> \n\n<paths>是目录路径，可以写多个，用空格隔开。'
 let dirArr = []
 
 let LISTFUNCTION = (dir,dirCount) => {
