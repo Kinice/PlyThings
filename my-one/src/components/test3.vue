@@ -86,15 +86,15 @@
     }
     .red1{
       background: red;
-      animation:redball 5s infinite linear;
+      animation:redball 5s infinite ease-in;
     }
     .blue1{
       background: blue;
-      animation:blueball 5s infinite linear;
+      animation:blueball 5s infinite ease-in;
     }
     .black1{
       background: black;
-      animation:blackball 5s infinite linear;
+      animation:blackball 5s infinite ease-in;
     }
     @keyframes redball{
       8.33333%,25%{
