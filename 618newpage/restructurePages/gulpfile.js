@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     autoprefixer = require('gulp-autoprefixer')
 
-
 gulp.task('less', function(){
     gulp.src('public/less/*.less')
         .pipe(less())
@@ -15,7 +14,7 @@ gulp.task('less', function(){
                 'last 2 version'
             ]
         }))
-        //.pipe(cleancss())
+        .pipe(cleancss())
         .pipe(gulp.dest('static/css'))
         .pipe(reload({stream:true}));
 });

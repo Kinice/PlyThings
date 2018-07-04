@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/pokemon.css">
+        <title>我的课程</title>
+        <style>
+            .scratch-cover{
+                display: inline-block;
+                position: relative;
+            }
+            .scratch-cover:before{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 60px;
+                height: 60px;
+                margin-left: -30px;
+                margin-top: -30px;
+                background: #686553;
+                border-radius: 50%;
+            }
+            .scratch-cover:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-width: 13px 20px;
+                border-style: solid;
+                border-color: transparent transparent transparent #fff;
+                margin-left: -6.5px;
+                margin-top: -12px;
+                z-index: 10;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd">
+            <div class="common-card">
+                <div class="card-title">
+                    <h2>
+                        Lesson 9：Virtual Pet
+                    </h2>
+                    <p>
+                        2018-05-05 16:53:23  孙扬
+                    </p>
+                </div>
+                <div class="card-main">
+                    <div class="video-con">
+                        <a href="http://share-dev.study-fun.com/?proj_id=16" class="scratch-cover">
+                            <img src="http://static.kinice.top/images/blogimgs/WechatIMG19.jpeg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="common-card">
+                <div class="card-title">
+                    <p>杰森老师点评</p>
+                </div>
+                <div class="card-main">
+                    <div class="comment">
+                        <div class="comment-item">
+                            <div class="avatar">
+                                <img src="../images/jin.jpg">
+                            </div>
+                            <div class="comment-main">
+                                时间会把时间会比较第八十九回本大家哈舍不得回家啊十八大加拿大籍时刻你打开加拿大
+                                <div class="angle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="art-bottom">
+                        <div class="views">
+                            阅读 9 <img src="../images/liked.png"> 9
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="common-card">
+                <div class="adv">
+                    <a href="http://baidu.com">
+                        <img src="../starwarimg/banner.jpg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

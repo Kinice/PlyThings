@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="../static/css/pokemon.css">
+        <title>我的课程</title>
+    </head>
+    <body>
+        <script>
+            document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            window.onresize = function(e){
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / 7.5 + 'px';
+            }
+        </script>
+        <div class="g-bd">
+            <div class="common-card">
+                <div class="card-title">
+                    <h2 class="title">
+                        请先绑定您的账号
+                    </h2>
+                </div>
+                <div class="card-main">
+                    <form action="/web/auth/signup" method="POST" class="form">
+                        <div class="form-item">
+                            <input type="text" class="input-normal input-phone" id="mobile" name="mobile" placeholder="请输入手机号">
+                        </div>
+                        <div class="form-item">
+                            <input type="password" class="input-normal input-phone" id="password" name="password" placeholder="请输入密码">
+                        </div>
+                        <div class="btn-submit-con">
+                            <input type="submit" class="btn-submit" id="bind" value="绑定">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
