@@ -5,6 +5,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 const baseDir = process.cwd()
 const helpTips = '\n用法: node listFolder.js <paths> \n\n      <paths>是目录路径，可以写多个，用空格隔开。'
 let dirArr = []
@@ -49,9 +50,9 @@ let LISTFUNCTION = (dir,dirCount) => {
     try{
         fs.readdirSync(dir)
     }catch(e){
-        return console.error('Error: ',dir,'不是一个有效的路径',helpTips)
+        return console.error(chalk.red('Error: ',dir,'不是一个有效的路径',helpTips))
     }
-    console.log('正在执行第',dirCount+1,'个任务：')
+    console.log(`正在执行第${dirCount+1}个任务：`)
     console.log('正在生成目录树。。。')
     finalObj = listFolder(dir, layer)
     console.log('正在渲染目录列表。。。')
@@ -59,12 +60,12 @@ let LISTFUNCTION = (dir,dirCount) => {
     console.log('正在写入文件：',path.basename(dir),'.txt 。。。')
     fs.writeFile(path.basename(dir)+'.txt', finalStr, (err) => {
         if(err) throw err
-        console.log('写入'+path.basename(dir)+'.txt'+'成功')
+        console.log(chalk.green('写入'+path.basename(dir)+'.txt'+'成功'))
     })
 }
 
 if(process.argv.length == 2){
-    console.log('无路径，默认输出当前目录')
+    console.log(chalk.blue('未输入路径，默认输出当前目录'))
     LISTFUNCTION(baseDir,0)
 }else{
     if(process.argv[2] == '-h'){
