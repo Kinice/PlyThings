@@ -56,8 +56,8 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-animation-delay:-.8s;
-    animation-delay:-.8s;
+    -webkit-animation-delay: -.8s;
+    animation-delay: -.8s;
 }
 @keyframes spinner{
     0%, 100%{
