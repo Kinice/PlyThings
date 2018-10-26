@@ -14,12 +14,18 @@
       <el-button size="mini" @click="$translate.setLang('fr')">FR</el-button>
       <el-button size="mini" @click="$translate.setLang('es')">ES</el-button>
     </div>
+    <calendar></calendar>
   </div>
 </template>
 
 <script>
+  import calendar from '../bse_tools/packages/calendar/calendar.vue'
+  console.log(calendar)
   export default {
-    locales: require('../i18n/Hello.js')
+    locales: require('../i18n/Hello.js'),
+    components: {
+      calendar
+    }
   }
 </script>
 
