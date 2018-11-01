@@ -15,7 +15,7 @@ gulp.task('less', function(){
                 'iOS >= 8'
             ]
         }))
-        .pipe(cleancss())
+        // .pipe(cleancss())
         .pipe(gulp.dest('static/css'))
         .pipe(reload({stream:true}));
 });
