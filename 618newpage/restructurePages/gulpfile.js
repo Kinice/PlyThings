@@ -11,7 +11,8 @@ gulp.task('less', function(){
         .pipe(autoprefixer({
             browsers: [
                 '>1%',
-                'last 2 version'
+                'last 10 version',
+                'iOS >= 8'
             ]
         }))
         .pipe(cleancss())
@@ -34,6 +35,7 @@ gulp.task('browser-sync',['script','less'],function(){
     gulp.watch('static/css/*.css').on('change',reload);
     gulp.watch('static/js/*.js').on('change',reload);
     gulp.watch('*/*.html').on('change',reload);
+    gulp.watch('songshuteacher/*.html').on('change',reload);
 });
 gulp.task('default',['browser-sync'], function(){
     console.log('Mission Complete');
