@@ -34,8 +34,8 @@ gulp.task('browser-sync',['script','less'],function(){
     gulp.watch('public/js/*.js',['script']);
     gulp.watch('static/css/*.css').on('change',reload);
     gulp.watch('static/js/*.js').on('change',reload);
-    gulp.watch('*/*.html').on('change',reload);
-    gulp.watch('songshuteacher/*.html').on('change',reload);
+    gulp.watch('**/*.html').on('change',reload);
+    // gulp.watch('zhuke/*.html').on('change',reload);
 });
 gulp.task('default',['browser-sync'], function(){
     console.log('Mission Complete');
