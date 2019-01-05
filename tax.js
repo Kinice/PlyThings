@@ -1,3 +1,5 @@
+console.log('2019新税法计算器v0.2.1')
+const Readline = require('readline')
 const taxTable = [{
     min: 0,
     max: 36000,
@@ -35,6 +37,7 @@ const taxTable = [{
     sub: 181920
 }]
 const taxTableCounts = [0, 36000, 144000, 300000, 420000, 660000, 960000]
+let [userIncome, userInsurance, userSub] = ''
 
 function getTaxTableIndex(totalIncome) {
     for (let i = 0; i < taxTableCounts.length; i++) {
@@ -62,10 +65,42 @@ function countTax(income = 0, insurance = 0, subcount = 0) {
             month: i,
             tax: tax,
             totalTax: totalTax,
-            totalIncome: totalIncome
+            totalIncome: totalIncome,
+            totalSubIncome: totalIncome - totalTax
         })
     }
     return monthData
 }
 
-console.log(countTax(9000, 695, 0))
+const rl = Readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
+function getReadLine(question) {
+    return new Promise((resolve, reject) => {
+        rl.question(question, (answer) => {
+            answer = parseFloat(answer)
+            if (answer) {
+                resolve(answer)
+            } else {
+                reject('输入错误')
+            }
+        })
+    })
+}
+
+getReadLine('请输入你的月收入：').then(ans => {
+    userIncome = ans
+    return getReadLine('请输入你的五险一金：')
+}).then(ans => {
+    userInsurance = ans
+    return getReadLine('请输入你的总税收减免：')
+}).then(ans => {
+    userSub = ans
+    console.log('结果为:\n')
+    console.log(countTax(userIncome, userInsurance, userSub))
+    process.exit(0)
+}).catch(err => {
+    console.error(err)
+})
