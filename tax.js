@@ -99,7 +99,7 @@ getReadLine('请输入你的月收入：').then(ans => {
 }).then(ans => {
     userSub = ans
     console.log('结果为:\n')
-    console.log(countTax(userIncome, userInsurance, userSub))
+    console.table(countTax(userIncome, userInsurance, userSub))
     process.exit(0)
 }).catch(err => {
     console.error(err)
