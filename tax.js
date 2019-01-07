@@ -103,4 +103,5 @@ getReadLine('请输入你的月收入：').then(ans => {
     process.exit(0)
 }).catch(err => {
     console.error(err)
+    process.exit(0)
 })
