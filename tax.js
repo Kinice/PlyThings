@@ -66,7 +66,7 @@ function countTax(income = 0, insurance = 0, subcount = 0) {
             tax: tax,
             totalTax: totalTax,
             totalIncome: totalIncome,
-            totalSubIncome: totalIncome - totalTax
+            totalSubIncome: totalIncome - totalTax - (insurance * i)
         })
     }
     return monthData
@@ -81,7 +81,7 @@ function getReadLine(question) {
     return new Promise((resolve, reject) => {
         rl.question(question, (answer) => {
             answer = parseFloat(answer)
-            if (answer) {
+            if (answer || answer === 0) {
                 resolve(answer)
             } else {
                 reject('输入错误')
