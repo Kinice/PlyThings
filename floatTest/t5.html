@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float test5 副作用：img的特性导致的多一块儿</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      width: 400px;
+    }
+    .father{
+      width: 400px;
+      border: 1px solid #000;
+      height: 200px;
+    }
+    .float{
+      float: left;
+    }
+    .father img{
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="float">
+      <img src="233.jpg">
+    </div>
+    死啊是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首死啊是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首死啊是看见你的空间安定那是肯德基阿森纳看
+  </div>
+  <p>你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首死啊是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首死啊是看见你的空间安定那是肯德基阿森纳看</p>
+</body>
+</html>

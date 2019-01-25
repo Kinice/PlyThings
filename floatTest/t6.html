@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float test6 流式布局：自适应</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .father{
+      width: 400px;
+      border: 1px solid #000;
+      margin-top: 30px;
+      margin-left: 10px;
+    }
+    .float{
+      float: left;
+    }
+    .father img{
+      height: 100px;
+      width: 100px;
+    }
+    .auto p{
+      margin-left: 110px;
+    }
+    .error p{
+      width: 320px;
+      float: right;
+    }
+    .anime.father {
+      animation: changeWidth 2.5s ease-in-out infinite;
+    }
+    @keyframes changeWidth{
+      0% { width: 400px; }
+      50% { width: 550px; }
+      100% { width: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="float">
+      <img src="233.jpg">
+    </div>
+    <p>是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看</p>
+  </div>
+  <div class="father auto">
+    <div class="float">
+      <img src="233.jpg">
+    </div>
+    <p>是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看</p>
+  </div>
+  <div class="father auto anime">
+    <div class="float">
+      <img src="233.jpg">
+    </div>
+    <p>是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看</p>
+  </div>
+  <div class="father error anime">
+    <div class="float">
+      <img src="233.jpg">
+    </div>
+    <p>是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看单身的空间阿森纳的空间俺是看见的那首是看见你的空间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看间安定那是肯德基阿森纳看</p>
+  </div>
+</body>
+</html>
