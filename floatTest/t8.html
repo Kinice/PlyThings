@@ -15,16 +15,20 @@
     img{
       float: left;
     }
-    span{
+    /*.clearfix{
+      overflow: hidden;
+    }*/
+    .clearfix:after{
+      content: '';
       display: block;
       clear: both;
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="clearfix">
     <img src="233.jpg">
-    <span></span>
+    <p>斯卡升级版的空间啊不是肯德基啊斯巴达克就是大</p>
   </div>
 </body>
 </html>
