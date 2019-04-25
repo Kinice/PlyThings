@@ -1,0 +1,143 @@
+@import url(./reset.less);
+@mainColor: #7661ec;
+body{
+  max-width: 750px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container{
+  .g-sec{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: .8rem 0;
+    .title{
+      text-align: center;
+      &:after{
+        content: '';
+        display: inline-block;
+        width: .55rem;
+        height: 2px;
+        background-color: #c2c2c2;
+      }
+      .main{
+        font-size: .388rem;
+        margin-bottom: .03rem;
+      }
+      .sub{
+        font-size: .436rem;
+        color: @mainColor;
+      }
+    }
+    .left{
+      text-align: left;
+      padding-left: .6rem;
+      &:after{
+        background-color: @mainColor;
+      }
+      .main{
+        font-size: .413rem;
+      }
+      .sub{
+        font-size: .3rem;
+        color: #333;
+      }
+    }
+    .sub-intro{
+      font-size: .25rem;
+      padding: .2rem .6rem;
+    }
+    .img-con{
+      padding: 0 .6rem;
+      margin-top: .4rem;
+      img{
+        width: 100%;
+      }
+    }
+    .download{
+      &>div{
+        margin-bottom: .3rem;
+        font-size: .2778rem;
+        color: #000;
+        width: 2.8rem;
+        border-radius: .08rem;
+        padding: .15rem 0 .15rem .18rem;
+        cursor: pointer;
+        img{
+          width: .3rem;
+          margin-right: .14rem;
+          margin-top: -.05rem;
+        }
+      }
+    }
+  }
+  .sec-1{
+    background-image: url(/images/aipl/banner.jpg);
+    height: 10.24rem;
+  }
+  .sec-2{
+    background-image: url(/images/aipl/download-1.jpg);
+    height: 6.86rem;
+    .download{
+      position: absolute;
+      left: 4.4rem;
+      top: 2.3rem;
+      &>div{
+        background-image: linear-gradient(#f8dc0f, #f5c123);
+      }
+    }
+  }
+  .sec-3{
+    background-image: url(/images/aipl/banner2.jpg);
+    height: 13.33rem;
+    // padding-top: .8rem;
+  }
+  .sec-4{
+    background-image: url(/images/aipl/banner3.jpg);
+    height: 11.41rem;
+  }
+  .sec-6{
+    background-color: #f2f2f2;
+  }
+  .sec-7{
+    .swiper-slide{
+      text-align: center;
+      img{
+        width: 6.3rem;
+      }
+    }
+    .swiper-button-next{
+      background-image: none;
+      width: .38rem;
+      height: .38rem;
+      border-top: 2px solid #6c6c6c;
+      border-right: 2px solid #6c6c6c;
+      transform: rotate(45deg);
+    }
+    .swiper-button-prev{
+      background-image: none;
+      background-image: none;
+      width: .38rem;
+      height: .38rem;
+      border-top: 2px solid #6c6c6c;
+      border-left: 2px solid #6c6c6c;
+      transform: rotate(-45deg);
+    }
+  }
+  .sec-8{
+    background-color: #f2f2f2;
+  }
+  .sec-10{
+    background-image: url(/images/aipl/download-2.jpg);
+    height: 6.1rem;
+    .download{
+      position: absolute;
+      left: 4.4rem;
+      top: 2.8rem;
+      &>div{
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}

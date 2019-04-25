@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- uc 强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ 强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes">
+    <title>小叶子爱练琴</title>
+    <link rel="stylesheet" type="text/css" href="/static/aipl/css/aipl.css">
+    <link rel="stylesheet" type="text/css" href="/static/aipl/css/swiper.min.css">
+    <script src="/static/aipl/js/jquery.min.js"></script>
+    <script src="/static/aipl/js/swiper.min.js"></script>
+    <script>
+      var width = document.documentElement.offsetWidth > 750 ? 750 : document.documentElement.offsetWidth
+      document.documentElement.style.fontSize = width / 7.5 + 'px';
+      window.onresize = function(e){
+        width = document.documentElement.offsetWidth > 750 ? 750 : document.documentElement.offsetWidth
+        document.documentElement.style.fontSize = width / 7.5 + 'px';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="g-sec sec-1"></div>
+      <div class="g-sec sec-2">
+        <div class="download">
+          <div class="ios"><img src="/images/aipl/ios.png">iOS 版下载</div>
+          <div class="android"><img src="/images/aipl/android.png">Android 版下载</div>
+        </div>
+      </div>
+      <div class="g-sec sec-3">
+        <div class="title">
+          <h2 class="main">陪孩子学琴路上</h2>
+          <h3 class="sub">是否面临这些问题？</h3>
+        </div>
+      </div>
+      <div class="g-sec sec-4"></div>
+      <div class="g-sec sec-5">
+        <div class="title left">
+          <h2 class="main">趣味节拍器 练琴有伴奏</h2>
+          <h3 class="sub">从抵触练琴到爱上练琴</h3>
+        </div>
+        <div class="sub-intro">
+          初级曲目使用互动式曲谱加伴奏音乐，并设置闯关练习、评星打分等趣味环节，将练习游戏化，极大提升孩子练琴主动性。
+        </div>
+        <div class="img-con">
+          <img src="/images/aipl/sub1.png">
+        </div>
+      </div>
+      <div class="g-sec sec-6">
+        <div class="title left">
+          <h2 class="main">分段规划练习 突破重点难点</h2>
+          <h3 class="sub">从无从下手到轻松掌握</h3>
+        </div>
+        <div class="sub-intro">
+          针对新曲目练习障碍，安排从分句、分手、到合手进行练习，从慢到快，从乐句到全曲，轻松掌握新曲目，提升孩子读谱能力。
+        </div>
+        <div class="img-con">
+          <img src="/images/aipl/sub2.png">
+        </div>
+      </div>
+      <div class="g-sec sec-7">
+        <div class="title left">
+          <h2 class="main">AI智能纠错、评测打分</h2>
+          <h3 class="sub">从无头绪到针对性练习</h3>
+        </div>
+        <div class="sub-intro">
+          独有的智能检测硬件为孩子纠正错音，从音准、节奏、平稳度、速度、完整性五个维度对练琴效果进行测评打分，并为每一次演奏生成完整评奏报告，让孩子自主练琴有效果。
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/images/aipl/sub3-1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/aipl/sub3-2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/aipl/sub3-3.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <div class="g-sec sec-8">
+        <div class="title left">
+          <h2 class="main">海量曲谱库覆盖主流钢琴教材</h2>
+          <h3 class="sub">从小汤到考级，从入门到专业</h3>
+        </div>
+        <div class="sub-intro">
+          包含从小汤到考级、入门到专业一应俱全的教材及趣味课外的万首曲目，满足不同需求，并提供智能专业辅助，让练琴考级轻轻松松不再艰难。
+        </div>
+        <div class="img-con">
+          <img src="/images/aipl/sub4.png">
+        </div>
+      </div>
+      <div class="g-sec sec-9">
+        <div class="title">
+          <h2 class="main">爱练琴App</h2>
+          <h3 class="sub">为家长算一笔省钱帐</h3>
+        </div>
+        <div class="img-con">
+          <img src="/images/aipl/sub5.png">
+        </div>
+      </div>
+      <div class="g-sec sec-10">
+        <div class="download">
+          <div class="ios"><img src="/images/aipl/ios.png">iOS 版下载</div>
+          <div class="android"><img src="/images/aipl/android.png">Android 版下载</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        speed:600,
+        autoplay: {
+          delay:3000
+        },
+        spaceBetween: 50,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      })
+      $('.ios').on('click', function(e) {
+        window.location.href = 'https://itunes.apple.com/cn/app/id1456213322?mt=8'
+      })
+      $('.android').on('click', function(e) {
+        window.location.href = 'http://static.1tai.com/apps/aipl/aipeilian-1tai-140.apk'
+      })
+    </script>
+  </body>
+</html>
