@@ -318,5 +318,49 @@ body {
 .container .sec-10 .download > div {
   background-color: rgba(255, 255, 255, 0.8);
 }
+.app-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  padding: 0.4rem 0;
+}
+.app-container .app-item {
+  text-align: center;
+  display: block;
+}
+.app-container .app-item img {
+  width: 0.95rem;
+}
+.app-container .app-item .app-name {
+  font-size: 0.24rem;
+  font-weight: 500;
+  margin: 0.08rem;
+}
+.app-container .app-item .intro {
+  font-size: 0.2rem;
+}
+.app-container .app-item .more {
+  font-size: 0.2rem;
+  margin-top: 0.15rem;
+  color: #49367b;
+  border: 1px solid #49367b;
+  display: inline-block;
+  padding: 0 4px;
+  -webkit-border-radius: 0.2rem;
+          border-radius: 0.2rem;
+}
+.app-container .app-1 .app-name {
+  color: #f09c51;
+}
+.app-container .app-2 .app-name {
+  color: #5e2ed4;
+}
+.app-container .app-3 .app-name {
+  color: #a557f4;
+}
 
 /*# sourceMappingURL=maps/aipl.css.map */
