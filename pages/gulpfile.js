@@ -45,7 +45,7 @@ function style(callback) {
         'iOS >= 8'
       ]
     }),
-    // cleancss(),
+    cleancss(),
     sourcemaps.write('maps'),
     gulp.dest(path.join(__dirname, paths.style.dest)),
     reload({

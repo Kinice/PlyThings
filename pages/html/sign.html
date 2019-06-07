@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小叶子爱练琴</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/sign.css">
+    <script src="/static/js/drag-block.js"></script>
+  </head>
+  <body>
+    <style>
+      .con{
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        width: 200px;
+        height: 200px;
+        z-index: 9999;
+        background-color: #821922;
+      }
+    </style>
+    <div style="width: 500px;color: #2a2a2a;max-width: 100%;">
+      <img src="http://static.1tai.com/images/sign/logo.png" style="width: 200px;">
+      <div style="font-size:16px;margin:13px 0 3px">孙兆鹏</div>
+      <div style="font-size:16px">新技术部/软件研发主管</div>
+      <div style="font-size:16px;margin:13px 0 3px">小叶子(北京)科技有限公司</div>
+      <div style="border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;margin-top:10px;padding:15px 0;position: relative;">
+        <div class="con"></div>
+        <div style="display:inline-block;height:20px;line-height:20px;font-size:13px;margin-right:25px">
+          <img src="http://static.1tai.com/images/sign/icon-phone_red.png" style="width:19px;vertical-align:top;margin-right:6px">
+          13126882233
+        </div>
+        <div style="display:inline-block;height:20px;line-height:20px;font-size:13px;margin-right:25px">
+          <img src="http://static.1tai.com/images/sign/icon-web.png" style="width:19px;vertical-align:top;margin-right:6px">
+          www.xiaoyezi.com
+        </div>
+        <div style="display:inline-block;height:20px;line-height:20px;font-size:13px;margin-right:25px">
+          <img src="http://static.1tai.com/images/sign/icon-weixin.png" style="width:19px;vertical-align:top;margin-right:6px">
+          szp_931218
+        </div>
+      </div>
+    </div>
+    <script>
+      if(window.DragBlock) {
+        new DragBlock(document.querySelector('.con'), {
+          useDragBar: false
+        })
+      }
+    </script>
+  </body>
+</html>
