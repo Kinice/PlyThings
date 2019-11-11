@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="keywords" content="钢琴陪练,在线陪练,钢琴陪练网,钢琴在线陪练,钢琴家教,学钢琴,熊猫陪练,熊猫钢琴陪练">
+    <meta name="description" content="熊猫钢琴陪练，在线少儿钢琴陪练专家，国内顶级老师，学历真实可查，双向视频上课， 更准确发现问题，1对1课管+私人助教，一体化教学专属服务。">
+    <meta name="baidu-site-verification" content="rl5XUfaZ4z" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- uc 强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ 强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes">
+    <title>小叶子陪练</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/panda.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+    <link rel="shortcut icon" href="/web/static/images/web_201807/logo-icon.jpg" type="image/x-icon"/>
+    <script src="/web/static/js/zhuge.js?123"></script>
+    <script>
+      zhuge.track("开始加载")
+    </script>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5de3b7dfa473b504a9bda57478478ace";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <!-- 腾讯DMP -->
+    <script>
+      !function(g,d,t,e,v,n,s){if(g.gdt)return;v=g.gdt=function(){v.tk?v.tk.apply(v,arguments):v.queue.push(arguments)};v.queue=[];n=d.createElement(t);n.async=!0;n.src=e;s=d.getElementsByTagName(t)[0];s.parentNode.insertBefore(n,s);}(window,document,'script','//qzonestyle.gtimg.cn/qzone/biz/gdt/dmp/user-action/gdtevent.min.js');
+      gdt('init','1106866808');
+      gdt('track','PAGE_VIEW');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://a.gdt.qq.com/pixel?user_action_set_id=1106866808&action_type=PAGE_VIEW&noscript=1"/>
+    </noscript>
+    <script>
+      var width = document.documentElement.offsetWidth > 750 ? 750 : document.documentElement.offsetWidth
+      document.documentElement.style.fontSize = width / 7.5 + 'px';
+      window.onresize = function(e){
+        width = document.documentElement.offsetWidth > 750 ? 750 : document.documentElement.offsetWidth
+        document.documentElement.style.fontSize = width / 7.5 + 'px';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="g-sec sec-1">
+        <div class="logo"></div>
+        <h1>郎朗推荐小叶子陪练</h1>
+        <div class="subtitle">
+          <h2>让孩子每天主动练琴1小时</h2>
+        </div>
+        <div class="video-block">
+          <div class="note1"></div>
+          <div class="note2"></div>
+          <div class="lang">
+            <div class="play-con" id="play-con"></div>
+          </div>
+        </div>
+        <div class="form-con">
+          <div class="form-title">
+            <h3>点击领取价值599元陪练大礼包</h3>
+          </div>
+          <form class="form">
+            <input type="text" id="mobile" class="phone" placeholder="输入手机号">
+            <div class="captcha-con">
+              <input type="text" id="code" name="code" class="code" placeholder="输入验证码">
+              <button class="btn-captcha" id="wap-captcha">获取验证码</button>
+            </div>
+            <input type="hidden" name="audio" value="<?= $audio ?>" />
+            <input type="hidden" name="from" id="from" value="<?= isset($from)?$from:''; ?>" />
+            <input type="hidden" name="cal" id="cal" value="<?=isset($cal)?$cal:''?>" />
+            <input type="hidden" name="vs" id="vs" value="<?=isset($vs)?$vs:''?>" />
+            <input type="hidden" name="v" id="v" value="<?=isset($v)?$v:''?>" />
+            <input type="hidden" name="referee_id" value="<?= isset($referee_id)?$referee_id:'';?>" />
+            <input type="hidden" name="vari_code" value="<?= $variCode ?>" />
+            <button class="btn" id="wap-getting"></button>
+          </form>
+        </div>
+      </section>
+      <section class="g-sec sec-2">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line">熊猫钢琴陪练升级为<span class="bold">小叶子陪练</span></h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <img src="/images/panda/pic1.jpg" class="main-img" alt="陪练3.0时代">
+        </div>
+      </section>
+      <section class="g-sec sec-3">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line">独创<span class="red">AI+真人</span>让孩子<span class="bold">每天</span>都能主动练琴</h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <div class="arr-line">+</div>
+          <div class="flex-2">
+            <div class="item">
+              <div class="img ai1"></div>
+              <div class="title">小叶子爱练琴APP</div>
+              <ul class="list">
+                <li class="arrow-orange">让孩子养成自主练琴能力</li>
+                <li class="arrow-purple">有趣又高效，孩子练琴更起劲儿</li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="img ai2"></div>
+              <div class="title">专业陪练老师</div>
+              <ul class="list">
+                <li class="arrow-orange">100%专业院校钢琴老师</li>
+                <li class="arrow-purple">协助孩子制定练琴周计划</li>
+                <li class="arrow-pink">针对每周问题进行个性化精准指导</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="g-sec sec-4">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line">我们如何做到让孩子<span class="bold">每天自主练琴</span>？</h3>
+          </div>
+        </div>
+        <div class="how3">
+          <div class="item">
+            <p class="big">每周<span class="red">7</span>天</p>
+            <p class="small">AI陪练</p>
+          </div>
+          <div class="plus">+</div>
+          <div class="item">
+            <p class="big">每周<span class="red">1</span>节</p>
+            <p class="small">真人陪练课</p>
+          </div>
+          <div class="plus">+</div>
+          <div class="item">
+            <p class="big"><span class="red" style="font-size: .3rem;">无限次</span></p>
+            <p class="small">练琴成绩单</p>
+          </div>
+        </div>
+        <div class="sec-main">
+          <img src="/images/panda/pic2.jpg" class="main-img" alt="陪练3.0时代">
+        </div>
+      </section>
+      <section class="g-sec sec-5">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line">为什么选择<span class="bold">小叶子陪练</span></h3>
+          </div>
+          <h4 class="sub-title">突破传统陪练形式，提升看得见</h4>
+        </div>
+        <div class="sec-main">
+          <img src="/images/panda/pic6.jpg" class="main-img" alt="陪练3.0时代">
+        </div>
+      </section>
+      <section class="g-sec sec-6">
+        <div class="header">
+          <h4 class="sub-title">传统陪练中，老师只对单次练习作指导</h4>
+          <div class="main-title">
+            <h3 class="under-line">陪练<span class="bold">3.0</span>协助孩子<span class="red">一周练琴效果大幅提升</span></h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <div class="guide-item item1">
+            <img src="/images/panda/list1.jpg" alt="双向视频">
+            <div class="guide-main">
+              <p>100%双向视频，</p>
+              <p>清楚看到老师的示范动作</p>
+            </div>
+          </div>
+          <div class="guide-item item2">
+            <img src="/images/panda/list2.jpg" alt="双向视频">
+            <div class="guide-main">
+              <p>100%专业院校钢琴老师，</p>
+              <p>音乐教育素养有保障</p>
+            </div>
+          </div>
+          <div class="guide-item item3">
+            <img src="/images/panda/list3.jpg" alt="双向视频">
+            <div class="guide-main">
+              <p>少儿陪练经验丰富，了解孩子心理，针对孩子特点定制科学练琴方法</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="g-sec sec-7">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line"><span class="bold">高效有趣，</span>孩子练琴更起劲儿</h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <img src="/images/panda/pic5.png" class="main-img" alt="陪练3.0时代">
+        </div>
+      </section>
+      <section class="g-sec sec-8">
+        <div class="header">
+          <div class="main-title">
+            <h3>解放家长，清楚掌握孩子</h3><br>
+            <h3 class="under-line"><span class="bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每一处进步与不足&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <div class="report-item item1" data-content="演奏成绩单">
+            <img src="/images/panda/pic3.jpg" alt="演奏成绩单">
+          </div>
+          <div class="report-item item2" data-content="练琴数据报告">
+            <img src="/images/panda/pic4.jpg" alt="练琴数据报告">
+          </div>
+        </div>
+      </section>
+      <section class="g-sec sec-9">
+        <div class="header">
+          <div class="main-title">
+            <h3><span class="bold">多种课程形式</span></h3><br>
+            <h3 class="under-line">选择孩子最适合的陪练方式</h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <div class="fit-item item1">
+            <div class="title" data-content="方式一">
+              <p>AI陪练课</p>
+            </div>
+            <ul class="list">
+              <li class="arrow-blue">最好的备考助手</li>
+              <li class="arrow-blue">适合已具备<span class="blue">自主练琴能力</span>的琴童</li>
+            </ul>
+          </div>
+          <p class="or">or</p>
+          <div class="fit-item item2">
+            <div class="title" data-content="方式二">
+              <p>AI陪练课</p>
+              <p>+</p>
+              <p>真人陪练课</p>
+            </div>
+            <ul class="list">
+              <li class="arrow-red">培养练琴习惯</li>
+              <li class="arrow-red">高效解决练琴问题</li>
+              <li class="arrow-red">适合<span class="red">初级琴童入门</span>及<span class="red">中高级琴童</span>的稳步提升</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="g-sec sec-10">
+        <div class="header">
+          <div class="main-title">
+            <h3 class="under-line"><span class="bold">&nbsp;&nbsp;用户说&nbsp;&nbsp;</span></h3>
+          </div>
+        </div>
+        <div class="sec-main">
+          <div class="swiper-container">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about-main">
+          <p>小叶子音乐教育（The ONE智能音乐教育）是国内领先人工智能驱动的音乐教育公司，获国际钢琴家郎朗、创新工场李开复、真格基金徐小平和美国红杉千万美元级投资，2013年由成功的连续创业者叶滨创立。</p>
+          <p>作为中国智造业走向全球的典型，小叶子音乐教育获得国际市场的认可。</p>
+          <p>“世界上没有两片相同的小叶子”，我们相信每个孩子都有他最特别的地方。小叶子以人工智能驱动音乐教育，让每一片“小叶子”在音乐世界里快乐成长、享受音乐带来的乐趣与幸福。</p>
+        </div>
+      </section>
+      <section class="copyright">
+        <p>津ICP备17006830号-1版权所有©2018 小叶子（天津）科技有限公司</p>
+        <p>工信部经营许可证编号：津ICP备17006830号</p>
+      </section>
+      <section class="fix" id="fix">
+        <p>点击领取<span>“AI+真人”</span>钢琴陪练大礼包</p>
+        <button class="btn" onclick="window.backToTop(8)" id="wap-get-course">立即领取</button>
+      </section>
+      <div class="video-con" id="video-con">
+        <div class="video-poster">
+          <div class="video-close" id="video-close">
+            <img src="/images/panda/close.png" alt="钢琴陪练软件">
+          </div>
+          <video class="video" id="video" poster="">
+            <source src="http://static.1tai.com/videos/langlang4.mp4" type="video/mp4"> 您的浏览器不支持视频播放
+          </video>
+          <div class="poster" id="poster"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/swiper.min.js"></script>
+    <script src="/web/static/js/wap_index_201807.js?456"></script>
+    <script src="/web/static/js/sem_web_statistics.js?123"></script>
+    <script>
+      window.onload = function() {
+        var talkDatas = [{
+          name: '彤彤妈妈',
+          title: '孩子7岁  学琴两年半',
+          intro: '“孩子在家每天狂练琴，从来没见她这么拼过。每天不用我督促，放了学到家第一件事就去练琴，说是有乐队伴奏特别爽！我可是轻松多了。”'
+        }, {
+          name: '小雨妈妈',
+          title: '孩子6岁  学琴半年',
+          intro: '“之前我陪练的时候特别头疼，自己也不懂，只能听老师说的每节课记下来，但孩子练的时候还是不知道练的对不对。用了小叶子陪练之后，他练习的每一遍都能有反馈，我一眼就能看明白，真的是神产品！”'
+        }, {
+          name: '五仁妈妈',
+          title: '孩子9岁  学琴两年',
+          intro: '“APP也太好玩了，以前孩子顶多能练半个小时就死活不愿意弹了，现在练一个小时还停不下来。练琴指导师也特别贴心，一次课能解决一周问题，五仁进步神速，回课的时候老师都惊了！”'
+        }, {
+          name: '思思爸爸',
+          title: '孩子8岁  学琴三年',
+          intro: '“孩子特别喜欢那个节奏小鼓，比节拍器带劲儿多了，每次弹得时候身体一晃一晃的，我们看着也开心。”'
+        }, {
+          name: '琳琳妈妈',
+          title: '孩子10岁  学琴五年',
+          intro: '“以前孩子弹得曲子简单，我还能听懂，现在曲子越来越难，我是跟不上了。但还好有小叶子陪练的测评，孩子每次弹完我只要看报告就行，孩子也能知道自己问题出在哪，简直是我的救星。”'
+        }, {
+          name: '于老师',
+          title: '教学3年',
+          intro: '“知道小叶子陪练还是通过我的一个学生，有一次他来回课进步特别明显，跟他的家长交流之后才知道原来他们体验了小叶子陪练。我觉得这对钢琴老师来说帮助太大了，特别方便，而且还能让孩子的练习效率提高，非常推荐给大家。”'
+        }, {
+          name: '教学6年',
+          title: '孩子7岁 学琴两年半',
+          intro: '“有一次跟一个学生的妈妈聊，她说在家陪练太难了，孩子不爱练，自己也不懂。正好我有个学生在用，我就推荐给她试试，结果她用了之后说特别好，孩子特别能坐得住，还一直在感谢我。”'
+        }]
+        var html = ''
+        for (var i = 0; i < talkDatas.length; i++) {
+          html += '<div class="swiper-slide"><div class="talk"><div class="name">' + talkDatas[i].name + '</div><h4 class="title">' + talkDatas[i].title + '</h4><p class="intro">' + talkDatas[i].intro + '</p></div></div>'
+        }
+        document.getElementById('swiper-wrapper').innerHTML = html
+        var mySwiper = new Swiper ('.swiper-container', {
+          direction: 'horizontal',
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          loop: true,
+          speed: 600,
+          autoplay: {
+            delay:3000
+          },
+          spaceBetween: 50
+        })
+      }
+      //底部按钮弹出方法
+      window.onscroll = function (e) {
+        var fix = document.getElementById('fix')
+        var upSize = 800 * (window.innerHeight / 750)
+        if (window.pageYOffset > upSize) {
+          fix.style.bottom = '0'
+        } else {
+          fix.style.bottom = '-1.2rem'
+        }
+      }
+      //滚动置顶方法
+      function backToTop(rate) {
+        var doc = document.body.scrollTop ? document.body : document.documentElement
+        var scrollTop = doc.scrollTop
+        
+        var top = function () {
+          scrollTop = scrollTop + (0 - scrollTop) / (rate || 2)
+          // 临界判断，终止动画
+          if (scrollTop < 1) {
+            doc.scrollTop = 0
+            return
+          }
+          doc.scrollTop = scrollTop
+          // 动画gogogo!
+          requestAnimationFrame(top)
+        }
+        top()
+      }
+      //videos
+      var video_close = document.getElementById('video-close')
+      var video_play = document.getElementById('play-con')
+      var video_con = document.getElementById('video-con')
+      var video = document.getElementById('video')
+      var poster = document.getElementById('poster')
+      var qimoChat = document.getElementById('wap-online-service')
+      video_play.addEventListener('click', function(){
+        video.play()
+        video_con.style.display = 'flex'
+        // video_con.style.top = window.pageYOffset + 'px'
+        // document.documentElement.style.overflow='hidden'
+      })
+      video_close.addEventListener('click', function(){
+        // document.documentElement.style.overflow='visible'
+        video.pause()
+        video_con.style.display = 'none'
+      })
+      video_con.addEventListener('click', function(){
+        video.pause()
+        video_con.style.display = 'none'
+      })
+      poster.addEventListener('click', function () {
+        event.stopPropagation()
+        if (video.paused) {
+          video.play()
+          this.style.opacity = '0'
+        } else {
+          video.pause()
+          this.style.opacity = '1'
+        }
+      })
+      
+      video.onpause = function () {
+        poster.style.opacity = '1'
+      }
+      video.onplay = function () {
+        poster.style.opacity = '0'
+      }
+    </script>
+  </body>
+</html>
