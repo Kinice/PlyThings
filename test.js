@@ -19,5 +19,22 @@ function double(mon){
     }else{
         return '0'+mon;
     }
-
 }
+
+let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('p1')
+        if (Math.random() > 0.5) resolve('data1')
+        else resolve('data2')
+    }, 500)
+})
+
+p1.then(data => {
+    if (p1.data === 'data1') {
+        resolve(p1.data)
+    } else {
+        reject(p1.data)
+    }
+}).then(data => {
+    console.log(data)
+})
