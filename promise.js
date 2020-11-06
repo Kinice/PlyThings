@@ -21,3 +21,10 @@ Promise.myAll = function(promiseArr) {
     })
   })
 }
+
+Promise.prototype.myfinally = function(callback) {
+  return this.then(
+    val => Promise.resolve(callback()).then(() => val),
+    err => Promise.resolve(callback()).then(() => { throw err })
+  )
+}
