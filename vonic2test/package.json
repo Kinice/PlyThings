@@ -23,7 +23,7 @@
     "file-loader": "^0.9.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
-    "node-sass": "^3.9.3",
+    "node-sass": "^7.0.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
